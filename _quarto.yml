@@ -1,0 +1,15 @@
+project:
+  title: "PFE"
+  render:
+    - index.qmd
+
+engine: knitr
+format:
+  pdf:
+    keep-tex: false
+    fig-width: 6
+    fig-height: 4
+
+diagram:
+  plantuml:
+    jar: "C:/Users/ramyh/Documents/plantuml.jar"

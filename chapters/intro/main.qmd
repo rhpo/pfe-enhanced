@@ -1,0 +1,10 @@
+# Introduction Générale {.unnumbered}
+
+Dans le système universitaire algérien, le Projet de Fin d'Études (PFE) constitue l'aboutissement obligatoire de tout cursus de formation supérieure. Il représente pour l'étudiant l'occasion de mobiliser l'ensemble des compétences acquises au cours de sa formation pour répondre à une problématique concrète - qu'il soit réalisé en interne à l'université ou en collaboration avec une entreprise.
+
+Or, malgré son importance centrale dans la validation des diplômes, la gestion du PFE demeure aujourd'hui largement manuelle et non structurée au sein des établissements algériens (tel que détaillé au Chapitre 1). La coordination entre étudiants, enseignants encadrants et services administratifs repose encore essentiellement sur des échanges informels, des tableurs et des courriers électroniques, sans aucune plateforme unifiée.
+
+L'objectif de ce mémoire est de combler cette lacune en concevant et réalisant une **application web dédiée à la gestion des PFE**, pensée spécifiquement pour le contexte des établissements universitaires algériens.
+
+<!-- Empty page -->
+{{< pagebreak >}}

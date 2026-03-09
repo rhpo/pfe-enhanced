@@ -1,0 +1,29 @@
+# Quarto internal cache and freeze state
+.quarto/
+_freeze/
+*_files/
+
+# Block all PDF and HTML files everywhere
+**/*.pdf
+**/*.html
+!garde.pdf          # Keep the necessary cover page
+
+# LaTeX intermediate/auto-generated files
+**/*.log
+**/*.aux
+**/*.tex
+**/*.toc
+**/*.out
+**/*.lof
+**/*.lot
+**/*.fdb_latexmk
+**/*.fls
+**/*.synctex.gz
+
+# Keep essential LaTeX configuration/headers
+!header.tex
+!before-body.tex
+
+# Scripting and environment
+node_modules/
+.reload-trigger.html

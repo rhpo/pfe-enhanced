@@ -1,0 +1,3 @@
+# Conception
+
+> Ce chapitre est en cours de rédaction. Il présentera la modélisation et la conception de la solution proposée : diagrammes UML (cas d'utilisation, classes, séquences), architecture technique et choix technologiques.
