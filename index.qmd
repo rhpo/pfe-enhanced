@@ -18,8 +18,8 @@ format:
       - bottom=2.5cm
       - left=2.5cm
       - right=2.5cm
-    include-in-header: header.tex
-    include-before-body: before-body.tex
+    include-in-header: config/header.tex
+    include-before-body: config/layout.tex
     toc: true
     number-sections: true
     colorlinks: true

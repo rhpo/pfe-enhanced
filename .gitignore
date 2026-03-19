@@ -6,7 +6,8 @@ _freeze/
 # Block all PDF and HTML files everywhere
 **/*.pdf
 **/*.html
-!garde.pdf          # Keep the necessary cover page
+!assets/
+!assets/**          # Keep the necessary cover page
 
 # LaTeX intermediate/auto-generated files
 **/*.log
@@ -27,3 +28,6 @@ _freeze/
 # Scripting and environment
 node_modules/
 .reload-trigger.html
+
+/.quarto/
+**/*.quarto_ipynb

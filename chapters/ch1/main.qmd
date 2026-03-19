@@ -1,10 +1,10 @@
-# Généralités sur les projets de fin d'études
+# Généralités sur l'Éducation
 
 > Ce chapitre pose le cadre conceptuel du sujet en partant du plus général vers le plus spécifique : de l'acte d'apprendre, en passant par les systèmes éducatifs, jusqu'au Projet de Fin d'Études (PFE) et aux limites constatées dans sa gestion actuelle.
 
 {{< pagebreak >}}
 
-## L'apprentissage : une nécessité fondamentale pour l'être humain
+## L'apprentissage
 
 L'apprentissage constitue l'une des activités les plus fondamentales de l'être humain. Depuis la préhistoire, l'*Homo sapiens* a développé sa capacité à accumuler, transmettre et transformer des connaissances, ce qui lui a permis de s'adapter à des environnements variés et de construire des civilisations complexes. Contrairement à d'autres espèces dont le comportement est essentiellement gouverné par l'instinct, l'être humain dépend largement de l'apprentissage pour acquérir les compétences nécessaires à sa survie et à son épanouissement.
 
@@ -26,7 +26,7 @@ Au Moyen Âge, l'enseignement se structure autour des sept arts libéraux avant 
 
 {{< pagebreak >}}
 
-### Pourquoi apprend-on ?
+### Pourquoi apprend-on maintenant ?
 
 La question du *pourquoi* de l'apprentissage est à la fois philosophique et pragmatique. Plusieurs motivations fondamentales expliquent l'impulsion naturelle de l'être humain à apprendre :
 
@@ -39,7 +39,9 @@ Ces motivations justifient l'organisation, par les sociétés, de systèmes édu
 
 {{< pagebreak >}}
 
-## Système éducatif : structure et parcours de formation
+# Système Educatif {.unnumbered .unlisted}
+
+## Structure et parcours de formation
 
 L'éducation formelle est le mécanisme institutionnel par lequel les sociétés organisent le transfert de connaissances et de compétences entre générations. Elle est structurée en paliers successifs, chacun ayant ses objectifs pédagogiques propres, menant progressivement l'individu de l'acquisition des savoirs de base jusqu'à une spécialisation professionnelle avancée.
 
@@ -99,7 +101,7 @@ Parallèlement au système [LMD](#def-lmd), certains établissements algériens 
 
 {{< pagebreak >}}
 
-## Projet de Fin d'Études (PFE) : définition et cadre général {#def-pfe}
+## Projet de Fin d'Études (PFE) {#def-pfe}
 
 > À ce stade du parcours académique, une question naturelle se pose : comment l'étudiant valide-t-il son cycle d'études ? La réponse tient en un événement clé : le Projet de Fin d'Études.
 
@@ -197,7 +199,7 @@ flowchart TD
 
 {{< pagebreak >}}
 
-## Problématique : les limites de la gestion actuelle des PFE
+## Limites de la gestion actuelle des PFE *(Problématique)*
 
 Après avoir décrit le cadre général de l'apprentissage, du parcours éducatif et du PFE dans sa conception théorique, il est nécessaire d'observer comment ce processus est géré dans la réalité des établissements universitaires algériens.
 

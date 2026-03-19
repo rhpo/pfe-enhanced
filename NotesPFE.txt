@@ -1,0 +1,22 @@
+Chaque chapiter contient Introduction + Conclusion
+
+Remove white stickers and 
+
+for references use IEEE, chiffre entre crochets [1] not (Anderson, 2000).
+
+Chapitre 1 contient le plus de references possible.
+
+Les figures reduce size (width 40%)
+
+Introduction must be in the 
+
+Systeme Educatif 
+
+Introduction 1.1
+1.2...
+Systeme educative 1.3
+
+
+No page breaks. only if we change chapter.
+
+L'encadrant externe c'est un acteur a ajouter.
