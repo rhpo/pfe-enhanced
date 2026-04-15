@@ -79,7 +79,7 @@ Les critères retenus pour la comparaison sont les suivants :
 
 Il ressort de cette analyse comparative que les LMS généralistes disponibles sur le marché (Moodle, Canvas, Blackboard) couvrent correctement les besoins liés à la communication et à la gestion documentaire, mais s'avèrent insuffisants dès lors qu'il s'agit de gérer spécifiquement le processus PFE dans son intégralité. En particulier, aucune de ces solutions ne propose de mécanisme automatisé pour la proposition, l'affectation et la validation de sujets de PFE.
 
-Par ailleurs, ces solutions ne tiennent aucunement compte des particularités du système universitaire algérien : organisation en semestres, régulations du [MESRS](#def-mesrs), pratiques locales en matière de soutenances et de constitution des jurys. Leur déploiement dans ce contexte nécessiterait des adaptations coûteuses en temps et en ressources humaines.
+Par ailleurs, ces solutions ne tiennent aucunement compte des particularités du système universitaire algérien : organisation en semestres, régulations du MESRS, pratiques locales en matière de soutenances et de constitution des jurys. Leur déploiement dans ce contexte nécessiterait des adaptations coûteuses en temps et en ressources humaines.
 
 
 ## Étude de cas : la gestion des PFE à l'ESST
@@ -87,9 +87,10 @@ Par ailleurs, ces solutions ne tiennent aucunement compte des particularités du
 Afin d'ancrer notre analyse dans une réalité institutionnelle concrète et de dépasser les généralisations théoriques, nous avons conduit une étude de cas portant sur les pratiques de gestion des PFE en vigueur à l'École Supérieure des Sciences et de la Technologie (ESST) d'Alger.
 
 {{< pagebreak >}}
+
 ### Présentation de l'ESST
 
-L'ESST est un établissement universitaire algérien relevant du [MESRS](#def-mesrs). Elle forme des étudiants en informatique et d'autres spécialités comme la chimie pharmaceutique, l'éléctronique et bien plus, et disciplines connexes selon le système LMD, et délivre des diplômes de Licence (3 ans) et de Master (2 ans supplémentaires) @esst. Comme la majorité des établissements de taille intermédiaire en Algérie, l'ESST ne dispose pas à ce jour d'une plateforme numérique dédiée à la gestion de ses activités pédagogiques et administratives.
+L'ESST est un établissement universitaire algérien relevant du MESRS. Elle forme des étudiants en informatique et d'autres spécialités comme la chimie pharmaceutique, l'éléctronique et bien plus, et disciplines connexes selon le système LMD, et délivre des diplômes de Licence (3 ans) et de Master (2 ans supplémentaires) @esst. Comme la majorité des établissements de taille intermédiaire en Algérie, l'ESST ne dispose pas à ce jour d'une plateforme numérique dédiée à la gestion de ses activités pédagogiques et administratives.
 
 ### Processus actuel de gestion des PFE à l'ESST
 
@@ -107,7 +108,7 @@ Lorsqu'une entreprise souhaite proposer un sujet de PFE à des étudiants de l'E
 
 La gestion administrative des PFE repose entièrement sur des outils bureautiques classiques : les affectations encadrant-étudiant sont consignées dans des feuilles Excel, les validations de sujets sont transmises par email ou par courrier papier, et les plannings de soutenance sont communiqués par voie d'affichage ou par email collectif. Il n'existe aucun système permettant un suivi en temps réel de l'avancement des PFE ni de génération automatique de documents officiels (attestations, procès-verbaux de soutenance...).
 
-![Processus actuel de PFE à l'ESST @esst](/images/etude-cas-esst-pfe.png){fig-align="center" width="100%"}
+![Processus actuel de PFE à l'ESST @esst](/images/etude-cas-esst-pfe-new.png){fig-align="center" width="100%"}
 
 ### Outils utilisés en interne
 
@@ -171,9 +172,9 @@ C'est dans ce contexte que s'inscrit la contribution de ce mémoire : la concept
 
 L'implémentation de cette solution s'appuie sur deux technologies open-source sélectionnées pour leur complémentarité, leur performance et leur adéquation au profil de l'application :
 
-- **SvelteKit (frontend) :** par rapport aux frameworks JavaScript dominants (React, Vue.js, Angular), SvelteKit se distingue par son architecture basée sur la compilation - le code est converti en JavaScript optimisé au moment du build, sans runtime virtuel. Cela se traduit par un temps de chargement initial nettement inférieur et une meilleure performance perceptible pour l'utilisateur. Sa génération de pages côté serveur (SSR) native améliore également le référencement et la réactivité dans des conditions réseau limitées, fréquentes dans les établissements universitaires algériens.
+- **SvelteKit (frontend) :** par rapport aux frameworks JavaScript dominants (React, Vue.js, Angular), SvelteKit se distingue par son architecture basée sur la compilation - le code est converti en JavaScript optimisé au moment du build, sans runtime virtuel. Cela se traduit par un temps de chargement initial nettement inférieur et une meilleure performance perceptible pour l'utilisateur. Sa génération de pages côté serveur (SSR) native améliore également le référencement et la réactivité dans des conditions réseau limitées, fréquentes dans les établissements universitaires algériens. @frwiki:231357933
 
-- **Golang (backend) :** Go est un langage compilé, conçu par Google pour des applications serveur à haute performance et forte concurrence. Comparé à des alternatives courantes (Node.js, Django, Laravel), Go offre une empreinte mémoire plus faible, une gestion native de la concurrence (goroutines) et un binaire déploiable sans dépendances externes. Ces caractéristiques en font un choix approprié pour une API REST servant plusieurs rôles simultanément (étudiants, enseignants, administrateurs) tout en restant facilement déployable sur une infrastructure universitaire limitée.
+- **Golang (backend) :** Go est un langage compilé, conçu par Google pour des applications serveur à haute performance et forte concurrence. Comparé à des alternatives courantes (Node.js, Django, Laravel), Go offre une empreinte mémoire plus faible, une gestion native de la concurrence (goroutines) et un binaire déploiable sans dépendances externes. Ces caractéristiques en font un choix approprié pour une API REST servant plusieurs rôles simultanément (étudiants, enseignants, administrateurs) tout en restant facilement déployable sur une infrastructure universitaire limitée. @frwiki:235063488
 
 **Note :** La solution proposée n'est pas un LMS généraliste adapté, mais bien une application métier dédiée, conçue sur mesure pour répondre aux besoins réels et spécifiques de la gestion des PFE dans le contexte universitaire algérien.
 

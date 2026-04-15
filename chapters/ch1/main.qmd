@@ -19,15 +19,15 @@ Du point de vue des sciences cognitives, l'apprentissage est défini comme un pr
 
 ### Aperçu historique de l'éducation
 
-L'histoire de l'éducation en Occident trouve ses racines dans la Grèce antique, avec l'émergence des premières écoles philosophiques. Parmi les plus célèbres, l'**Académie de Platon** - fondée vers 387 av. JC. - et le **Lycée d'Aristote** - fondé en 335 av. J.-C., également connu sous le nom d'école péripatéticienne - ont jeté les bases du raisonnement logique et de l'observation systématique [@lebrun2003]. Au Lycée (@fig-aristote), Aristote privilégiait une approche empirique et encyclopédique du savoir, enseignant souvent en arpentant les jardins avec ses disciples.
+L'histoire de l'éducation en Occident trouve ses racines dans la Grèce antique, avec l'émergence des premières écoles philosophiques. Parmi les plus célèbres, l'**Académie de Platon** - fondée vers 387 av. JC. - et le **Lycée d'Aristote** - fondé en 335 av. J.-C., également connu sous le nom d'école péripatéticienne - ont jeté les bases du raisonnement logique et de l'observation systématique [@lebrun2003]. Au Lycée (@fig-aristote), Aristote privilégiait une approche empirique et encyclopédique du savoir, enseignant souvent en arpentant les jardins avec ses disciples. @frwiki:228902474
 
 \vspace{1cm}
 
-![Représentation de l'école d'Aristote](/images/Schule_des_Aristoteles.jpg){#fig-aristote fig-align="center" width="50%"}
+![Représentation de l'école d'Aristote @frwiki:228902474](/images/Schule_des_Aristoteles.jpg){#fig-aristote fig-align="center" width="50%"}
 
 Au Moyen Âge, l'enseignement se structure autour des sept arts libéraux avant l'apparition des premières universités au XIIe siècle, organisées en facultés (Théologie, Droit, Médecine, Arts) [@lebrun2003]. L'époque moderne voit l'émergence des collèges jésuites et de structures d'enseignement royal comme le Collège de France. Cette période est marquée par la publication d'ouvrages pédagogiques influents comme celui de Reixac en 1749 (@fig-reixac).
 
-![Ouvrage pédagogique : *Instruccions per a l'ensenyança de minyons* (1749)](/images/Reixac.jpg){#fig-reixac fig-align="center" width="35%"}
+![Ouvrage pédagogique : *Instruccions per a l'ensenyança de minyons* (1749) @frwiki:215942518](/images/Reixac.jpg){#fig-reixac fig-align="center" width="35%"}
 
 **Enfin**, l'époque contemporaine marque la généralisation de l'instruction obligatoire et gratuite au XIXe siècle, transformant l'éducation en un droit fondamental et un service public universel [@lebrun2003].
 
@@ -52,7 +52,7 @@ En Algérie, comme dans la majorité des pays, le système éducatif est organis
 
 \vspace{1cm}
 
-![Parcours scolaire de l'être humain - du primaire au baccalauréat](/images/education.png){
+![Parcours scolaire de l'être humain (en Algérie) @france-edu-intl](/images/education.png){
     fig-align="center"
     width="90%"
 }
