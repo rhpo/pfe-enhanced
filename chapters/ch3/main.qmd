@@ -1,3 +1,175 @@
-# Conception
+# Analyse Système et Exigences
 
-> Ce chapitre est en cours de rédaction. Il présentera la modélisation et la conception de la solution proposée : diagrammes UML (cas d'utilisation, classes, séquences), architecture technique et choix technologiques.
+## Introduction du chapitre
+
+Ce chapitre est en cours de rédaction.
+
+```{.plantuml width=100%}
+@startuml
+skinparam classAttributeIconSize 0
+
+' ================= ENUMS =================
+enum PFEType {
+  INTERNAL
+  EXTERNAL
+}
+
+enum PFEStatus {
+  DRAFT
+  FICHE_PENDING_VALIDATION
+  VALIDATED
+  REJECTED
+  IN_PROGRESS
+  SUBMITTED
+  UNDER_EVALUATION
+  ADMITTED
+  FAILED
+  CORRECTION_REQUIRED
+  PUBLISHED
+}
+
+enum EvaluationResult {
+  ADMITTED
+  NOT_ADMITTED
+  CORRECTION_REQUIRED
+}
+
+' ================= CORE ACTORS =================
+class Student {
+  +id: String
+  +fullName: String
+  +dob: Date
+  +speciality: String
+}
+
+class Teacher {
+  +id: String
+  +fullName: String
+  +department: String
+}
+
+class Company {
+  +id: String
+  +name: String
+}
+
+' ================= PFE =================
+class PFE {
+  +code: String
+  +title: String
+  +type: PFEType
+  +status: PFEStatus
+  +deadline: Date
+  +submit()
+  +validateFiche()
+  +assignCode()
+  +publish()
+}
+
+class CoPromoteur {
+  +id: String
+  +name: String
+}
+
+PFE "1" -- "1" Student : assigned to >
+PFE "1" -- "1" Teacher : encadrant >
+PFE "0..1" -- "1" Company : external >
+PFE "0..1" -- "1" CoPromoteur : external only >
+
+' ================= FICHE PFE =================
+class FichePFE {
+  +id: String
+  +submittedAt: Date
+  +isValid: Boolean
+  +validate()
+  +requestChanges()
+}
+
+PFE "1" o-- "1" FichePFE
+
+Teacher --> FichePFE : signs
+Student --> FichePFE : fills
+FichePFE --> Teacher : encadrant validation
+FichePFE --> Administration : submitted to
+
+class Administration {
+  +id: String
+  +validateFiche()
+  +assignCode()
+  +assignJury()
+  +assignRoom()
+  +assignSchedule()
+}
+
+' ================= FOLLOW-UP =================
+class FicheSuiviPFE {
+  +id: String
+  +meetingDate: Date
+  +progressNotes: String
+  +teacherFeedback: String
+  +studentNotes: String
+}
+
+PFE "1" o-- "0..*" FicheSuiviPFE
+Student --> FicheSuiviPFE : fills
+Teacher --> FicheSuiviPFE : reviews
+
+' ================= JURY SYSTEM =================
+class Jury {
+  +id: String
+}
+
+class JuryMember {
+  +role: String  ' President / Member
+}
+
+Teacher "0..*" -- "0..*" JuryMember
+Jury "1" o-- "1..3" JuryMember
+PFE "1" -- "1" Jury
+
+Administration --> Jury : assigns
+
+' ================= EVALUATION =================
+class Evaluation {
+  +id: String
+  +date: Date
+  +result: EvaluationResult
+  +score: float
+  +comment: String
+  +evaluate()
+}
+
+Jury "1" -- "1" Evaluation
+PFE "1" -- "0..1" Evaluation
+
+Evaluation --> PFE : evaluates
+
+' ================= LOGISTICS =================
+class Schedule {
+  +date: Date
+  +time: Time
+}
+
+class Room {
+  +number: String
+  +building: String
+}
+
+PFE "1" -- "1" Schedule
+PFE "1" -- "1" Room
+
+Administration --> Schedule : assigns
+Administration --> Room : assigns
+
+' ================= NOTIFICATIONS =================
+class NotificationService {
+  +sendToStudent()
+  +sendToTeachers()
+}
+
+Administration --> NotificationService : triggers
+NotificationService --> Student
+NotificationService --> Teacher
+
+@enduml
+```

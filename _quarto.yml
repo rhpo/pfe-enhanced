@@ -4,12 +4,15 @@ project:
     - index.qmd
 
 engine: knitr
-format:
-  pdf:
-    keep-tex: false
-    fig-width: 6
-    fig-height: 4
+
+filters:
+  - diagram
 
 diagram:
-  plantuml:
-    jar: "C:/Users/ramyh/Documents/plantuml.jar"
+  engine:
+    plantuml:
+      execpath:
+        - "C:/Users/ramyh/scoop/apps/openjdk17/current/bin/java.exe"
+        - "-jar"
+        - "C:/Users/ramyh/Documents/plantuml.jar"
+      mime-type: "image/png"

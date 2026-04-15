@@ -1,6 +1,9 @@
-Chaque chapiter contient Introduction + Conclusion
 
-Remove white stickers and 
+[x] Remove the footer for Introduction Générale
+
+[x] Chaque chapiter contient Introduction + Conclusion
+
+Remove the `` blocks (citations).
 
 for references use IEEE, chiffre entre crochets [1] not (Anderson, 2000).
 
@@ -8,9 +11,9 @@ Chapitre 1 contient le plus de references possible.
 
 Les figures reduce size (width 40%)
 
-Introduction must be in the 
+Introduction must be in the
 
-Systeme Educatif 
+Systeme Educatif
 
 Introduction 1.1
 1.2...

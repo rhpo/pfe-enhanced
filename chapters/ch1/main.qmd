@@ -1,34 +1,40 @@
 # Généralités sur l'Éducation
 
-> Ce chapitre pose le cadre conceptuel du sujet en partant du plus général vers le plus spécifique : de l'acte d'apprendre, en passant par les systèmes éducatifs, jusqu'au Projet de Fin d'Études (PFE) et aux limites constatées dans sa gestion actuelle.
 
-{{< pagebreak >}}
+## Introduction du chapitre
+
+Ce chapitre a pour vocation de poser le cadre conceptuel et contextuel dans lequel s'inscrit le présent travail, en adoptant une démarche progressive allant du général vers le particulier.
+
+Nous partons de l'acte fondamental d'apprendre, socle de toute réflexion pédagogique, pour nous intéresser ensuite à la manière dont les sociétés ont structuré cet apprentissage au sein de systèmes éducatifs formels, en nous appuyant sur le cas du système algérien.
+
+Cette progression nous mènera naturellement vers le Projet de Fin d'Études (PFE), épreuve de synthèse par excellence à travers laquelle l'étudiant mobilise l'ensemble des compétences acquises durant son cursus.
+
+Enfin, une analyse critique de la gestion actuelle des PFE dans les établissements universitaires algériens permettra de mettre en lumière les lacunes organisationnelles existantes, constituant ainsi le point de départ de la problématique qui motive le présent travail.
 
 ## L'apprentissage
 
 L'apprentissage constitue l'une des activités les plus fondamentales de l'être humain. Depuis la préhistoire, l'*Homo sapiens* a développé sa capacité à accumuler, transmettre et transformer des connaissances, ce qui lui a permis de s'adapter à des environnements variés et de construire des civilisations complexes. Contrairement à d'autres espèces dont le comportement est essentiellement gouverné par l'instinct, l'être humain dépend largement de l'apprentissage pour acquérir les compétences nécessaires à sa survie et à son épanouissement.
 
-Du point de vue des sciences cognitives, l'apprentissage est défini comme un processus par lequel un individu acquiert de nouvelles connaissances, compétences, comportements ou valeurs à travers l'expérience, l'étude, l'enseignement ou la pratique (Anderson, 2000). Ce processus repose sur des mécanismes neurologiques complexes, notamment la plasticité synaptique et la mémoire à long terme, qui permettent au cerveau de se reconfigurer en réponse aux expériences vécues.
+Du point de vue des sciences cognitives, l'apprentissage est défini comme un processus par lequel un individu acquiert de nouvelles connaissances, compétences, comportements ou valeurs à travers l'expérience, l'étude, l'enseignement ou la pratique [@anderson1982]. Ce processus repose sur des mécanismes neurologiques complexes, notamment la plasticité synaptique et la mémoire à long terme, qui permettent au cerveau de se reconfigurer en réponse aux expériences vécues [@anderson2000].
 
 ### Aperçu historique de l'éducation
 
-L'histoire de l'éducation en Occident trouve ses racines dans la Grèce antique, avec l'émergence des premières écoles philosophiques. Parmi les plus célèbres, l'**Académie de Platon** et le **Lycée d'Aristote** (également connu sous le nom d'école péripatéticienne) ont jeté les bases du raisonnement logique et de l'observation systématique. Au Lycée (@fig-aristote), Aristote privilégiait une approche empirique et encyclopédique du savoir, enseignant souvent en arpentant les jardins avec ses disciples.
+L'histoire de l'éducation en Occident trouve ses racines dans la Grèce antique, avec l'émergence des premières écoles philosophiques. Parmi les plus célèbres, l'**Académie de Platon** - fondée vers 387 av. JC. - et le **Lycée d'Aristote** - fondé en 335 av. J.-C., également connu sous le nom d'école péripatéticienne - ont jeté les bases du raisonnement logique et de l'observation systématique [@lebrun2003]. Au Lycée (@fig-aristote), Aristote privilégiait une approche empirique et encyclopédique du savoir, enseignant souvent en arpentant les jardins avec ses disciples.
 
 \vspace{1cm}
 
-![Représentation de l'école d'Aristote](/images/Schule_des_Aristoteles.jpg){#fig-aristote fig-align="center" width="80%"}
+![Représentation de l'école d'Aristote](/images/Schule_des_Aristoteles.jpg){#fig-aristote fig-align="center" width="50%"}
 
-Au Moyen Âge, l'enseignement se structure autour des sept arts libéraux avant l'apparition des premières universités au XIIe siècle, organisées en facultés (Théologie, Droit, Médecine, Arts). L'époque moderne voit l'émergence des collèges jésuites et de structures d'enseignement royal comme le Collège de France. Cette période est marquée par la publication d'ouvrages pédagogiques influents comme celui de Reixac en 1749 (@fig-reixac).
+Au Moyen Âge, l'enseignement se structure autour des sept arts libéraux avant l'apparition des premières universités au XIIe siècle, organisées en facultés (Théologie, Droit, Médecine, Arts) [@lebrun2003]. L'époque moderne voit l'émergence des collèges jésuites et de structures d'enseignement royal comme le Collège de France. Cette période est marquée par la publication d'ouvrages pédagogiques influents comme celui de Reixac en 1749 (@fig-reixac).
 
-![Ouvrage pédagogique : *Instruccions per a l'ensenyança de minyons* (1749)](/images/Reixac.jpg){#fig-reixac fig-align="center" width="60%"}
+![Ouvrage pédagogique : *Instruccions per a l'ensenyança de minyons* (1749)](/images/Reixac.jpg){#fig-reixac fig-align="center" width="35%"}
 
-**Enfin**, l'époque contemporaine marque la généralisation de l'instruction obligatoire et gratuite au XIXe siècle, transformant l'éducation en un droit fondamental et un service public universel.
+**Enfin**, l'époque contemporaine marque la généralisation de l'instruction obligatoire et gratuite au XIXe siècle, transformant l'éducation en un droit fondamental et un service public universel [@lebrun2003].
 
-{{< pagebreak >}}
 
-### Pourquoi apprend-on maintenant ?
+### Pourquoi apprend-on ?
 
-La question du *pourquoi* de l'apprentissage est à la fois philosophique et pragmatique. Plusieurs motivations fondamentales expliquent l'impulsion naturelle de l'être humain à apprendre :
+La question du *pourquoi* de l'apprentissage est à la fois philosophique et pragmatique. Plusieurs motivations fondamentales expliquent l'impulsion naturelle de l'être humain à apprendre [@anderson2000] :
 
 - **Réussir et s'épanouir :** l'apprentissage est le moteur de la réussite personnelle et professionnelle. Il permet à l'individu d'atteindre ses objectifs, de surmonter les obstacles et de trouver sa place dans la société.
 - **Obtenir une reconnaissance sociale et des diplômes :** dans les sociétés modernes, les certifications et diplômes constituent des preuves tangibles des connaissances et compétences acquises. Ils conditionnent l'accès à l'emploi, à des fonctions à responsabilités et à une ascension sociale.
@@ -37,109 +43,103 @@ La question du *pourquoi* de l'apprentissage est à la fois philosophique et pra
 
 Ces motivations justifient l'organisation, par les sociétés, de systèmes éducatifs formels destinés à structurer et à optimiser le processus d'apprentissage dès le plus jeune âge.
 
-{{< pagebreak >}}
-
-# Système Educatif {.unnumbered .unlisted}
 
 ## Structure et parcours de formation
 
 L'éducation formelle est le mécanisme institutionnel par lequel les sociétés organisent le transfert de connaissances et de compétences entre générations. Elle est structurée en paliers successifs, chacun ayant ses objectifs pédagogiques propres, menant progressivement l'individu de l'acquisition des savoirs de base jusqu'à une spécialisation professionnelle avancée.
 
-En Algérie, comme dans la majorité des pays, le système éducatif est organisé en plusieurs cycles définis par le ministère de l'Éducation nationale et le ministère de l'Enseignement supérieur et de la Recherche scientifique ([MESRS]{#def-mesrs}).
-
-### L'enseignement primaire
-
-L'enseignement primaire constitue la première étape de la scolarisation obligatoire. En Algérie, il s'étend sur six années (de l'âge de 6 ans à 12 ans environ) et couvre les fondamentaux : lecture, écriture, calcul, sciences naturelles et éducation civique. L'objectif principal est de doter l'enfant des outils cognitifs et sociaux nécessaires à la poursuite de sa scolarité. À l'issue de ce cycle, l'élève passe l'**Examen de Fin de Cycle Primaire** et obtient le **Certificat d'Études Primaires** (CEP).
-
-### L'enseignement moyen
-
-Le cycle moyen (collège) dure quatre ans en Algérie (classes de 1ère à 4ème année moyenne). Il approfondit et élargit les connaissances acquises en primaire, en introduisant des disciplines supplémentaires telles que les mathématiques approfondies, les sciences physiques, l'histoire-géographie et les langues étrangères. Ce cycle se conclut par le **Brevet d'Enseignement Moyen (BEM)**, examen national qui conditionne l'accès au lycée.
-
-{{< pagebreak >}}
-
-### L'enseignement secondaire
-
-Le lycée s'étale sur trois années et représente une étape charnière dans l'orientation scolaire de l'élève. Les élèves se spécialisent dans des filières (sciences, lettres, mathématiques, technique, gestion...) en fonction de leurs aptitudes et projets professionnels. Ce cycle se termine par l'obtention du **Baccalauréat**, diplôme national donnant accès à l'enseignement supérieur, souvent considéré comme le premier diplôme officiel de l'élève.
+En Algérie, comme dans la majorité des pays, le système éducatif est organisé en plusieurs cycles définis par le ministère de l'Éducation nationale et le ministère de l'Enseignement supérieur et de la Recherche scientifique (MESRS) [@loi9905].
 
 \vspace{1cm}
 
 ![Parcours scolaire de l'être humain - du primaire au baccalauréat](/images/education.png){
     fig-align="center"
-    width="100%"
+    width="90%"
 }
 
-{{< pagebreak >}}
+
+### L'enseignement primaire
+
+L'enseignement primaire constitue la première étape de la scolarisation obligatoire. En Algérie, il s'étend sur cinq années (de l'âge de 6 ans à 11 ans environ) et couvre les fondamentaux : lecture, écriture, calcul, sciences naturelles et éducation civique [@loi9905]. L'objectif principal est de doter l'enfant des outils cognitifs et sociaux nécessaires à la poursuite de sa scolarité. À l'issue de ce cycle, l'élève passe l'**Examen de Fin de Cycle Primaire** et obtient le **Certificat d'Études Primaires** (CEP).
+
+### L'enseignement moyen
+
+Le cycle moyen (collège) dure quatre ans en Algérie - classes de 1ère AM à 4ème AM [@loi9905]. Il approfondit et élargit les connaissances acquises en primaire, en introduisant des disciplines supplémentaires telles que les mathématiques approfondies, les sciences physiques, l'histoire-géographie et les langues étrangères. Ce cycle se conclut par le **Brevet d'Enseignement Moyen (BEM)**, examen national qui conditionne l'accès au lycée.
+
+### L'enseignement secondaire
+
+Le lycée s'étale sur trois années - classes de 1ère AS à 3ème AS - et représente une étape charnière dans l'orientation scolaire de l'élève [@loi9905]. Les élèves se spécialisent dans des filières (sciences, lettres, mathématiques, technique, gestion...) en fonction de leurs aptitudes et projets professionnels. Ce cycle se termine par l'obtention du **Baccalauréat**, diplôme national donnant accès à l'enseignement supérieur, souvent considéré comme le premier diplôme officiel de l'élève.
 
 ### L'enseignement supérieur
 
-L'enseignement supérieur représente le sommet de la formation académique formelle. En Algérie, il est dispensé dans des universités, des écoles supérieures, des instituts et des centres universitaires répartis à travers le territoire national. Deux grands systèmes de formation coexistent.
+L'enseignement supérieur représente le sommet de la formation académique formelle. En Algérie, il est dispensé dans des universités, des écoles supérieures, des instituts et des centres universitaires répartis à travers le territoire national [@loi9905]. Deux grands systèmes de formation coexistent.
 
-#### a) Le système LMD (Licence - Master - Doctorat) {#def-lmd}
+#### a) Le système LMD (Licence - Master - Doctorat)
 
-Introduit en Algérie à partir de 2004-2005 dans le cadre d'une réforme visant à harmoniser le système universitaire algérien avec les standards européens (processus de Bologne), le système [LMD](#def-lmd) est organisé en trois grades. Dans ce cadre, un **crédit** est l'unité qui mesure la charge de travail de l'étudiant - cours, travaux dirigés, travaux pratiques et travail personnel - équivalant à environ **20 à 25 heures de travail par semestre** (MESRS, 2023). Chaque semestre correspond à 30 crédits, et les crédits sont **capitalisables** : une fois validés, ils sont définitivement acquis, même en cas de redoublement.
+> Le LMD est un système mis en place en Algérie en application du décret exécutif n°04-371 du 21 novembre 2004. Il vise, selon un schéma innovant, l’intégration de l’Université dans le développement économique et l’harmonisation du système d’enseignement supérieur avec le reste du monde. [@univalger]
 
-- **Licence (L) :** premier grade universitaire, obtenu en trois ans (six semestres) après le baccalauréat. La Licence valide **180 crédits** et permet soit une insertion professionnelle directe, soit la poursuite en Master.
-- **Master (M) :** second grade, obtenu en deux ans supplémentaires (quatre semestres) après la Licence. Le Master valide **120 crédits supplémentaires** et approfondit la spécialisation. Il existe deux types : le Master académique (orienté recherche) et le Master professionnel (orienté marché du travail).
-- **Doctorat (D) :** troisième grade, décerné au terme d'un travail de recherche original d'une durée minimale de trois ans. Il constitue le plus haut grade académique.
+Introduit en Algérie à partir de 2004-2005 dans le cadre d'une réforme visant à harmoniser le système universitaire algérien avec les standards européens (processus de Bologne) [@decret2004 ; @berrouche2007], le système LMD est organisé en trois grades. Dans ce cadre, un **crédit** est l'unité qui mesure la charge de travail de l'étudiant - cours, travaux dirigés, travaux pratiques et travail personnel - équivalant à environ **20 à 25 heures de travail par semestre** [@mesrs2023 ; @mesrs2005guide]. Chaque semestre correspond à 30 crédits, et les crédits sont **capitalisables** : une fois validés, ils sont définitivement acquis, même en cas de redoublement [@mesrs2005guide].
 
-![Structure du système [LMD](#def-lmd) en Algérie - progression semestrielle et crédits capitalisables (Source : [MESRS](#def-mesrs), 2023)](/images/lmd-timeline.png){#fig-lmd fig-align="center" width="85%"}
+- **Licence (L) :** premier grade universitaire, obtenu en trois ans (six semestres) après le baccalauréat. La Licence valide **180 crédits** et permet soit une insertion professionnelle directe, soit la poursuite en Master [@mesrs2005guide].
+- **Master (M) :** second grade, obtenu en deux ans supplémentaires (quatre semestres) après la Licence. Le Master valide **120 crédits supplémentaires** et approfondit la spécialisation. Il existe deux types : le Master académique (orienté recherche) et le Master professionnel (orienté marché du travail) [@mesrs2005guide].
+- **Doctorat (D) :** troisième grade, décerné au terme d'un travail de recherche original d'une durée minimale de trois ans. Il constitue le plus haut grade académique [@decret2004].
+
+![Structure du système LMD en Algérie - progression semestrielle et crédits capitalisables @mesrs2023](/images/lmd-timeline.png){#fig-lmd fig-align="center" width="70%"}
 
 #### b) La formation d'ingénieur
 
-Parallèlement au système [LMD](#def-lmd), certains établissements algériens (Écoles Nationales Supérieures, Écoles Polytechniques) dispensent une formation d'ingénieur d'une durée de cinq ans après le baccalauréat, délivrant un **diplôme d'ingénieur d'État**. Ce cursus est plus intégré et moins modulaire que le [LMD](#def-lmd), avec un programme national défini par le [MESRS](#def-mesrs). La formation alterne enseignements théoriques, travaux pratiques et stages en entreprise, et se conclut obligatoirement par un Projet de Fin d'Études.
+Parallèlement au système LMD, certains établissements algériens (Écoles Nationales Supérieures, Écoles Polytechniques) dispensent une formation d'ingénieur d'une durée de cinq ans après le baccalauréat, délivrant un **diplôme d'ingénieur d'État** [@mesrs2004]. Ce cursus est plus intégré et moins modulaire que le LMD, avec un programme national défini par le MESRS. La formation alterne enseignements théoriques, travaux pratiques et stages en entreprise, et se conclut obligatoirement par un Projet de Fin d'Études [@insaniyat2018].
 
-| Critère | Système [LMD](#def-lmd) | Formation Ingénieur |
+| Critère | Système LMD | Formation Ingénieur |
 |---|---|---|
 | Durée totale | 3 ans (Licence) + 2 ans (Master) | 5 ans |
-| Diplôme obtenu | Licence / Master | Diplôme d'Ingénieur d'État |
-| Modularité | Élevée (semestres, crédits capitalisables) | Faible (programme national fixé) |
-| Validation finale | Module PFE (Licence) / Semestre PFE (Master) | Semestre PFE |
-| Orientation | Académique ou professionnelle | Professionnelle et technique |
-| Accès | Baccalauréat (toutes filières) | Baccalauréat scientifique / technique |
+| Diplôme obtenu | Licence / Master  |
+| Modularité | Élevée (semestres, crédits capitalisables)  |
+| Validation finale | Module PFE (Licence) / Semestre PFE (Master)  |
+| Orientation | Académique ou professionnelle |
+| Accès | Baccalauréat (toutes filières) |
 
-: Comparaison entre le système [LMD](#def-lmd) et la formation d'ingénieur en Algérie {tbl-colwidths="[30,35,35]"}
+: Comparaison entre le système LMD et la formation d'ingénieur en Algérie [@decret2004 ; @mesrs2004] {tbl-colwidths="[30,35,35]"}
 
-{{< pagebreak >}}
 
-## Projet de Fin d'Études (PFE) {#def-pfe}
+## Projet de Fin d'Études (PFE)
 
-> À ce stade du parcours académique, une question naturelle se pose : comment l'étudiant valide-t-il son cycle d'études ? La réponse tient en un événement clé : le Projet de Fin d'Études.
+À ce stade du parcours académique, une question naturelle se pose : comment l'étudiant valide-t-il son cycle d'études ? La réponse tient en un événement clé : le Projet de Fin d'Études ou PFE.
 
-Le Projet de Fin d'Études (PFE), également appelé *Mémoire de fin d'études* ou *Travail de Fin d'Études* selon les établissements, est une activité académique obligatoire qui sanctionne la fin d'un cycle de formation supérieure. Il constitue pour l'étudiant l'occasion de mobiliser l'ensemble des connaissances et compétences acquises tout au long de sa formation pour répondre à une problématique concrète, qu'elle soit d'ordre scientifique, technologique ou organisationnel.
+Le Projet de Fin d'Études (PFE), également appelé *Mémoire de fin d'études* ou *Travail de Fin d'Études* selon les établissements, est une activité académique obligatoire qui sanctionne la fin d'un cycle de formation supérieure [@mesrs2004]. Il constitue pour l'étudiant l'occasion de mobiliser l'ensemble des connaissances et compétences acquises tout au long de sa formation pour répondre à une problématique concrète, qu'elle soit d'ordre scientifique, technologique ou organisationnel.
 
-Le PFE est reconnu internationalement sous diverses appellations : *Senior Thesis* (États-Unis), *Final Year Project* (Royaume-Uni), *Travail de Bachelor* ou *Travail de Master* (Suisse et pays francophones). En Algérie, sa place dans le cursus varie selon le type de formation.
+Le PFE est reconnu internationalement sous diverses appellations : *Senior Thesis* (États-Unis), *Final Year Project* (Royaume-Uni), *Travail de Bachelor* ou *Travail de Master* (Suisse et pays francophones). En Algérie, sa place dans le cursus varie selon le type de formation [@mesrs2004].
 
 ### PFE : selon le cursus en Algérie
 
 La nature et l'importance du PFE diffèrent selon le niveau d'études :
 
-- **Dans le système [LMD](#def-lmd) (Licence) :** le PFE est traité comme un module obligatoire du dernier semestre (S6). Il est noté au même titre que les autres matières et constitue une unité d'enseignement (UE) à part entière. Sa durée est généralement de quelques mois et son volume horaire est encadré par les textes réglementaires du [MESRS](#def-mesrs).
-- **Dans le système [LMD](#def-lmd) (Master) et en formation d'ingénieur :** le PFE constitue un semestre entier dédié (S10 en Master, S10 en ingénieur). Il représente une charge de travail significativement plus importante, souvent en lien avec une entreprise ou un laboratoire de recherche. Il donne lieu à la rédaction d'un mémoire complet et à une soutenance formelle devant un jury.
+- **Dans le système LMD (Licence) :** le PFE est traité comme un module obligatoire du dernier semestre (S6). Il est noté au même titre que les autres matières et constitue une unité d'enseignement (UE) à part entière. Sa durée est généralement de quelques mois et son volume horaire est encadré par les textes réglementaires du MESRS [@mesrs2004 ; @mesrs2005guide].
+- **Dans le système LMD (Master) et en formation d'ingénieur :** le PFE constitue un semestre entier dédié (S10 en Master, S10 en ingénieur). Il représente une charge de travail significativement plus importante, souvent en lien avec une entreprise ou un laboratoire de recherche. Il donne lieu à la rédaction d'un mémoire complet et à une soutenance formelle devant un jury [@mesrs2004].
 
 | Cursus | Statut du PFE | Durée approximative | Mode d'évaluation |
 |---|---|---|---|
-| Licence ([LMD](#def-lmd)) | Module du S6 | 2 à 4 mois | Mémoire + soutenance |
-| Master ([LMD](#def-lmd)) | Semestre entier (S10) | 5 à 6 mois | Mémoire + soutenance devant jury |
+| Licence (LMD) | Module du S6 | 2 à 4 mois | Mémoire + soutenance |
+| Master (LMD) | Semestre entier (S10) | 5 à 6 mois | Mémoire + soutenance devant jury |
 | Ingénieur d'État | Semestre entier (S10) | 5 à 6 mois | Mémoire + soutenance devant jury |
 
-: Statut du PFE selon le cursus universitaire en Algérie {tbl-colwidths="[25,25,20,30]"}
+: Statut du PFE selon le cursus universitaire en Algérie [@mesrs2004] {tbl-colwidths="[25,25,20,30]"}
 
 ### Types de PFE
 
-Selon le cadre dans lequel il est réalisé, un PFE peut être classifié en deux catégories principales :
+Selon le cadre dans lequel il est réalisé, un PFE peut être classifié en deux catégories principales [@mesrs2004] :
 
 - **PFE interne :** réalisé au sein même de l'établissement universitaire, sous la supervision d'un enseignant-chercheur. Il porte généralement sur une problématique académique ou une application directe des enseignements reçus. Ce type est plus courant en Licence.
-- **PFE externe (ou en entreprise) :** réalisé dans une organisation extérieure à l'université (entreprise privée, organisme public, administration...). L'étudiant est alors encadré à la fois par un enseignant (encadrant académique) et par un professionnel de l'entreprise (encadrant industriel ou maître de stage). Ce format est dominant en Master et en formation d'ingénieur.
+- **PFE externe (ou en entreprise) :** réalisé dans une organisation extérieure à l'université (entreprise privée, organisme public, administration...). L'étudiant est alors encadré à la fois par un enseignant  (encadrant académique) et par un professionnel de l'entreprise (encadrant industriel ou maître de stage). Ce format est dominant en Master et en formation d'ingénieur.
 
-{{< pagebreak >}}
 
 ## Acteurs du PFE et leurs rôles respectifs
 
-La réalisation d'un PFE est un processus collaboratif impliquant plusieurs parties prenantes dont les rôles sont complémentaires et interdépendants.
+La réalisation d'un PFE est un processus collaboratif impliquant plusieurs parties prenantes dont les rôles sont complémentaires et interdépendants [@mesrs2004].
 
 ### L'étudiant
 
-L'étudiant est le principal acteur du PFE. Il est à l'initiative de la recherche de sujet et responsable de la réalisation des travaux. Ses responsabilités incluent :
+L'étudiant est le principal acteur du PFE. Il est à l'initiative de la recherche de sujet et responsable de la réalisation des travaux [@mesrs2004]. Ses responsabilités incluent :
 
 - Identifier et proposer un sujet de PFE en accord avec sa spécialité et ses intérêts.
 - Contacter les enseignants susceptibles de l'encadrer, ou répondre aux propositions émises par des enseignants ou entreprises.
@@ -149,46 +149,44 @@ L'étudiant est le principal acteur du PFE. Il est à l'initiative de la recherc
 
 ### L'enseignant encadrant
 
-L'encadrant académique joue un rôle d'accompagnateur pédagogique et scientifique. Il peut être à l'origine d'une proposition de sujet ou accepter d'encadrer un étudiant venant avec son propre sujet. Ses missions consistent à :
+L'encadrant académique joue un rôle d'accompagnateur pédagogique et scientifique [@mesrs2005guide]. Il peut être à l'origine d'une proposition de sujet ou accepter d'encadrer un étudiant venant avec son propre sujet. Ses missions consistent à :
 
 - Valider la pertinence et la faisabilité du sujet de PFE.
 - Assurer un suivi régulier de l'avancement des travaux (réunions périodiques, corrections...).
 - Guider l'étudiant dans sa démarche méthodologique et scientifique.
 - Évaluer la qualité du mémoire rendu et participer au jury de soutenance.
 
-{{< pagebreak >}}
-
 ### L'administration
 
-L'administration universitaire (service de scolarité, département, direction des études) joue un rôle logistique et réglementaire fondamental. Comme illustré par la @fig-acteurs, elle se positionne au carrefour des interactions entre l'étudiant et l'encadrant :
+L'administration universitaire (service de scolarité, département, direction des études) joue un rôle logistique et réglementaire fondamental [@loi9905]. Comme illustré par la @fig-acteurs, elle se positionne au carrefour des interactions entre l'étudiant et l'encadrant :
 
 - Définir et communiquer les règles et procédures relatives au PFE (délais, format du mémoire, composition du jury...).
-- Recueillir et valider les propositions de sujets et les affectations encadrant-étudiant.
+- Recueillir et valider les propositions de sujets et les affectations encadrant–étudiant.
 - Planifier les soutenances et constituer les jurys.
 - Archiver les mémoires et mettre à jour les résultats dans les systèmes d'information universitaires.
 
 \vspace{1cm}
 
-![Les trois acteurs du PFE et leurs interactions mutuelles (Source : auteur)](/images/trois-acteurs.png){#fig-acteurs width=80% fig-align="center"}
+![Les trois acteurs du PFE et leurs interactions mutuelles @esst](/images/trois-acteurs.png){#fig-acteurs width=65% fig-align="center"}
 
-{{< pagebreak >}}
 
 ## Étapes du processus PFE
 
-La réalisation d'un PFE suit un processus structuré en plusieurs phases successives. Ce processus, bien que variable d'un établissement à l'autre, obéit globalement aux étapes suivantes :
+La réalisation d'un PFE suit un processus structuré en plusieurs phases successives [@mesrs2004]. Ce processus, bien que variable d'un établissement à l'autre, obéit globalement aux étapes suivantes :
 
 1. **Proposition et recherche de sujet :** l'étudiant prospecte des sujets en consultant les enseignants de son département, les offres d'entreprises partenaires ou les annonces diffusées par l'administration. Parallèlement, certains enseignants ou entreprises soumettent directement des propositions de sujets à l'administration.
-2. **Mise en relation et affectation :** une fois le sujet identifié, l'étudiant est mis en relation avec l'encadrant potentiel. En cas de PFE externe, un accord tripartite (étudiant - entreprise - université) est formalisé.
-3. **Validation du sujet :** le sujet proposé est soumis à validation auprès du responsable pédagogique ou du chef de département. Cette étape garantit la cohérence du PFE avec le niveau d'études et la spécialité de l'étudiant.
+2. **Mise en relation et affectation :** une fois le sujet identifié, l'étudiant est mis en relation avec l'encadrant potentiel. En cas de PFE externe, un accord tripartite (étudiant – entreprise – université) est formalisé [@mesrs2004].
+3. **Validation du sujet :** le sujet proposé est soumis à validation auprès du responsable pédagogique ou du chef de département. Cette étape garantit la cohérence du PFE avec le niveau d'études et la spécialité de l'étudiant [@mesrs2005guide].
 4. **Réalisation des travaux :** l'étudiant conduit les activités prévues (analyse, conception, développement, expérimentation...) sous la supervision de son encadrant, selon un planning défini en amont.
-5. **Rédaction du mémoire :** l'étudiant rédige un document formel décrivant la problématique, la méthodologie adoptée, les résultats obtenus et les perspectives envisagées. Ce document est relu et corrigé par l'encadrant.
-6. **Soutenance :** l'étudiant présente son travail devant un jury composé d'enseignants et, dans le cas d'un PFE externe, d'un représentant de l'entreprise. Une note est attribuée, prenant en compte à la fois le mémoire écrit et la qualité de la présentation orale.
+5. **Rédaction du mémoire :** l'étudiant rédige un document formel décrivant la problématique, la méthodologie adoptée, les résultats obtenus et les perspectives envisagées. Ce document est relu et corrigé par l'encadrant [@mesrs2004].
+6. **Soutenance :** l'étudiant présente son travail devant un jury composé d'enseignants et, dans le cas d'un PFE externe, d'un représentant de l'entreprise. Une note est attribuée, prenant en compte à la fois le mémoire écrit et la qualité de la présentation orale [@mesrs2004].
 
 ```{mermaid}
 %%| label: fig-workflow-pfe
-%%| fig-cap: "Workflow du processus PFE - de la proposition à la soutenance (Source : auteur)"
-%%| fig-width: 3
-flowchart TD
+%%| fig-cap: "Workflow du processus PFE - de la proposition à la soutenance @mesrs2004"
+%%| fig-width: 6.5
+
+flowchart LR
     A([Proposition de sujet]) --> B([Affectation encadrant])
     B --> C{Validation du sujet}
     C -- Refusé --> A
@@ -197,28 +195,8 @@ flowchart TD
     E --> F([Soutenance])
 ```
 
-{{< pagebreak >}}
 
-## Limites de la gestion actuelle des PFE *(Problématique)*
-
-Après avoir décrit le cadre général de l'apprentissage, du parcours éducatif et du PFE dans sa conception théorique, il est nécessaire d'observer comment ce processus est géré dans la réalité des établissements universitaires algériens.
-
-Malgré le rôle central que joue le PFE dans la validation des cursus universitaires, sa gestion demeure à ce jour largement artisanale et non structurée. Les trois acteurs impliqués - étudiant, encadrant et administration - n'ont à leur disposition aucune plateforme unifiée pour coordonner les différentes étapes du processus. Les échanges reposent principalement sur des outils bureautiques standards (Microsoft Word, Microsoft Excel), des communications par courrier électronique ou encore des contacts téléphoniques directs.
-
-Cette absence d'automatisation engendre plusieurs dysfonctionnements récurrents, parmi lesquels on peut citer :
-
-- La difficulté pour les étudiants à identifier les sujets disponibles et les encadrants potentiels, faute d'une liste centralisée et actualisée.
-- Le manque de traçabilité des échanges et validations entre les parties prenantes.
-- La surcharge administrative pesant sur les responsables pédagogiques et les secrétariats, liée au traitement manuel de nombreux dossiers.
-- Les risques d'erreurs, de pertes d'information et de délais non respectés en l'absence d'un suivi automatisé.
-- L'impossibilité d'obtenir des statistiques fiables et en temps réel sur l'avancement des PFE au niveau de l'établissement.
-
-> **Problématique centrale :** La gestion des Projets de Fin d'Études au sein des établissements universitaires algériens reste non automatisée et repose sur des outils non dédiés. Cette situation génère des inefficacités organisationnelles pour les trois parties prenantes (étudiant, enseignant, administration) et justifie la conception d'une solution applicative dédiée.
-
-C'est à partir de ce constat que s'inscrit le présent travail, dont l'objectif est de concevoir et développer une application web permettant de centraliser, structurer et automatiser la gestion des [PFE](#def-pfe) au sein d'un établissement universitaire - en prenant pour cas d'usage concret l'École Supérieure des Sciences et de la Technologie ([ESST]{#def-esst}) d'Alger.
-
-{{< pagebreak >}}
 
 ## Conclusion du chapitre
 
-Ce premier chapitre a permis de poser les bases théoriques de notre étude. Après avoir défini l'acte d'apprendre et les structures éducatives en Algérie, nous avons focalisé notre attention sur le Projet de Fin d'Études. Les limites identifiées dans sa gestion actuelle soulignent l'importance de moderniser ce processus par le biais d'une solution numérique dédiée, dont l'étude technique sera approfondie dans les chapitres suivants.
+Ce premier chapitre a permis de poser les bases théoriques et contextuelles de notre étude. Partant de la définition cognitive de l'apprentissage [@anderson1982], nous avons retracé l'évolution historique des systèmes éducatifs [@lebrun2003] avant d'ancrer notre analyse dans le contexte algérien, régi par la loi d'orientation de 1999 [@loi9905] et la réforme LMD de 2004 [@decret2004]. Nous avons ensuite focalisé notre attention sur le Projet de Fin d'Études, dont le cadre réglementaire est défini par le MESRS [@mesrs2004 ; @mesrs2005guide]. Les limites identifiées dans sa gestion actuelle [@berrouche2007 ; @insaniyat2018] soulignent l'importance de moderniser ce processus par le biais d'une solution numérique dédiée, dont l'étude sera approfondie dans les chapitres suivants.

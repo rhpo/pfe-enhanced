@@ -1,4 +1,7 @@
+
 # Introduction Générale {.unnumbered}
+
+\markboth{}{}
 
 <!--
 
@@ -13,4 +16,4 @@ L'objectif de ce mémoire est de combler cette lacune en concevant et réalisant
 {{< lipsum 2 >}}
 
 <!-- Empty page -->
-{{< pagebreak >}}
+

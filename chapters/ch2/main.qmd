@@ -1,22 +1,24 @@
 # Étude de l'existant
 
-> Ce chapitre analyse les solutions existantes permettant la gestion académique et, plus spécifiquement, la gestion des [PFE](#def-pfe). Après un recensement des outils disponibles sur le marché ([LMS](#def-lms), plateformes dédiées), une étude comparative est effectuée. Enfin, une étude de cas concrète portant sur les pratiques en vigueur à l'[ESST](#def-esst) permet de mesurer l'écart entre l'existant et les besoins réels, justifiant ainsi la proposition d'une nouvelle solution.
 
-{{< pagebreak >}}
 
-## Systèmes de gestion de l'apprentissage ([LMS](#def-lms)) {#def-lms}
+## Introduction du Chapitre
+Ce chapitre analyse les solutions existantes permettant la gestion académique et, plus spécifiquement, la gestion des PFE. Après un recensement des outils disponibles sur le marché (LMS, plateformes dédiées), une étude comparative est effectuée. Enfin, une étude de cas concrète portant sur les pratiques en vigueur à l'ESST permet de mesurer l'écart entre l'existant et les besoins réels, justifiant ainsi la proposition d'une nouvelle solution.
 
-Les *Learning Management Systems* ([LMS](#def-lms)), ou systèmes de gestion de l'apprentissage, sont des plateformes logicielles conçues pour faciliter la création, la diffusion et le suivi de contenus pédagogiques. Apparus dans les années 1990, ils se sont rapidement imposés dans l'enseignement supérieur mondial comme outils centraux de la gestion académique numérique.
 
-Ellis (2009) définit un [LMS](#def-lms) comme un logiciel permettant de gérer et distribuer des activités d'apprentissage en ligne à plusieurs participants simultanément, en offrant des fonctionnalités de suivi, d'évaluation et de communication. Bien qu'initialement conçus pour la e-formation, les [LMS](#def-lms) ont progressivement été étendus à d'autres usages, dont la gestion de projets académiques.
+## Systèmes de gestion de l'apprentissage (LMS)
+
+Les *Learning Management Systems* (LMS), ou systèmes de gestion de l'apprentissage, sont des plateformes logicielles conçues pour faciliter la création, la diffusion et le suivi de contenus pédagogiques. Apparus dans les années 1990, ils se sont rapidement imposés dans l'enseignement supérieur mondial comme outils centraux de la gestion académique numérique.
+
+@ellis2009 définit un LMS comme un logiciel permettant de gérer et distribuer des activités d'apprentissage en ligne à plusieurs participants simultanément, en offrant des fonctionnalités de suivi, d'évaluation et de communication. Bien qu'initialement conçus pour la e-formation, les LMS ont progressivement été étendus à d'autres usages, dont la gestion de projets académiques.
 
 ### Moodle
 
-Moodle (*Modular Object-Oriented Dynamic Learning Environment*) est la plateforme [LMS](#def-lms) open-source la plus utilisée dans le monde. Développée initialement par Martin Dougiamas en 2002 et publiée sous licence GNU GPL, elle compte aujourd'hui plus de 400 millions d'utilisateurs répartis dans plus de 230 pays (Moodle HQ, 2023). Son architecture modulaire permet une personnalisation poussée grâce à un écosystème de plugins développés par la communauté.
+Moodle (*Modular Object-Oriented Dynamic Learning Environment*) est la plateforme LMS open-source la plus utilisée dans le monde. Développée initialement par Martin Dougiamas en 2002 et publiée sous licence GNU GPL, elle compte aujourd'hui plus de 400 millions d'utilisateurs répartis dans plus de 230 pays [@moodle2023]. Son architecture modulaire permet une personnalisation poussée grâce à un écosystème de plugins développés par la communauté.
 
-Dans le contexte universitaire algérien, Moodle est utilisé dans plusieurs établissements comme support aux enseignements (dépôt de cours, devoirs en ligne, forums). Certaines universités ont tenté d'adapter ses modules de gestion de devoirs pour le suivi des [PFE](#def-pfe), avec des résultats mitigés en termes d'ergonomie et d'adéquation aux spécificités du processus algérien.
+Dans le contexte universitaire algérien, Moodle est utilisé dans plusieurs établissements comme support aux enseignements (dépôt de cours, devoirs en ligne, forums). Certaines universités ont tenté d'adapter ses modules de gestion de devoirs pour le suivi des PFE, avec des résultats mitigés en termes d'ergonomie et d'adéquation aux spécificités du processus algérien.
 
-Fonctionnalités principales de Moodle pertinentes pour la gestion de [PFE](#def-pfe) :
+Fonctionnalités principales de Moodle pertinentes pour la gestion de PFE :
 
 - Gestion des utilisateurs (rôles : étudiant, enseignant, administrateur).
 - Dépôt et échange de fichiers (mémoires, rapports d'avancement).
@@ -24,32 +26,27 @@ Fonctionnalités principales de Moodle pertinentes pour la gestion de [PFE](#def
 - Attribution de notes et de feedback.
 - Suivi des activités des étudiants.
 
-### Autres [LMS](#def-lms) notables
+### Autres LMS notables
 
-Au-delà de Moodle, d'autres [LMS](#def-lms) sont utilisés dans l'enseignement supérieur mondial, chacun avec ses spécificités :
+Au-delà de Moodle, d'autres LMS sont utilisés dans l'enseignement supérieur mondial, chacun avec ses spécificités :
 
-- **Canvas (Instructure) :** [LMS](#def-lms) propriétaire très répandu en Amérique du Nord, apprécié pour son interface moderne et intuitive. Il offre des fonctionnalités avancées de collaboration et s'intègre facilement avec des outils tiers.
-- **Blackboard Learn :** l'un des premiers [LMS](#def-lms) commerciaux, largement adopté par les grandes universités. Il propose des outils analytiques avancés mais est souvent critiqué pour sa complexité d'utilisation.
+- **Canvas (Instructure) :** LMS propriétaire très répandu en Amérique du Nord, apprécié pour son interface moderne et intuitive. Il offre des fonctionnalités avancées de collaboration et s'intègre facilement avec des outils tiers.
+- **Blackboard Learn :** l'un des premiers LMS commerciaux, largement adopté par les grandes universités. Il propose des outils analytiques avancés mais est souvent critiqué pour sa complexité d'utilisation.
 - **Google Classroom :** solution légère et gratuite de Google, particulièrement adaptée à l'enseignement secondaire et aux petites structures. Son intégration avec l'écosystème Google (Drive, Docs, Meet) constitue son principal atout.
 - **Microsoft Teams for Education :** solution de Microsoft intégrant gestion de classe, communication et collaboration. Elle est de plus en plus adoptée dans le supérieur grâce aux licences gratuites offertes aux établissements.
 
-### La plateforme de l'ENSIA
-
-L'École Nationale Supérieure d'Informatique (ENSIA) d'Alger constitue un exemple local intéressant. L'établissement a développé sa propre plateforme de gestion interne, basée sur le CMS WordPress complété par des plugins personnalisés. Cette plateforme permet la diffusion d'informations administratives, la publication des emplois du temps et le dépôt de certains documents pédagogiques. Toutefois, elle n'intègre pas de module dédié à la gestion structurée des [PFE](#def-pfe) - la coordination de ces derniers continuant à se faire de manière informelle.
-
-
-{{< pagebreak >}}
 
 ## Étude comparative des solutions existantes
 
-Afin d'évaluer objectivement les solutions recensées dans la section précédente, une étude comparative a été menée en définissant un ensemble de critères fonctionnels et non fonctionnels directement liés aux besoins de la gestion des [PFE](#def-pfe).
+Afin d'évaluer objectivement les solutions recensées dans la section précédente, une étude comparative a été menée en définissant un ensemble de critères fonctionnels et non fonctionnels directement liés aux besoins de la gestion des PFE.
+
 
 ### Critères d'évaluation
 
 Les critères retenus pour la comparaison sont les suivants :
 
 - Gestion des utilisateurs et des rôles (étudiant, enseignant, administration).
-- Proposition et affectation de sujets de [PFE](#def-pfe).
+- Proposition et affectation de sujets de PFE.
 - Suivi de l'avancement des travaux (planning, jalons, livrables).
 - Communication intégrée entre les parties prenantes.
 - Gestion documentaire (dépôt de mémoires, rapports).
@@ -57,59 +54,60 @@ Les critères retenus pour la comparaison sont les suivants :
 - Coût et accessibilité (open-source vs propriétaire).
 - Facilité de déploiement et de maintenance.
 
+{{< pagebreak >}}
+
 ### Tableau comparatif
 
-| Critère | Moodle | Canvas | Blackboard | Plateforme ENSIA | Exigences identifiées |
-|---|:---:|:---:|:---:|:---:|:---:|
-| Gestion des rôles | ✓ | ✓ | ✓ | Partielle | Obligatoire |
-| Proposition de sujets | Partielle | ✗ | ✗ | ✗ | Obligatoire |
-| Affectation encadrant-étudiant | Manuelle | Manuelle | Manuelle | ✗ | Automatisée |
-| Suivi de l'avancement | Partielle | Partielle | Partielle | ✗ | Obligatoire |
-| Communication intégrée | ✓ | ✓ | ✓ | ✗ | Souhaitée |
-| Gestion documentaire | ✓ | ✓ | ✓ | Partielle | Obligatoire |
-| Adapté au contexte algérien | ✗ | ✗ | ✗ | Partielle | Obligatoire |
-| Open-source / Gratuit | ✓ | ✗ | ✗ | ✗ | Préféré |
-| Déploiement simple | Moyen | Difficile | Difficile | Moyen | Simple |
+| Critère                        |   Moodle  |   Canvas  | Blackboard | Exigences identifiées |
+| ------------------------------ | :-------: | :-------: | :--------: | :-------------------: |
+| Gestion des rôles              |     ✓     |     ✓     |      ✓     |      Obligatoire      |
+| Proposition de sujets          | Partielle |     ✗     |      ✗     |      Obligatoire      |
+| Affectation encadrant-étudiant |  Manuelle |  Manuelle |  Manuelle  |      Automatisée      |
+| Suivi de l'avancement          | Partielle | Partielle |  Partielle |      Obligatoire      |
+| Communication intégrée         |     ✓     |     ✓     |      ✓     |       Souhaitée       |
+| Gestion documentaire           |     ✓     |     ✓     |      ✓     |      Obligatoire      |
+| Adapté au contexte algérien    |     ✗     |     ✗     |      ✗     |      Obligatoire      |
+| Open-source / Gratuit          |     ✓     |     ✗     |      ✗     |        Préféré        |
+| Déploiement simple             |   Moyen   | Difficile |  Difficile |         Simple        |
+
 
 : Comparaison des solutions existantes et exigences identifiées pour la solution proposée {tbl-colwidths="[25,15,15,15,15,15]"}
 
-{{< pagebreak >}}
+
 
 ### Analyse des résultats
 
-Il ressort de cette analyse comparative que les [LMS](#def-lms) généralistes disponibles sur le marché (Moodle, Canvas, Blackboard) couvrent correctement les besoins liés à la communication et à la gestion documentaire, mais s'avèrent insuffisants dès lors qu'il s'agit de gérer spécifiquement le processus [PFE](#def-pfe) dans son intégralité. En particulier, aucune de ces solutions ne propose de mécanisme automatisé pour la proposition, l'affectation et la validation de sujets de [PFE](#def-pfe).
+Il ressort de cette analyse comparative que les LMS généralistes disponibles sur le marché (Moodle, Canvas, Blackboard) couvrent correctement les besoins liés à la communication et à la gestion documentaire, mais s'avèrent insuffisants dès lors qu'il s'agit de gérer spécifiquement le processus PFE dans son intégralité. En particulier, aucune de ces solutions ne propose de mécanisme automatisé pour la proposition, l'affectation et la validation de sujets de PFE.
 
 Par ailleurs, ces solutions ne tiennent aucunement compte des particularités du système universitaire algérien : organisation en semestres, régulations du [MESRS](#def-mesrs), pratiques locales en matière de soutenances et de constitution des jurys. Leur déploiement dans ce contexte nécessiterait des adaptations coûteuses en temps et en ressources humaines.
 
-La plateforme développée par l'ENSIA constitue une tentative locale méritoire, mais son périmètre fonctionnel reste limité et ne couvre pas les besoins spécifiques liés au [PFE](#def-pfe). Elle illustre néanmoins que des établissements algériens reconnaissent la nécessité de disposer d'outils numériques adaptés, même si les solutions mises en place demeurent partielles.
+
+## Étude de cas : la gestion des PFE à l'ESST
+
+Afin d'ancrer notre analyse dans une réalité institutionnelle concrète et de dépasser les généralisations théoriques, nous avons conduit une étude de cas portant sur les pratiques de gestion des PFE en vigueur à l'École Supérieure des Sciences et de la Technologie (ESST) d'Alger.
 
 {{< pagebreak >}}
+### Présentation de l'ESST
 
-## Étude de cas : la gestion des [PFE](#def-pfe) à l'[ESST](#def-esst)
+L'ESST est un établissement universitaire algérien relevant du [MESRS](#def-mesrs). Elle forme des étudiants en informatique et d'autres spécialités comme la chimie pharmaceutique, l'éléctronique et bien plus, et disciplines connexes selon le système LMD, et délivre des diplômes de Licence (3 ans) et de Master (2 ans supplémentaires) @esst. Comme la majorité des établissements de taille intermédiaire en Algérie, l'ESST ne dispose pas à ce jour d'une plateforme numérique dédiée à la gestion de ses activités pédagogiques et administratives.
 
-Afin d'ancrer notre analyse dans une réalité institutionnelle concrète et de dépasser les généralisations théoriques, nous avons conduit une étude de cas portant sur les pratiques de gestion des [PFE](#def-pfe) en vigueur à l'École Supérieure des Sciences et de la Technologie ([ESST](#def-esst)) d'Alger.
-
-### Présentation de l'[ESST](#def-esst)
-
-L'[ESST](#def-esst) est un établissement universitaire algérien relevant du [MESRS](#def-mesrs). Elle forme des étudiants en informatique et disciplines connexes selon le système [LMD](#def-lmd), et délivre des diplômes de Licence (3 ans) et de Master (2 ans supplémentaires). Comme la majorité des établissements de taille intermédiaire en Algérie, l'[ESST](#def-esst) ne dispose pas à ce jour d'une plateforme numérique dédiée à la gestion de ses activités pédagogiques et administratives.
-
-### Processus actuel de gestion des [PFE](#def-pfe) à l'[ESST](#def-esst)
+### Processus actuel de gestion des PFE à l'ESST
 
 Les observations présentées ci-après ont été recueillies dans le cadre d'entretiens menés auprès d'acteurs de l'établissement (enseignants, étudiants et membres du service de scolarité). <!-- À COMPLÉTER : préciser le nombre de personnes interrogées, la période et le protocole d'entretien exact -->
 
 **Du côté de l'étudiant**
 
-L'étudiant qui doit réaliser son [PFE](#def-pfe) n'a accès à aucun catalogue centralisé de sujets disponibles. Il lui incombe donc de faire le tour des enseignants du département pour identifier ceux qui proposent un sujet ou qui acceptent d'en encadrer un. Cette prospection s'effectue de manière individuelle, souvent informelle (contact direct dans les couloirs, envoi d'emails personnels, appels téléphoniques), sans aucun cadre structuré. L'étudiant est ainsi fortement dépendant de ses réseaux de relations personnelles au sein de l'établissement, ce qui crée des inégalités d'accès à l'information.
+L'étudiant qui doit réaliser son PFE n'a accès à aucun catalogue centralisé de sujets disponibles. Il lui incombe donc de faire le tour des enseignants du département pour identifier ceux qui proposent un sujet ou qui acceptent d'en encadrer un. Cette prospection s'effectue de manière individuelle, souvent informelle (contact direct dans les couloirs, envoi d'emails personnels, appels téléphoniques), sans aucun cadre structuré. L'étudiant est ainsi fortement dépendant de ses réseaux de relations personnelles au sein de l'établissement, ce qui crée des inégalités d'accès à l'information.
 
 **Du côté des entreprises**
 
-Lorsqu'une entreprise souhaite proposer un sujet de [PFE](#def-pfe) à des étudiants de l'[ESST](#def-esst), elle doit contacter directement certains membres de l'administration (direction, responsables pédagogiques) par email ou par téléphone. Il n'existe pas de formulaire standardisé ni de portail de dépôt en ligne pour ces propositions. Cela implique que les offres d'entreprises ne sont pas systématiquement transmises à tous les étudiants concernés, engendrant une distribution inégale des opportunités.
+Lorsqu'une entreprise souhaite proposer un sujet de PFE à des étudiants de l'ESST, elle doit contacter directement certains membres de l'administration (direction, responsables pédagogiques) par email ou par téléphone. Il n'existe pas de formulaire standardisé ni de portail de dépôt en ligne pour ces propositions. Cela implique que les offres d'entreprises ne sont pas systématiquement transmises à tous les étudiants concernés, engendrant une distribution inégale des opportunités.
 
 **Du côté de l'administration**
 
-La gestion administrative des [PFE](#def-pfe) repose entièrement sur des outils bureautiques classiques : les affectations encadrant-étudiant sont consignées dans des feuilles Excel, les validations de sujets sont transmises par email ou par courrier papier, et les plannings de soutenance sont communiqués par voie d'affichage ou par email collectif. Il n'existe aucun système permettant un suivi en temps réel de l'avancement des [PFE](#def-pfe) ni de génération automatique de documents officiels (attestations, procès-verbaux de soutenance...).
+La gestion administrative des PFE repose entièrement sur des outils bureautiques classiques : les affectations encadrant-étudiant sont consignées dans des feuilles Excel, les validations de sujets sont transmises par email ou par courrier papier, et les plannings de soutenance sont communiqués par voie d'affichage ou par email collectif. Il n'existe aucun système permettant un suivi en temps réel de l'avancement des PFE ni de génération automatique de documents officiels (attestations, procès-verbaux de soutenance...).
 
-> **À insérer :** *Un diagramme de flux représentant les échanges entre les trois acteurs dans le processus actuel de l'[ESST](#def-esst) (Source : auteur, d'après observations terrain) - à produire lors de la phase de conception.*
+![Processus actuel de PFE à l'ESST @esst](/images/etude-cas-esst-pfe.png){fig-align="center" width="100%"}
 
 ### Outils utilisés en interne
 
@@ -123,31 +121,51 @@ La gestion administrative des [PFE](#def-pfe) repose entièrement sur des outils
 | Dépôt du mémoire | Remise physique / Email | Pas d'archivage numérique structuré |
 | Planification des soutenances | Affichage / Email collectif | Communication non centralisée |
 
-: Outils utilisés dans la gestion des [PFE](#def-pfe) à l'[ESST](#def-esst) et leurs limites {tbl-colwidths="[30,30,40]"}
+: Outils utilisés dans la gestion des PFE à l'ESST et leurs limites {tbl-colwidths="[30,30,40]"}
+
+
+
+## Limites de la gestion actuelle des PFE
+
+Après avoir décrit le cadre général de l'apprentissage, du parcours éducatif et du PFE dans sa conception théorique, il est nécessaire d'observer comment ce processus est géré dans la réalité des établissements universitaires algériens.
+
+Malgré le rôle central que joue le PFE dans la validation des cursus universitaires [@loi9905], sa gestion demeure à ce jour largement artisanale et non structurée [@insaniyat2018 ; @berrouche2007]. Les trois acteurs impliqués - étudiant, encadrant et administration - n'ont à leur disposition aucune plateforme unifiée pour coordonner les différentes étapes du processus. Les échanges reposent principalement sur des outils bureautiques standards (Microsoft Word, Microsoft Excel), des communications par courrier électronique ou encore des contacts téléphoniques directs.
+
+Cette absence d'automatisation engendre plusieurs dysfonctionnements récurrents, parmi lesquels on peut citer [@berrouche2007] :
+
+- La difficulté pour les étudiants à identifier les sujets disponibles et les encadrants potentiels, faute d'une liste centralisée et actualisée.
+- Le manque de traçabilité des échanges et validations entre les parties prenantes.
+- La surcharge administrative pesant sur les responsables pédagogiques et les secrétariats, liée au traitement manuel de nombreux dossiers.
+- Les risques d'erreurs, de pertes d'information et de délais non respectés en l'absence d'un suivi automatisé.
+- L'impossibilité d'obtenir des statistiques fiables et en temps réel sur l'avancement des PFE au niveau de l'établissement.
+
+**Problématique centrale :** La gestion des Projets de Fin d'Études au sein des établissements universitaires algériens reste non automatisée et repose sur des outils non dédiés. Cette situation génère des inefficacités organisationnelles pour les trois parties prenantes (étudiant, enseignant, administration) et justifie la conception d'une solution applicative dédiée.
+
+C'est à partir de ce constat que s'inscrit le présent travail, dont l'objectif est de concevoir et développer une application web permettant de centraliser, structurer et automatiser la gestion des PFE au sein d'un établissement universitaire - en prenant pour cas d'usage concret l'École Supérieure des Sciences et de la Technologie (ESST) d'Alger.
 
 ### Synthèse des dysfonctionnements identifiés
 
-L'étude de cas menée à l'[ESST](#def-esst) confirme et illustre concrètement les limites générales évoquées en conclusion du Chapitre 1. Les principaux dysfonctionnements identifiés peuvent être résumés en quatre axes :
+L'étude de cas menée à l'ESST confirme et illustre concrètement les limites générales évoquées en conclusion du Chapitre 1. Les principaux dysfonctionnements identifiés peuvent être résumés en quatre axes :
 
 - **Manque de centralisation :** l'information relative aux sujets, encadrants et soutenances est dispersée entre plusieurs supports (tableurs, emails, affichages), sans point d'accès unique pour les parties prenantes.
 - **Absence d'automatisation :** chaque étape du processus nécessite une intervention humaine manuelle, générant une charge de travail administrative élevée et des risques d'erreurs.
 - **Faible traçabilité :** l'historique des échanges, validations et décisions n'est pas systématiquement conservé sous une forme consultable et structurée.
 - **Inégalités d'accès à l'information :** les étudiants les moins bien connectés au réseau informel de l'établissement sont désavantagés dans leur recherche de sujet et d'encadrant.
 
-{{< pagebreak >}}
+
 
 ## Positionnement et justification de la solution proposée
 
-L'analyse conduite tout au long de ce chapitre - étude des [LMS](#def-lms) généralistes, étude comparative et étude de cas à l'[ESST](#def-esst) - converge vers un constat clair : il n'existe pas aujourd'hui de solution logicielle dédiée, adaptée au contexte algérien, permettant de gérer de manière intégrée et automatisée l'ensemble du cycle de vie d'un Projet de Fin d'Études.
+L'analyse conduite tout au long de ce chapitre - étude des LMS généralistes, étude comparative et étude de cas à l'ESST - converge vers un constat clair : il n'existe pas aujourd'hui de solution logicielle dédiée, adaptée au contexte algérien, permettant de gérer de manière intégrée et automatisée l'ensemble du cycle de vie d'un Projet de Fin d'Études.
 
-Les [LMS](#def-lms) existants (Moodle, Canvas...) couvrent des besoins pédagogiques généraux mais ne modélisent pas le processus [PFE](#def-pfe) dans sa spécificité. Les solutions locales (ENSIA) sont des tentatives partielles ne couvrant pas l'ensemble des étapes. Et la réalité de terrain à l'[ESST](#def-esst) illustre les coûts réels de cette absence : perte d'information, inefficacité organisationnelle, inégalités entre étudiants.
+Les LMS existants (Moodle, Canvas...) couvrent des besoins pédagogiques généraux mais ne modélisent pas le processus PFE dans sa spécificité. Les solutions locales sont des tentatives partielles ne couvrant pas l'ensemble des étapes. Et la réalité de terrain à l'ESST illustre les coûts réels de cette absence : perte d'information, inefficacité organisationnelle, inégalités entre étudiants.
 
-C'est dans ce contexte que s'inscrit la contribution de ce mémoire : la conception et le développement d'une application web dédiée à la gestion des [PFE](#def-pfe), ciblant spécifiquement les établissements universitaires algériens et, en priorité, l'[ESST](#def-esst). Cette application se propose de :
+C'est dans ce contexte que s'inscrit la contribution de ce mémoire : la conception et le développement d'une application web dédiée à la gestion des PFE, ciblant spécifiquement les établissements universitaires algériens et, en priorité, l'ESST. Cette application se propose de :
 
-- Centraliser sur une plateforme unique l'ensemble des informations relatives aux [PFE](#def-pfe) (sujets, affectations, plannings, soutenances).
+- Centraliser sur une plateforme unique l'ensemble des informations relatives aux PFE (sujets, affectations, plannings, soutenances).
 - Automatiser les étapes clés du processus (propositions, validations, notifications).
 - Offrir à chaque acteur (étudiant, enseignant, administration) une interface adaptée à ses besoins et à son rôle.
-- Assurer la traçabilité complète des échanges et décisions tout au long du cycle [PFE](#def-pfe).
+- Assurer la traçabilité complète des échanges et décisions tout au long du cycle PFE.
 
 ### Choix technologiques
 
@@ -157,14 +175,14 @@ L'implémentation de cette solution s'appuie sur deux technologies open-source s
 
 - **Golang (backend) :** Go est un langage compilé, conçu par Google pour des applications serveur à haute performance et forte concurrence. Comparé à des alternatives courantes (Node.js, Django, Laravel), Go offre une empreinte mémoire plus faible, une gestion native de la concurrence (goroutines) et un binaire déploiable sans dépendances externes. Ces caractéristiques en font un choix approprié pour une API REST servant plusieurs rôles simultanément (étudiants, enseignants, administrateurs) tout en restant facilement déployable sur une infrastructure universitaire limitée.
 
-> **Note :** La solution proposée n'est pas un [LMS](#def-lms) généraliste adapté, mais bien une application métier dédiée, conçue sur mesure pour répondre aux besoins réels et spécifiques de la gestion des [PFE](#def-pfe) dans le contexte universitaire algérien.
+**Note :** La solution proposée n'est pas un LMS généraliste adapté, mais bien une application métier dédiée, conçue sur mesure pour répondre aux besoins réels et spécifiques de la gestion des PFE dans le contexte universitaire algérien.
 
 Les chapitres suivants décriront en détail la conception de cette solution : analyse des besoins, modélisation, architecture technique et implémentation.
 
-{{< pagebreak >}}
+
 
 ## Conclusion du chapitre
 
-Ce chapitre a dressé un panorama complet des solutions existantes dans le domaine de la gestion académique numérique. L'étude des [LMS](#def-lms) a mis en évidence leur inadéquation partielle aux besoins spécifiques de la gestion des [PFE](#def-pfe), en particulier dans le contexte universitaire algérien. L'étude comparative a permis de quantifier objectivement ces lacunes. Enfin, l'étude de cas menée à l'[ESST](#def-esst) a fourni une illustration concrète et locale des dysfonctionnements induits par l'absence d'une solution dédiée.
+Ce chapitre a dressé un panorama complet des solutions existantes dans le domaine de la gestion académique numérique. L'étude des LMS a mis en évidence leur inadéquation partielle aux besoins spécifiques de la gestion des PFE, en particulier dans le contexte universitaire algérien. L'étude comparative a permis de quantifier objectivement ces lacunes. Enfin, l'étude de cas menée à l'ESST a fourni une illustration concrète et locale des dysfonctionnements induits par l'absence d'une solution dédiée.
 
 Ces constats constituent la justification fondamentale du projet présenté dans ce mémoire, et définissent les exigences fonctionnelles et non fonctionnelles auxquelles la solution proposée devra répondre.

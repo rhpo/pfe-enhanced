@@ -4,6 +4,9 @@ subtitle: "Rapport de Projet de Fin d'Études"
 author: "HADID Rami"
 date: last-modified
 lang: fr
+csl: norms/ieee.csl
+bibliography: bibliography/references.bib
+
 format:
   html:
     toc: true
@@ -21,6 +24,7 @@ format:
     include-in-header: config/header.tex
     include-before-body: config/layout.tex
     toc: true
+    lof: true
     number-sections: true
     colorlinks: true
     fig-pos: H
@@ -43,19 +47,15 @@ Ce mémoire a poursuivi un fil conducteur clair, allègre du plus général au p
 
 Le **Chapitre 1** a posé le cadre théorique en définissant le Projet de Fin d'Études dans le contexte du système éducatif algérien (LMD et formation d'ingénieur). Il a ensuite dressé un tableau précis des acteurs impliqués et du processus institutionnel du PFE, avant d'identifier les dysfonctionnements majeurs de sa gestion actuelle - justifiant ainsi la nécessité d'une solution numérique dédiée.
 
-Le **Chapitre 2** a validé cette nécessité par l'analyse de l'existant : après une étude des LMS généralistes disponibles (Moodle, Canvas, Blackboard) et une comparaison objective de leurs limites, l'étude de cas menée à l'École Supérieure des Sciences et de la Technologie ([ESST](#def-esst)) d'Alger a confirmé l'absence totale de solution structurée adaptée au contexte universitaire algérien.
+Le **Chapitre 2** a validé cette nécessité par l'analyse de l'existant : après une étude des LMS généralistes disponibles (Moodle, Canvas, Blackboard) et une comparaison objective de leurs limites, l'étude de cas menée à l'École Supérieure des Sciences et de la Technologie (ESST) d'Alger a confirmé l'absence totale de solution structurée adaptée au contexte universitaire algérien.
 
 Le **Chapitre 3** (en cours) présentera la conception de la solution répondant à ces besoins : architecture logicielle, modélisation UML et choix technologiques.
 
 En somme, ce mémoire établit qu'une application web dédiée à la gestion des PFE est non seulement techniquement réalisable, mais institutionnellement nécessaire - et que sa conception doit être ancrée dans les réalités spécifiques du système universitaire algérien.
 
-{{< pagebreak >}}
+
 
 # Bibliographie {.unnumbered}
 
-1. Anderson, J. R. (2000). *Cognitive Psychology and Its Implications* (5e éd.). Worth Publishers.
-2. Ellis, R. K. (2009). *A Field Guide to Learning Management Systems*. ASTD Learning Circuits.
-3. Moodle HQ. (2023). *Moodle Statistics*. Retrouvé sur : https://stats.moodle.org
-4. Ministère de l'Enseignement Supérieur et de la Recherche Scientifique ([MESRS](#def-mesrs)). (2004). *Réforme [LMD](#def-lmd) : Textes réglementaires*. Alger : Direction de l'Enseignement Supérieur.
-5. Ministère de l'Enseignement Supérieur et de la Recherche Scientifique ([MESRS](#def-mesrs)). (2023). *Guide du nouveau bachelier : Notions de base du système LMD*. Retrouvé sur : https://services.mesrs.dz/bac2023/guide/fr/notion%20de%20base.html
-6. Lebrun, F., Venard, M., & Quiénard, J. (2003). *Histoire de l'enseignement et de l'éducation, tome 2 : De Gutenberg aux Lumières (1480-1789)*. Perrin.
+::: {#refs}
+:::
