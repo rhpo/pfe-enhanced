@@ -1,5 +1,6 @@
 \renewcommand{\maketitle}{} % Suppress auto title page - we use garde.pdf instead
 \usepackage{titlesec}
+\usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{tocloft}
@@ -148,3 +149,7 @@
 \titleformat{\subsubsection}
   {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
 \titlespacing*{\subsubsection}{0pt}{10pt}{5pt}
+
+\hypersetup{
+  linkcolor=black,
+}

@@ -1,0 +1,11 @@
+/* All TOC links */
+.sidebar nav[role=doc-toc] a,
+#TOC a {
+    color: black !important;
+}
+
+/* Active/current TOC link */
+#TOC a.active,
+.nav-link.active {
+    color: black !important;
+}

@@ -9,7 +9,9 @@ bibliography: bibliography/references.bib
 
 format:
   html:
+    css: styles.css
     toc: true
+    lof: true
     number-sections: true
     theme: cosmo
   pdf:
@@ -27,6 +29,10 @@ format:
     lof: true
     number-sections: true
     colorlinks: true
+    linkcolor: black
+    urlcolor: blue
+    citecolor: black
+    filecolor: black
     fig-pos: H
 render:
   - "**/*.qmd"        # ← watches ALL .qmd files in subfolders
