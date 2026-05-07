@@ -1,0 +1,35 @@
+﻿@startuml
+skinparam state {
+  BackgroundColor #EEF5FF
+  BorderColor #3366CC
+  ArrowColor #3366CC
+  FontSize 12
+}
+
+[*] --> DRAFT : Étudiant crée la FichePFE
+
+DRAFT --> FICHE_PENDING_VALIDATION : Encadrant valide la fiche
+DRAFT --> DRAFT : Encadrant demande révision
+
+FICHE_PENDING_VALIDATION --> VALIDATED : Administration valide\net attribue code PFE
+FICHE_PENDING_VALIDATION --> REJECTED : Administration rejette
+
+REJECTED --> [*] : Fin du processus
+
+VALIDATED --> IN_PROGRESS : Encadrant affecté\n(début des travaux)
+
+IN_PROGRESS --> SUBMITTED : Étudiant soumet\nle mémoire final
+
+SUBMITTED --> UNDER_EVALUATION : Jury constitué\net soutenance planifiée
+
+UNDER_EVALUATION --> ADMITTED : Jury - Résultat : Admis
+UNDER_EVALUATION --> CORRECTION_REQUIRED : Jury - Corrections requises
+UNDER_EVALUATION --> FAILED : Jury - Non admis
+
+CORRECTION_REQUIRED --> SUBMITTED : Étudiant re-soumet\naprès corrections
+
+ADMITTED --> PUBLISHED : Administration archive\net publie
+
+PUBLISHED --> [*] : Fin du cycle
+FAILED --> [*] : Fin du cycle
+@enduml

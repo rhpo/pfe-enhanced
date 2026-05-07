@@ -1,0 +1,83 @@
+﻿@startuml
+skinparam activity {
+  BackgroundColor #EEF5FF
+  BorderColor #3366CC
+  ArrowColor #3366CC
+  DiamondBackgroundColor #FFF8E1
+  DiamondBorderColor #FF8C00
+  FontSize 12
+}
+
+|Étudiant|
+start
+:S'authentifier;
+:Remplir et soumettre FichePFE;
+
+|Encadrant|
+:Consulter la FichePFE;
+if (Fiche valide ?) then (Oui)
+  :Valider la FichePFE;
+else (Non)
+  :Demander révision;
+  |Étudiant|
+  :Corriger la FichePFE;
+  |Encadrant|
+  :Re-valider;
+endif
+
+|Administration|
+:Recevoir la fiche validée;
+if (Fiche acceptable ?) then (Oui)
+  :Attribuer code PFE;
+  :Affecter encadrant;
+  if (PFE externe ?) then (Oui)
+    :Affecter co-promoteur;
+  endif
+  :Notifier étudiant + encadrant;
+else (Non)
+  :Rejeter avec justification;
+  |Étudiant|
+  :Recevoir notification de rejet;
+  stop
+endif
+
+|Étudiant|
+:Réaliser les travaux du PFE;
+
+|Étudiant|
+fork
+  :Renseigner FicheSuiviPFE;
+|Encadrant|
+  :Cosigner FicheSuiviPFE\n+ feedback;
+fork end
+
+|Étudiant|
+:Soumettre le mémoire final;
+
+|Administration|
+:Constituer le jury;
+:Planifier la soutenance;
+:Notifier toutes les parties;
+
+|Étudiant|
+:Présenter la soutenance;
+
+|Administration|
+:Enregistrer le résultat;
+
+if (Résultat ?) then (Admis)
+  :Archiver le PFE;
+  if (Archivable ?) then (Oui)
+    :Publier en ligne;
+  endif
+  stop
+else if (Corrections requises)
+  |Étudiant|
+  :Apporter les corrections;
+  :Re-soumettre;
+  |Administration|
+  :Re-planifier soutenance;
+else (Non admis)
+  stop
+endif
+@enduml

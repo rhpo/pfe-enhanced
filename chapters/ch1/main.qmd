@@ -106,96 +106,13 @@ Parallèlement au système LMD, certains établissements algériens (Écoles Nat
 
 À ce stade du parcours académique, une question naturelle se pose : comment l'étudiant valide-t-il son cycle d'études ? La réponse tient en un événement clé : le Projet de Fin d'Études ou PFE.
 
-Le Projet de Fin d'Études (PFE), également appelé *Mémoire de fin d'études* ou *Travail de Fin d'Études* selon les établissements, est une activité académique obligatoire qui sanctionne la fin d'un cycle de formation supérieure [@mesrs2004]. Il constitue pour l'étudiant l'occasion de mobiliser l'ensemble des connaissances et compétences acquises tout au long de sa formation pour répondre à une problématique concrète, qu'elle soit d'ordre scientifique, technologique ou organisationnel.
+D'une manière générale, les cursus universitaires, qu'il s'agisse de la licence ou du master, se clôturent par des projets de fin d'étude. Le PFE est une épreuve académique qui fait l'objet d'une note finale et qui sanctionne la fin d'un cycle de formation supérieure [@mesrs2004]. Il est obligatoire chez *la majorité* des formations de licence, et *la totalité* des formations de master.
+
+Il constitue pour l'étudiant l'occasion de mobiliser l'ensemble des connaissances et compétences acquises tout au long de sa formation pour répondre à une problématique concrète, qu'elle soit d'ordre scientifique, technologique ou organisationnel, en rédigeant un document écrit (le **Mémoire**), et généralement une **partie applicative** de la solution, en le soutenant devant un jury.
 
 Le PFE est reconnu internationalement sous diverses appellations : *Senior Thesis* (États-Unis), *Final Year Project* (Royaume-Uni), *Travail de Bachelor* ou *Travail de Master* (Suisse et pays francophones). En Algérie, sa place dans le cursus varie selon le type de formation [@mesrs2004].
 
-### PFE : selon le cursus en Algérie
-
-La nature et l'importance du PFE diffèrent selon le niveau d'études :
-
-- **Dans le système LMD (Licence) :** le PFE est traité comme un module obligatoire du dernier semestre (S6). Il est noté au même titre que les autres matières et constitue une unité d'enseignement (UE) à part entière. Sa durée est généralement de quelques mois et son volume horaire est encadré par les textes réglementaires du MESRS [@mesrs2004 ; @mesrs2005guide].
-- **Dans le système LMD (Master) et en formation d'ingénieur :** le PFE constitue un semestre entier dédié (S10 en Master, S10 en ingénieur). Il représente une charge de travail significativement plus importante, souvent en lien avec une entreprise ou un laboratoire de recherche. Il donne lieu à la rédaction d'un mémoire complet et à une soutenance formelle devant un jury [@mesrs2004].
-
-| Cursus | Statut du PFE | Durée approximative | Mode d'évaluation |
-|---|---|---|---|
-| Licence (LMD) | Module du S6 | 2 à 4 mois | Mémoire + soutenance |
-| Master (LMD) | Semestre entier (S10) | 5 à 6 mois | Mémoire + soutenance devant jury |
-| Ingénieur d'État | Semestre entier (S10) | 5 à 6 mois | Mémoire + soutenance devant jury |
-
-: Statut du PFE selon le cursus universitaire en Algérie [@mesrs2004] {tbl-colwidths="[25,25,20,30]"}
-
-### Types de PFE
-
-Selon le cadre dans lequel il est réalisé, un PFE peut être classifié en deux catégories principales [@mesrs2004] :
-
-- **PFE interne :** réalisé au sein même de l'établissement universitaire, sous la supervision d'un enseignant-chercheur. Il porte généralement sur une problématique académique ou une application directe des enseignements reçus. Ce type est plus courant en Licence.
-- **PFE externe (ou en entreprise) :** réalisé dans une organisation extérieure à l'université (entreprise privée, organisme public, administration...). L'étudiant est alors encadré à la fois par un enseignant  (encadrant académique) et par un professionnel de l'entreprise (encadrant industriel ou maître de stage). Ce format est dominant en Master et en formation d'ingénieur.
-
-
-## Acteurs du PFE et leurs rôles respectifs
-
-La réalisation d'un PFE est un processus collaboratif impliquant plusieurs parties prenantes dont les rôles sont complémentaires et interdépendants [@mesrs2004].
-
-### L'étudiant
-
-L'étudiant est le principal acteur du PFE. Il est à l'initiative de la recherche de sujet et responsable de la réalisation des travaux [@mesrs2004]. Ses responsabilités incluent :
-
-- Identifier et proposer un sujet de PFE en accord avec sa spécialité et ses intérêts.
-- Contacter les enseignants susceptibles de l'encadrer, ou répondre aux propositions émises par des enseignants ou entreprises.
-- Respecter le planning défini avec l'encadrant et produire des livrables réguliers.
-- Rédiger un mémoire structuré conformément aux normes de l'établissement.
-- Préparer et présenter la soutenance orale devant le jury.
-
-### L'enseignant encadrant
-
-L'encadrant académique joue un rôle d'accompagnateur pédagogique et scientifique [@mesrs2005guide]. Il peut être à l'origine d'une proposition de sujet ou accepter d'encadrer un étudiant venant avec son propre sujet. Ses missions consistent à :
-
-- Valider la pertinence et la faisabilité du sujet de PFE.
-- Assurer un suivi régulier de l'avancement des travaux (réunions périodiques, corrections...).
-- Guider l'étudiant dans sa démarche méthodologique et scientifique.
-- Évaluer la qualité du mémoire rendu et participer au jury de soutenance.
-
-### L'administration
-
-L'administration universitaire (service de scolarité, département, direction des études) joue un rôle logistique et réglementaire fondamental [@loi9905]. Comme illustré par la @fig-acteurs, elle se positionne au carrefour des interactions entre l'étudiant et l'encadrant :
-
-- Définir et communiquer les règles et procédures relatives au PFE (délais, format du mémoire, composition du jury...).
-- Recueillir et valider les propositions de sujets et les affectations encadrant–étudiant.
-- Planifier les soutenances et constituer les jurys.
-- Archiver les mémoires et mettre à jour les résultats dans les systèmes d'information universitaires.
-
-\vspace{1cm}
-
-![Les trois acteurs du PFE et leurs interactions mutuelles @esst](/images/trois-acteurs.png){#fig-acteurs width=65% fig-align="center"}
-
-
-## Étapes du processus PFE
-
-La réalisation d'un PFE suit un processus structuré en plusieurs phases successives [@mesrs2004]. Ce processus, bien que variable d'un établissement à l'autre, obéit globalement aux étapes suivantes :
-
-1. **Proposition et recherche de sujet :** l'étudiant prospecte des sujets en consultant les enseignants de son département, les offres d'entreprises partenaires ou les annonces diffusées par l'administration. Parallèlement, certains enseignants ou entreprises soumettent directement des propositions de sujets à l'administration.
-2. **Mise en relation et affectation :** une fois le sujet identifié, l'étudiant est mis en relation avec l'encadrant potentiel. En cas de PFE externe, un accord tripartite (étudiant – entreprise – université) est formalisé [@mesrs2004].
-3. **Validation du sujet :** le sujet proposé est soumis à validation auprès du responsable pédagogique ou du chef de département. Cette étape garantit la cohérence du PFE avec le niveau d'études et la spécialité de l'étudiant [@mesrs2005guide].
-4. **Réalisation des travaux :** l'étudiant conduit les activités prévues (analyse, conception, développement, expérimentation...) sous la supervision de son encadrant, selon un planning défini en amont.
-5. **Rédaction du mémoire :** l'étudiant rédige un document formel décrivant la problématique, la méthodologie adoptée, les résultats obtenus et les perspectives envisagées. Ce document est relu et corrigé par l'encadrant [@mesrs2004].
-6. **Soutenance :** l'étudiant présente son travail devant un jury composé d'enseignants et, dans le cas d'un PFE externe, d'un représentant de l'entreprise. Une note est attribuée, prenant en compte à la fois le mémoire écrit et la qualité de la présentation orale [@mesrs2004].
-
-```{mermaid}
-%%| label: fig-workflow-pfe
-%%| fig-cap: "Workflow du processus PFE - de la proposition à la soutenance @mesrs2004"
-%%| fig-width: 6.5
-
-flowchart LR
-    A([Proposition de sujet]) --> B([Affectation encadrant])
-    B --> C{Validation du sujet}
-    C -- Refusé --> A
-    C -- Accepté --> D([Réalisation des travaux])
-    D --> E([Rédaction du mémoire])
-    E --> F([Soutenance])
-```
-
-
+<!-- Here was the PFE section that I moved to chapter 2 -->
 
 ## Conclusion du chapitre
 

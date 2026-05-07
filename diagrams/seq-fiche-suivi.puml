@@ -1,0 +1,31 @@
+﻿@startuml
+skinparam sequenceArrowThickness 1.5
+skinparam sequenceParticipantBackgroundColor #EEF5FF
+skinparam sequenceParticipantBorderColor #3366CC
+
+actor "Étudiant" as E
+actor "Encadrant" as T
+participant "Frontend" as FE
+participant "API Backend" as API
+database "Base de données" as DB
+
+E -> FE : Crée une nouvelle fiche de suivi
+FE -> API : POST /pfe/{pfeId}/suivis\n{ meetingDate, progressNotes, studentNotes }
+API -> DB : INSERT FicheSuiviPFE
+DB --> API : suivi.id
+API --> FE : 201 Created { suiviId }
+FE --> E : Confirmation de création
+
+T -> FE : Consulte la fiche de suivi
+FE -> API : GET /pfe/{pfeId}/suivis/{suiviId}
+API -> DB : SELECT suivi WHERE id = ?
+DB --> API : FicheSuiviPFE
+API --> FE : 200 OK { suivi }
+
+T -> FE : Ajoute feedback + cosigne
+FE -> API : PATCH /pfe/{pfeId}/suivis/{suiviId}\n{ teacherFeedback }
+API -> DB : UPDATE FicheSuiviPFE\n(teacherFeedback, signedByTeacher=true)
+DB --> API : OK
+API --> FE : 200 OK
+FE --> T : Confirmation de cosignature
+@enduml

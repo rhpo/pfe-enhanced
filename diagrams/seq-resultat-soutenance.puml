@@ -1,0 +1,39 @@
+﻿@startuml
+skinparam sequenceArrowThickness 1.5
+skinparam sequenceParticipantBackgroundColor #EEF5FF
+skinparam sequenceParticipantBorderColor #3366CC
+
+actor "Administration" as A
+actor "Étudiant" as E
+participant "Frontend" as FE
+participant "API Backend" as API
+database "Base de données" as DB
+participant "Notification\nService" as NS
+
+A -> FE : Saisit le résultat d'évaluation\n{ result, score, comment }
+FE -> API : POST /pfe/{pfeId}/evaluation\n{ result, score, comment }
+API -> DB : INSERT Evaluation
+
+alt result == ADMITTED
+  API -> DB : UPDATE PFE status=ADMITTED
+  alt archivable
+    API -> DB : UPDATE PFE status=PUBLISHED
+    API --> FE : PFE publié
+  end
+  API -> NS : Notifie étudiant (admis)
+  NS -> E : Email "Félicitations - PFE admis, note: {score}"
+
+else result == CORRECTION_REQUIRED
+  API -> DB : UPDATE PFE status=CORRECTION_REQUIRED
+  API -> NS : Notifie étudiant (corrections)
+  NS -> E : Email "Corrections requises : {comment}"
+
+else result == NOT_ADMITTED
+  API -> DB : UPDATE PFE status=FAILED
+  API -> NS : Notifie étudiant (non-admis)
+  NS -> E : Email "PFE non admis"
+end
+
+API --> FE : 201 Created { evaluation }
+FE --> A : Résultat enregistré
+@enduml

@@ -1,4 +1,4 @@
-# Analyse Système et Exigences {#sec-analyse}
+﻿# Analyse Système et Exigences {#sec-analyse}
 
 ## Introduction du chapitre
 
@@ -20,24 +20,14 @@ Language* (UML 2.0) via PlantUML.
 
 ## Présentation générale du système
 
-Le système conçu est une **application web dédiée à la gestion du cycle de vie complet
-des Projets de Fin d'Études** au sein d'un établissement universitaire algérien, en prenant
+Le système conçu est dédiée à la gestion du cycle de vie complet
+des Projets de Fin d'Études au sein d'un établissement universitaire algérien, en prenant
 pour cas d'usage concret l'ESST d'Alger.
 
 Son objectif est de centraliser, structurer et automatiser l'ensemble des étapes du processus
 PFE : depuis la soumission d'une fiche PFE par un étudiant jusqu'à l'archivage du résultat
 de soutenance, en passant par la validation administrative, l'affectation des encadrants,
 le suivi de l'avancement, la constitution des jurys et la planification des soutenances.
-
-L'application repose sur une architecture **client-serveur** à deux niveaux :
-
-- **Frontend** : interface web réactive développée en SvelteKit, offrant des vues
-  différenciées selon le rôle de l'utilisateur authentifié.
-- **Backend** : API REST développée en Go (Golang), exposant des endpoints sécurisés
-  et gérant la logique métier ainsi que la persistance des données.
-
-Cette séparation stricte des responsabilités garantit la maintenabilité, la testabilité et
-l'évolutivité de la solution.
 
 ## Identification des acteurs
 
@@ -46,10 +36,10 @@ principaux, dont les rôles et les interactions sont complémentaires et interd�
 
 ### L'étudiant
 
-L'étudiant est l'initiateur du processus PFE. Il interagit avec le système tout au long
+L'étudiant se voit affecter un PFE (soit par l'enseignant, soit par l'entreprise), il interagit avec le système tout au long
 du cycle de vie de son projet. Ses responsabilités dans le système incluent :
 
-- Soumettre une fiche PFE (*FichePFE*) décrivant son sujet proposé.
+- Soumettre une fiche PFE modifiable (*FichePFE*).
 - Consulter le statut de validation de sa fiche par l'administration.
 - Renseigner régulièrement sa fiche de suivi (*FicheSuiviPFE*) pour documenter
   l'avancement de ses travaux.
@@ -74,6 +64,8 @@ d'accompagnateur et d'évaluateur :
 L'administration est le pivot organisationnel du système. Elle valide, coordonne et
 archive :
 
+- Crée les comptes des enseignants.
+- Confirme les demandes d'inscription des entreprises.
 - Recevoir et examiner les fiches PFE soumises par les étudiants.
 - Attribuer un code unique de PFE (*PFE-XX-SPEC-ANNEE*) et valider la fiche.
 - Affecter l'encadrant académique et, le cas échéant, le co-promoteur pour les PFE
@@ -83,6 +75,9 @@ archive :
 - Envoyer les notifications aux parties prenantes via le service de notification.
 - Archiver les PFE admis et gérer les corrections requises.
 - Produire des statistiques sur l'avancement global des PFE.
+
+### Initiateur?
+L'initiateur peut être l'encadrant en proposant un sujet, ou bien l'administration.
 
 ## Spécification des exigences
 
@@ -194,46 +189,7 @@ Le diagramme suivant représente l'ensemble des fonctionnalités accessibles à 
 une fois authentifié. Son périmètre est centré sur la gestion de son propre PFE : soumission,
 suivi et consultation des résultats.
 
-```{.plantuml width="100%"}
-@startuml
-left to right direction
-skinparam actorStyle awesome
-skinparam packageStyle rectangle
-skinparam usecase {
-  BackgroundColor #EEF5FF
-  BorderColor #3366CC
-  ArrowColor #3366CC
-}
-
-actor "Étudiant" as E
-
-rectangle "Système de Gestion des PFE" {
-  usecase "S'authentifier" as UC1
-  usecase "Gérer son profil" as UC2
-  usecase "Soumettre une FichePFE" as UC3
-  usecase "Consulter le statut de sa FichePFE" as UC4
-  usecase "Renseigner une FicheSuiviPFE" as UC5
-  usecase "Consulter l'historique de suivi" as UC6
-  usecase "Consulter le planning de soutenance" as UC7
-  usecase "Consulter le résultat de l'évaluation" as UC8
-  usecase "Consulter les PFE publiés" as UC9
-}
-
-E --> UC1
-E --> UC2
-E --> UC3
-E --> UC4
-E --> UC5
-E --> UC6
-E --> UC7
-E --> UC8
-E --> UC9
-
-UC3 ..> UC1 : <<include>>
-UC5 ..> UC1 : <<include>>
-UC4 ..> UC3 : <<extend>>
-@enduml
-```
+![Cas d'utilisation de l'Ã©tudiant](/diagrams/uc-etudiant.png){width="100%"}
 
 #### Cas d'utilisation de l'enseignant encadrant
 
@@ -241,101 +197,14 @@ L'enseignant intervient principalement dans les phases de validation de la fiche
 de suivi de l'avancement des travaux. Il participe également à l'évaluation en tant que
 membre du jury.
 
-```{.plantuml width="100%"}
-@startuml
-left to right direction
-skinparam actorStyle awesome
-skinparam packageStyle rectangle
-skinparam usecase {
-  BackgroundColor #EEF5FF
-  BorderColor #3366CC
-  ArrowColor #3366CC
-}
-
-actor "Enseignant" as T
-
-rectangle "Système de Gestion des PFE" {
-  usecase "S'authentifier" as UC1
-  usecase "Consulter les PFE encadrés" as UC2
-  usecase "Valider une FichePFE" as UC3
-  usecase "Demander révision d'une FichePFE" as UC4
-  usecase "Cosigner une FicheSuiviPFE" as UC5
-  usecase "Renseigner le feedback encadrant" as UC6
-  usecase "Participer au jury de soutenance" as UC7
-  usecase "Consulter l'historique des PFE" as UC8
-}
-
-T --> UC1
-T --> UC2
-T --> UC3
-T --> UC4
-T --> UC5
-T --> UC6
-T --> UC7
-T --> UC8
-
-UC3 ..> UC1 : <<include>>
-UC5 ..> UC1 : <<include>>
-UC6 ..> UC5 : <<include>>
-UC4 ..> UC3 : <<extend>>
-@enduml
-```
+![Cas d'utilisation de l'enseignant encadrant](/diagrams/uc-enseignant.png){width="100%"}
 
 #### Cas d'utilisation de l'administration
 
 L'administration dispose du périmètre fonctionnel le plus étendu. Elle orchestre
 l'ensemble du processus : validation, affectation, planification et archivage.
 
-```{.plantuml width="100%"}
-@startuml
-left to right direction
-skinparam actorStyle awesome
-skinparam packageStyle rectangle
-skinparam usecase {
-  BackgroundColor #EEF5FF
-  BorderColor #3366CC
-  ArrowColor #3366CC
-}
-
-actor "Administration" as A
-
-rectangle "Système de Gestion des PFE" {
-  usecase "S'authentifier" as UC1
-  usecase "Valider / Rejeter une FichePFE" as UC2
-  usecase "Attribuer un code PFE" as UC3
-  usecase "Affecter un encadrant" as UC4
-  usecase "Affecter un co-promoteur" as UC5
-  usecase "Constituer le jury" as UC6
-  usecase "Planifier la soutenance" as UC7
-  usecase "Envoyer des notifications" as UC8
-  usecase "Enregistrer le résultat d'évaluation" as UC9
-  usecase "Archiver / Publier un PFE" as UC10
-  usecase "Consulter le tableau de bord" as UC11
-  usecase "Gérer les utilisateurs" as UC12
-}
-
-A --> UC1
-A --> UC2
-A --> UC3
-A --> UC4
-A --> UC5
-A --> UC6
-A --> UC7
-A --> UC8
-A --> UC9
-A --> UC10
-A --> UC11
-A --> UC12
-
-UC2 ..> UC1 : <<include>>
-UC3 ..> UC2 : <<include>>
-UC4 ..> UC3 : <<include>>
-UC5 ..> UC4 : <<extend>>
-UC8 ..> UC4 : <<include>>
-UC8 ..> UC7 : <<include>>
-UC8 ..> UC9 : <<include>>
-@enduml
-```
+![Cas d'utilisation de l'administration](/diagrams/uc-administration.png){width="100%"}
 
 ### Diagramme de classes
 
@@ -343,153 +212,7 @@ Le diagramme de classes ci-dessous modélise les entités du domaine métier, le
 leurs méthodes et leurs relations structurelles. Il constitue la base de la conception de la
 couche de persistance et de la logique métier du backend.
 
-```{.plantuml width=100%}
-@startuml
-skinparam classAttributeIconSize 0
-skinparam class {
-  BackgroundColor #EEF5FF
-  BorderColor #3366CC
-  ArrowColor #3366CC
-  FontSize 12
-}
-
-enum PFEType {
-  INTERNAL
-  EXTERNAL
-}
-
-enum PFEStatus {
-  DRAFT
-  FICHE_PENDING_VALIDATION
-  VALIDATED
-  REJECTED
-  IN_PROGRESS
-  SUBMITTED
-  UNDER_EVALUATION
-  ADMITTED
-  FAILED
-  CORRECTION_REQUIRED
-  PUBLISHED
-}
-
-enum EvaluationResult {
-  ADMITTED
-  NOT_ADMITTED
-  CORRECTION_REQUIRED
-}
-
-class Student {
-  +id: String
-  +fullName: String
-  +dob: Date
-  +specialty: String
-  +isValid: Boolean
-}
-
-class Teacher {
-  +id: String
-  +fullName: String
-  +department: String
-}
-
-class Administration {
-  +id: String
-  +validateFiche(): void
-  +assignCode(): void
-  +assignJury(): void
-  +assignRoom(): void
-  +assignSchedule(): void
-}
-
-class FichePFE {
-  +id: String
-  +submittedAt: Date
-  +isValid: Boolean
-  +validate(): void
-  +requestChanges(): void
-}
-
-class PFE {
-  +code: String
-  +title: String
-  +type: PFEType
-  +status: PFEStatus
-  +deadline: Date
-  +submit(): void
-  +validateFiche(): void
-  +assignCode(): void
-  +publish(): void
-}
-
-class FicheSuiviPFE {
-  +id: String
-  +meetingDate: Date
-  +progressNotes: String
-  +teacherFeedback: String
-  +studentNotes: String
-}
-
-class Jury {
-  +id: String
-}
-
-class JuryMember {
-  +role: String
-}
-
-class Evaluation {
-  +id: String
-  +date: Date
-  +result: EvaluationResult
-  +score: Float
-  +comment: String
-  +evaluate(): void
-}
-
-class Schedule {
-  +date: Date
-  +time: Time
-}
-
-class Room {
-  +number: String
-  +building: String
-}
-
-class Company {
-  +id: String
-  +name: String
-}
-
-class CoPromoteur {
-  +id: String
-  +name: String
-}
-
-class NotificationService {
-  +sendToStudent(): void
-  +sendToTeachers(): void
-}
-
-Student "1" -- "1" FichePFE : fills
-FichePFE "1" --> "1" Administration : submitted to
-Administration "1" --> "0..*" PFE : assigns
-Administration "1" ..> NotificationService : triggers
-Jury "1" -- "1..*" JuryMember : composed of
-Jury "1" -- "1" Evaluation : evaluates
-Evaluation "0..1" -- "1" PFE : evaluates
-PFE "1" -- "1" Teacher : encadrant
-PFE "0..1" -- "0..1" Company : external only
-PFE "0..1" -- "0..1" CoPromoteur : external only
-PFE "1" -- "0..*" FicheSuiviPFE : reviews
-Teacher "0..1" -- "0..*" FicheSuiviPFE : reviews
-Schedule "1" -- "1" Room : assigned to
-Administration "1" --> "1" Schedule : assigns
-Administration "1" --> "1" Jury : assigns
-Student "1" -- "0..*" PFE : fills
-Teacher "1" -- "0..*" JuryMember : signs
-@enduml
-```
+![Diagramme de classes du systÃ¨me](/diagrams/dc-classes.png){width="100%"}
 
 ### Diagrammes de séquence
 
@@ -502,32 +225,7 @@ Ce scénario décrit le flux d'authentification d'un utilisateur. Le système ut
 mécanisme JWT : en cas de succès, un token signé est retourné au client et joint dans
 l'en-tête de toutes les requêtes suivantes.
 
-```{.plantuml width="100%"}
-@startuml
-skinparam sequenceArrowThickness 1.5
-skinparam sequenceParticipantBackgroundColor #EEF5FF
-skinparam sequenceParticipantBorderColor #3366CC
-
-actor "Utilisateur" as U
-participant "Frontend\n(SvelteKit)" as FE
-participant "API Backend\n(Go)" as API
-database "Base de données" as DB
-
-U -> FE : Saisit identifiant + mot de passe
-FE -> API : POST /auth/login\n{ email, password }
-API -> DB : SELECT user WHERE email = ?
-DB --> API : Retourne l'enregistrement utilisateur
-alt Mot de passe valide (bcrypt.Compare)
-  API -> API : Génère JWT (rôle, userId, exp)
-  API --> FE : 200 OK { token, role }
-  FE -> FE : Stocke le token (sessionStorage)
-  FE --> U : Redirige vers dashboard (selon rôle)
-else Mot de passe invalide ou utilisateur inexistant
-  API --> FE : 401 Unauthorized
-  FE --> U : Affiche message d'erreur
-end
-@enduml
-```
+![SÃ©quence - Authentification](/diagrams/seq-authentification.png){width="100%"}
 
 #### Soumission et validation d'une fiche PFE
 
@@ -535,68 +233,7 @@ Ce scénario couvre le cycle complet de soumission d'une fiche PFE par l'étudia
 sa validation par l'administration, en passant par la validation préalable de l'encadrant.
 C'est le scénario nominal le plus représentatif du processus métier.
 
-```{.plantuml width=100%}
-@startuml
-skinparam sequenceArrowThickness 1.5
-skinparam sequenceParticipantBackgroundColor #EEF5FF
-skinparam sequenceParticipantBorderColor #3366CC
-
-actor "Étudiant" as E
-actor "Encadrant" as T
-actor "Administration" as A
-participant "Frontend" as FE
-participant "API Backend" as API
-database "Base de données" as DB
-participant "Notification\nService" as NS
-
-E -> FE : Remplit et soumet FichePFE
-FE -> API : POST /fiches { titre, type, description, ... }
-API -> DB : INSERT FichePFE (status=DRAFT)
-DB --> API : fiche.id
-API --> FE : 201 Created { ficheId }
-API -> NS : Notifie l'encadrant désigné
-NS -> T : Email "Nouvelle fiche à valider"
-
-T -> FE : Consulte la fiche
-FE -> API : GET /fiches/{ficheId}
-API -> DB : SELECT fiche WHERE id = ?
-DB --> API : FichePFE
-API --> FE : 200 OK { fiche }
-
-alt Encadrant valide la fiche
-  T -> FE : Clique "Valider"
-  FE -> API : PATCH /fiches/{ficheId}/validate
-  API -> DB : UPDATE FichePFE status=FICHE_PENDING_VALIDATION
-  API -> NS : Notifie l'administration
-  NS -> A : Email "Fiche en attente de validation"
-else Encadrant demande révision
-  T -> FE : Ajoute commentaire + clique "Révision requise"
-  FE -> API : PATCH /fiches/{ficheId}/request-changes
-  API -> DB : UPDATE FichePFE status=DRAFT
-  API -> NS : Notifie l'étudiant
-  NS -> E : Email "Corrections requises"
-end
-
-A -> FE : Consulte les fiches en attente
-FE -> API : GET /fiches?status=FICHE_PENDING_VALIDATION
-API --> FE : Liste des fiches
-
-alt Administration valide
-  A -> FE : Valide + attribue code PFE
-  FE -> API : PATCH /fiches/{ficheId}/admin-validate\n{ code: "PFE-06-INFO-2026" }
-  API -> DB : UPDATE FichePFE isValid=true\nINSERT PFE (status=VALIDATED, code=...)
-  API -> NS : Notifie étudiant + encadrant
-  NS -> E : Email "PFE validé - Code attribué"
-  NS -> T : Email "PFE validé"
-else Administration rejette
-  A -> FE : Rejette avec justification
-  FE -> API : PATCH /fiches/{ficheId}/reject { reason }
-  API -> DB : UPDATE FichePFE, PFE status=REJECTED
-  API -> NS : Notifie l'étudiant
-  NS -> E : Email "PFE rejeté : {reason}"
-end
-@enduml
-```
+![SÃ©quence - Soumission et validation d'une fiche PFE](/diagrams/seq-soumission-fiche.png){width="100%"}
 
 #### Renseignement d'une fiche de suivi (FicheSuiviPFE)
 
@@ -604,118 +241,15 @@ Ce scénario illustre la collaboration entre l'étudiant et l'encadrant lors d'u
 d'avancement. La fiche de suivi est co-renseignée et constitue la trace formelle du suivi
 pédagogique.
 
-```{.plantuml width="100%"}
-@startuml
-skinparam sequenceArrowThickness 1.5
-skinparam sequenceParticipantBackgroundColor #EEF5FF
-skinparam sequenceParticipantBorderColor #3366CC
-
-actor "Étudiant" as E
-actor "Encadrant" as T
-participant "Frontend" as FE
-participant "API Backend" as API
-database "Base de données" as DB
-
-E -> FE : Crée une nouvelle fiche de suivi
-FE -> API : POST /pfe/{pfeId}/suivis\n{ meetingDate, progressNotes, studentNotes }
-API -> DB : INSERT FicheSuiviPFE
-DB --> API : suivi.id
-API --> FE : 201 Created { suiviId }
-FE --> E : Confirmation de création
-
-T -> FE : Consulte la fiche de suivi
-FE -> API : GET /pfe/{pfeId}/suivis/{suiviId}
-API -> DB : SELECT suivi WHERE id = ?
-DB --> API : FicheSuiviPFE
-API --> FE : 200 OK { suivi }
-
-T -> FE : Ajoute feedback + cosigne
-FE -> API : PATCH /pfe/{pfeId}/suivis/{suiviId}\n{ teacherFeedback }
-API -> DB : UPDATE FicheSuiviPFE\n(teacherFeedback, signedByTeacher=true)
-DB --> API : OK
-API --> FE : 200 OK
-FE --> T : Confirmation de cosignature
-@enduml
-```
+![SÃ©quence - Renseignement d'une fiche de suivi](/diagrams/seq-fiche-suivi.png){width="100%"}
 
 #### Constitution du jury et planification de la soutenance
 
-```{.plantuml width="100%"}
-@startuml
-skinparam sequenceArrowThickness 1.5
-skinparam sequenceParticipantBackgroundColor #EEF5FF
-skinparam sequenceParticipantBorderColor #3366CC
-
-actor "Administration" as A
-actor "Étudiant" as E
-actor "Jury" as J
-participant "Frontend" as FE
-participant "API Backend" as API
-database "Base de données" as DB
-participant "Notification\nService" as NS
-
-A -> FE : Sélectionne un PFE soumis
-A -> FE : Constitue le jury (Président + Membres)
-FE -> API : POST /pfe/{pfeId}/jury\n{ presidentId, memberIds[] }
-API -> DB : INSERT Jury, JuryMembers
-DB --> API : jury.id
-API --> FE : 201 Created
-
-A -> FE : Planifie la soutenance
-FE -> API : POST /pfe/{pfeId}/schedule\n{ date, time, roomId }
-API -> DB : INSERT Schedule\nUPDATE PFE status=UNDER_EVALUATION
-DB --> API : schedule.id
-API -> NS : Notifie toutes les parties
-NS -> E : Email "Soutenance planifiée : {date}, {salle}"
-NS -> J : Email "Convocation jury : {date}, {salle}"
-API --> FE : 201 Created
-FE --> A : Confirmation de planification
-@enduml
-```
+![SÃ©quence - Constitution du jury et planification](/diagrams/seq-jury-planification.png){width="100%"}
 
 #### Enregistrement du résultat de soutenance
 
-```{.plantuml width="100%"}
-@startuml
-skinparam sequenceArrowThickness 1.5
-skinparam sequenceParticipantBackgroundColor #EEF5FF
-skinparam sequenceParticipantBorderColor #3366CC
-
-actor "Administration" as A
-actor "Étudiant" as E
-participant "Frontend" as FE
-participant "API Backend" as API
-database "Base de données" as DB
-participant "Notification\nService" as NS
-
-A -> FE : Saisit le résultat d'évaluation\n{ result, score, comment }
-FE -> API : POST /pfe/{pfeId}/evaluation\n{ result, score, comment }
-API -> DB : INSERT Evaluation
-
-alt result == ADMITTED
-  API -> DB : UPDATE PFE status=ADMITTED
-  alt archivable
-    API -> DB : UPDATE PFE status=PUBLISHED
-    API --> FE : PFE publié
-  end
-  API -> NS : Notifie étudiant (admis)
-  NS -> E : Email "Félicitations — PFE admis, note: {score}"
-
-else result == CORRECTION_REQUIRED
-  API -> DB : UPDATE PFE status=CORRECTION_REQUIRED
-  API -> NS : Notifie étudiant (corrections)
-  NS -> E : Email "Corrections requises : {comment}"
-
-else result == NOT_ADMITTED
-  API -> DB : UPDATE PFE status=FAILED
-  API -> NS : Notifie étudiant (non-admis)
-  NS -> E : Email "PFE non admis"
-end
-
-API --> FE : 201 Created { evaluation }
-FE --> A : Résultat enregistré
-@enduml
-```
+![SÃ©quence - Enregistrement du rÃ©sultat de soutenance](/diagrams/seq-resultat-soutenance.png){width="100%"}
 
 ### Diagrammes d'états
 
@@ -725,67 +259,11 @@ Ce diagramme modélise l'ensemble des états qu'un PFE peut traverser depuis sa 
 jusqu'à sa publication ou son échec définitif. Chaque transition est déclenchée par une
 action précise d'un acteur identifié.
 
-```{.plantuml width=100%}
-@startuml
-skinparam state {
-  BackgroundColor #EEF5FF
-  BorderColor #3366CC
-  ArrowColor #3366CC
-  FontSize 12
-}
-
-[*] --> DRAFT : Étudiant crée la FichePFE
-
-DRAFT --> FICHE_PENDING_VALIDATION : Encadrant valide la fiche
-DRAFT --> DRAFT : Encadrant demande révision
-
-FICHE_PENDING_VALIDATION --> VALIDATED : Administration valide\net attribue code PFE
-FICHE_PENDING_VALIDATION --> REJECTED : Administration rejette
-
-REJECTED --> [*] : Fin du processus
-
-VALIDATED --> IN_PROGRESS : Encadrant affecté\n(début des travaux)
-
-IN_PROGRESS --> SUBMITTED : Étudiant soumet\nle mémoire final
-
-SUBMITTED --> UNDER_EVALUATION : Jury constitué\net soutenance planifiée
-
-UNDER_EVALUATION --> ADMITTED : Jury — Résultat : Admis
-UNDER_EVALUATION --> CORRECTION_REQUIRED : Jury — Corrections requises
-UNDER_EVALUATION --> FAILED : Jury — Non admis
-
-CORRECTION_REQUIRED --> SUBMITTED : Étudiant re-soumet\naprès corrections
-
-ADMITTED --> PUBLISHED : Administration archive\net publie
-
-PUBLISHED --> [*] : Fin du cycle
-FAILED --> [*] : Fin du cycle
-@enduml
-```
+![Diagramme d'Ã©tats - Cycle de vie d'un PFE](/diagrams/etat-pfe.png){width="100%"}
 
 #### Cycle de vie d'une FicheSuiviPFE
 
-```{.plantuml width="100%"}
-@startuml
-skinparam state {
-  BackgroundColor #EEF5FF
-  BorderColor #3366CC
-  ArrowColor #3366CC
-}
-
-[*] --> CREATED : Étudiant crée la fiche\n(progressNotes, studentNotes)
-
-CREATED --> PENDING_TEACHER_REVIEW : Fiche soumise\nà l'encadrant
-
-PENDING_TEACHER_REVIEW --> COSIGNED : Encadrant ajoute\nfeedback et cosigne
-
-PENDING_TEACHER_REVIEW --> REVISION_REQUESTED : Encadrant demande\nune révision
-
-REVISION_REQUESTED --> CREATED : Étudiant corrige\nla fiche
-
-COSIGNED --> [*] : Fiche archivée
-@enduml
-```
+![Diagramme d'Ã©tats - Cycle de vie d'une FicheSuiviPFE](/diagrams/etat-fiche-suivi.png){width="100%"}
 
 ### Diagramme d'activité global
 
@@ -793,102 +271,18 @@ Ce diagramme représente le flux de bout en bout du processus PFE au sein du sys
 depuis l'authentification initiale jusqu'à l'archivage final, en intégrant les trois voies
 d'activité parallèles des acteurs.
 
-```{.plantuml width=100%}
-@startuml
-skinparam activity {
-  BackgroundColor #EEF5FF
-  BorderColor #3366CC
-  ArrowColor #3366CC
-  DiamondBackgroundColor #FFF8E1
-  DiamondBorderColor #FF8C00
-  FontSize 12
-}
-
-|Étudiant|
-start
-:S'authentifier;
-:Remplir et soumettre FichePFE;
-
-|Encadrant|
-:Consulter la FichePFE;
-if (Fiche valide ?) then (Oui)
-  :Valider la FichePFE;
-else (Non)
-  :Demander révision;
-  |Étudiant|
-  :Corriger la FichePFE;
-  |Encadrant|
-  :Re-valider;
-endif
-
-|Administration|
-:Recevoir la fiche validée;
-if (Fiche acceptable ?) then (Oui)
-  :Attribuer code PFE;
-  :Affecter encadrant;
-  if (PFE externe ?) then (Oui)
-    :Affecter co-promoteur;
-  endif
-  :Notifier étudiant + encadrant;
-else (Non)
-  :Rejeter avec justification;
-  |Étudiant|
-  :Recevoir notification de rejet;
-  stop
-endif
-
-|Étudiant|
-:Réaliser les travaux du PFE;
-
-|Étudiant|
-fork
-  :Renseigner FicheSuiviPFE;
-|Encadrant|
-  :Cosigner FicheSuiviPFE\n+ feedback;
-fork end
-
-|Étudiant|
-:Soumettre le mémoire final;
-
-|Administration|
-:Constituer le jury;
-:Planifier la soutenance;
-:Notifier toutes les parties;
-
-|Étudiant|
-:Présenter la soutenance;
-
-|Administration|
-:Enregistrer le résultat;
-
-if (Résultat ?) then (Admis)
-  :Archiver le PFE;
-  if (Archivable ?) then (Oui)
-    :Publier en ligne;
-  endif
-  stop
-else if (Corrections requises)
-  |Étudiant|
-  :Apporter les corrections;
-  :Re-soumettre;
-  |Administration|
-  :Re-planifier soutenance;
-else (Non admis)
-  stop
-endif
-@enduml
-```
+![Diagramme d'activitÃ© global du processus PFE](/diagrams/act-global.png){width="100%"}
 
 ## Conclusion
 
 Ce chapitre a posé les fondements formels de la solution applicative proposée. Partant
-d'une identification précise des trois acteurs du système — étudiant, enseignant et
-administration — nous avons défini un ensemble d'exigences fonctionnelles et non
+d'une identification précise des trois acteurs du système - étudiant, enseignant et
+administration - nous avons défini un ensemble d'exigences fonctionnelles et non
 fonctionnelles exhaustif et cohérent avec les dysfonctionnements identifiés dans le
 chapitre précédent.
 
-La modélisation UML qui en résulte — cas d'utilisation, classes, séquences, états et
-activité — offre une spécification non ambiguë du comportement attendu du système,
+La modélisation UML qui en résulte - cas d'utilisation, classes, séquences, états et
+activité - offre une spécification non ambiguë du comportement attendu du système,
 constituant à la fois un contrat entre les parties prenantes et une feuille de route
 technique pour la phase d'implémentation.
 

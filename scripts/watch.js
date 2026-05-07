@@ -131,7 +131,7 @@ es.onerror = function() {
 // -- HTTP server --------------------------------------------------------------
 http.createServer((req, res) => {
 
-  // SSE endpoint — keep connection alive with heartbeat
+  // SSE endpoint - keep connection alive with heartbeat
   if (req.url === "/__sse") {
     res.writeHead(200, {
       "Content-Type": "text/event-stream",
@@ -159,7 +159,7 @@ http.createServer((req, res) => {
     fs.readFile(PDF_FILE, (err, data) => {
       if (err) {
         res.writeHead(404, { "Content-Type": "text/plain" });
-        res.end("PDF not found — waiting for first render");
+        res.end("PDF not found - waiting for first render");
         return;
       }
       res.writeHead(200, {

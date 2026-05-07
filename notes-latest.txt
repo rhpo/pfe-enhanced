@@ -1,0 +1,59 @@
+# key changes (my innovation in this project)
+
+in the Fiche de notes du PFE, it's the only form in my website whom i need to add an Export to PDF feature, so we can deliver it to students etc...
+
+add a great more-interesting UI/UX.
+add fluid interfaces.
+real time data and notifications.
+
+
+
+features to implement
+
+gestion des etudiants
+(cest des etudiants, issue de l'etablissement, celon les different cursus (licence, master) etc...
+et les crud (qui va faire les crud? ex. Admin)
+fonctionnalités
+
+gestion des enseignants
+gestion de entreprise
+gestion de projets
+gestion des affectations
+gestion de soutenance
+gestion des notations
+gestion des publications & archivage
+gestion des validations
+gestion des fiches de suivi PFE
+
+Chaque gestion on en parle brievement.
+
+
+Company Account Creation
+
+When he creates an account, he can choose his company from the dropdown, if not, he can create a general account about his company first, then create a normal extern encadrant account. (Register company, Next ->, Create account).
+
+The ESST administrator can at anytime modify the information of a company, if someone at the company finds an error or misspell in the company information, he can file a report (ex. Missing information, Falsy information) and the administrator would have that.
+
+More information is required:
+Logo
+Professional email required (ex. contact@sonatrach.dz)
+Position au niveau de l'entreprise (ex. Directeur commercial, Développeur, etc...)
+
+
+Updates: 
+There is a superadmin role, that adds admins etc... not an admin adds an admin. 
+the superadmin is hardcoded, 
+he has statistics, 
+he has PFE evolutions, 
+Les fiches de suivi
+nombres de rencontres,
+
+Chaque PFE est un dossier, the authorized user can open it and view the sujet, etudiant, encadrant, co-encadrant (optionnel) (and btw if all those are all available we affect the PFE code PFE-SPEC-XX-XXXX).
+
+avec le code PFE, on peut voir l'historique du code pfe, tu peux voir les fiches PFE, I can send them direct messages, I can view the submitted files by them.
+
+
+in the admin dashboard add Account Management.
+
+ad OTP verification in the entire project (ex. The email of the created extern company, when a new email address is created).
+

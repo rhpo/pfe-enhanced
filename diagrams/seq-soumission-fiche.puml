@@ -1,0 +1,60 @@
+﻿@startuml
+skinparam sequenceArrowThickness 1.5
+skinparam sequenceParticipantBackgroundColor #EEF5FF
+skinparam sequenceParticipantBorderColor #3366CC
+
+actor "Étudiant" as E
+actor "Encadrant" as T
+actor "Administration" as A
+participant "Frontend" as FE
+participant "API Backend" as API
+database "Base de données" as DB
+participant "Notification\nService" as NS
+
+E -> FE : Remplit et soumet FichePFE
+FE -> API : POST /fiches { titre, type, description, ... }
+API -> DB : INSERT FichePFE (status=DRAFT)
+DB --> API : fiche.id
+API --> FE : 201 Created { ficheId }
+API -> NS : Notifie l'encadrant désigné
+NS -> T : Email "Nouvelle fiche à valider"
+
+T -> FE : Consulte la fiche
+FE -> API : GET /fiches/{ficheId}
+API -> DB : SELECT fiche WHERE id = ?
+DB --> API : FichePFE
+API --> FE : 200 OK { fiche }
+
+alt Encadrant valide la fiche
+  T -> FE : Clique "Valider"
+  FE -> API : PATCH /fiches/{ficheId}/validate
+  API -> DB : UPDATE FichePFE status=FICHE_PENDING_VALIDATION
+  API -> NS : Notifie l'administration
+  NS -> A : Email "Fiche en attente de validation"
+else Encadrant demande révision
+  T -> FE : Ajoute commentaire + clique "Révision requise"
+  FE -> API : PATCH /fiches/{ficheId}/request-changes
+  API -> DB : UPDATE FichePFE status=DRAFT
+  API -> NS : Notifie l'étudiant
+  NS -> E : Email "Corrections requises"
+end
+
+A -> FE : Consulte les fiches en attente
+FE -> API : GET /fiches?status=FICHE_PENDING_VALIDATION
+API --> FE : Liste des fiches
+
+alt Administration valide
+  A -> FE : Valide + attribue code PFE
+  FE -> API : PATCH /fiches/{ficheId}/admin-validate\n{ code: "PFE-06-INFO-2026" }
+  API -> DB : UPDATE FichePFE isValid=true\nINSERT PFE (status=VALIDATED, code=...)
+  API -> NS : Notifie étudiant + encadrant
+  NS -> E : Email "PFE validé - Code attribué"
+  NS -> T : Email "PFE validé"
+else Administration rejette
+  A -> FE : Rejette avec justification
+  FE -> API : PATCH /fiches/{ficheId}/reject { reason }
+  API -> DB : UPDATE FichePFE, PFE status=REJECTED
+  API -> NS : Notifie l'étudiant
+  NS -> E : Email "PFE rejeté : {reason}"
+end
+@enduml

@@ -122,7 +122,7 @@ http.createServer((req, res) => {
 function render(changedFile) {
     broadcast("rendering");
 
-    // Always full render — single-file only updates that file's .html,
+    // Always full render - single-file only updates that file's .html,
     // but index.html (what the browser shows) only updates on full render.
     const args = ["render", "--to", "html"];
     const label = path.relative(PROJECT_DIR, changedFile);

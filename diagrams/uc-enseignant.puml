@@ -1,0 +1,37 @@
+﻿@startuml
+left to right direction
+skinparam actorStyle awesome
+skinparam packageStyle rectangle
+skinparam usecase {
+  BackgroundColor #EEF5FF
+  BorderColor #3366CC
+  ArrowColor #3366CC
+}
+
+actor "Enseignant" as T
+
+rectangle "Système de Gestion des PFE" {
+  usecase "S'authentifier" as UC1
+  usecase "Consulter les PFE encadrés" as UC2
+  usecase "Valider une FichePFE" as UC3
+  usecase "Demander révision d'une FichePFE" as UC4
+  usecase "Cosigner une FicheSuiviPFE" as UC5
+  usecase "Renseigner le feedback encadrant" as UC6
+  usecase "Participer au jury de soutenance" as UC7
+  usecase "Consulter l'historique des PFE" as UC8
+}
+
+T --> UC1
+T --> UC2
+T --> UC3
+T --> UC4
+T --> UC5
+T --> UC6
+T --> UC7
+T --> UC8
+
+UC3 ..> UC1 : <<include>>
+UC5 ..> UC1 : <<include>>
+UC6 ..> UC5 : <<include>>
+UC4 ..> UC3 : <<extend>>
+@enduml

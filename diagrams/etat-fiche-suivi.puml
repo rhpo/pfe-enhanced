@@ -1,0 +1,19 @@
+﻿@startuml
+skinparam state {
+  BackgroundColor #EEF5FF
+  BorderColor #3366CC
+  ArrowColor #3366CC
+}
+
+[*] --> CREATED : Étudiant crée la fiche\n(progressNotes, studentNotes)
+
+CREATED --> PENDING_TEACHER_REVIEW : Fiche soumise\nà l'encadrant
+
+PENDING_TEACHER_REVIEW --> COSIGNED : Encadrant ajoute\nfeedback et cosigne
+
+PENDING_TEACHER_REVIEW --> REVISION_REQUESTED : Encadrant demande\nune révision
+
+REVISION_REQUESTED --> CREATED : Étudiant corrige\nla fiche
+
+COSIGNED --> [*] : Fiche archivée
+@enduml

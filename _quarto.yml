@@ -3,16 +3,6 @@ project:
   render:
     - index.qmd
 
-engine: knitr
-
-filters:
-  - diagram
-
-diagram:
-  engine:
-    plantuml:
-      execpath:
-        - "C:/Users/ramyh/scoop/apps/openjdk17/current/bin/java.exe"
-        - "-jar"
-        - "C:/Users/ramyh/Documents/plantuml.jar"
-      mime-type: "image/png"
+execute:
+  cache: true
+  freeze: auto

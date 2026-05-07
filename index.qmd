@@ -9,13 +9,13 @@ bibliography: bibliography/references.bib
 
 format:
   html:
-    css: styles.css
-    toc: true
-    lof: true
+    css:             styles.css
+    toc:             true
+    lof:             true
+    theme:           cosmo
     number-sections: true
-    theme: cosmo
   pdf:
-    title-block: false
+    title-block:     false
     documentclass: report
     classoption: [a4paper, 12pt]
     geometry:
@@ -46,6 +46,8 @@ render:
 {{< include chapters/ch2/main.qmd >}}
 
 {{< include chapters/ch3/main.qmd >}}
+
+{{< include chapters/ch4/main.qmd >}}
 
 # Conclusion {.unnumbered}
 

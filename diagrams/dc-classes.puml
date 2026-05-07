@@ -1,0 +1,145 @@
+﻿@startuml
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor #EEF5FF
+  BorderColor #3366CC
+  ArrowColor #3366CC
+  FontSize 12
+}
+
+enum PFEType {
+  INTERNAL
+  EXTERNAL
+}
+
+enum PFEStatus {
+  DRAFT
+  FICHE_PENDING_VALIDATION
+  VALIDATED
+  REJECTED
+  IN_PROGRESS
+  SUBMITTED
+  UNDER_EVALUATION
+  ADMITTED
+  FAILED
+  CORRECTION_REQUIRED
+  PUBLISHED
+}
+
+enum EvaluationResult {
+  ADMITTED
+  NOT_ADMITTED
+  CORRECTION_REQUIRED
+}
+
+class Student {
+  +id: String
+  +fullName: String
+  +dob: Date
+  +specialty: String
+  +isValid: Boolean
+}
+
+class Teacher {
+  +id: String
+  +fullName: String
+  +department: String
+}
+
+class Administration {
+  +id: String
+  +validateFiche(): void
+  +assignCode(): void
+  +assignJury(): void
+  +assignRoom(): void
+  +assignSchedule(): void
+}
+
+class FichePFE {
+  +id: String
+  +submittedAt: Date
+  +isValid: Boolean
+  +validate(): void
+  +requestChanges(): void
+}
+
+class PFE {
+  +code: String
+  +title: String
+  +type: PFEType
+  +status: PFEStatus
+  +deadline: Date
+  +submit(): void
+  +validateFiche(): void
+  +assignCode(): void
+  +publish(): void
+}
+
+class FicheSuiviPFE {
+  +id: String
+  +meetingDate: Date
+  +progressNotes: String
+  +teacherFeedback: String
+  +studentNotes: String
+}
+
+class Jury {
+  +id: String
+}
+
+class JuryMember {
+  +role: String
+}
+
+class Evaluation {
+  +id: String
+  +date: Date
+  +result: EvaluationResult
+  +score: Float
+  +comment: String
+  +evaluate(): void
+}
+
+class Schedule {
+  +date: Date
+  +time: Time
+}
+
+class Room {
+  +number: String
+  +building: String
+}
+
+class Company {
+  +id: String
+  +name: String
+}
+
+class CoPromoteur {
+  +id: String
+  +name: String
+}
+
+class NotificationService {
+  +sendToStudent(): void
+  +sendToTeachers(): void
+}
+
+Student "1" -- "1" FichePFE : fills
+FichePFE "1" --> "1" Administration : submitted to
+Administration "1" --> "0..*" PFE : assigns
+Administration "1" ..> NotificationService : triggers
+Jury "1" -- "1..*" JuryMember : composed of
+Jury "1" -- "1" Evaluation : evaluates
+Evaluation "0..1" -- "1" PFE : evaluates
+PFE "1" -- "1" Teacher : encadrant
+PFE "0..1" -- "0..1" Company : external only
+PFE "0..1" -- "0..1" CoPromoteur : external only
+PFE "1" -- "0..*" FicheSuiviPFE : reviews
+Teacher "0..1" -- "0..*" FicheSuiviPFE : reviews
+Schedule "1" -- "1" Room : assigned to
+Administration "1" --> "1" Schedule : assigns
+Administration "1" --> "1" Jury : assigns
+Student "1" -- "0..*" PFE : fills
+Teacher "1" -- "0..*" JuryMember : signs
+@enduml

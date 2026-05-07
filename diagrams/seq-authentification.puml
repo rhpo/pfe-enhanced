@@ -1,0 +1,24 @@
+﻿@startuml
+skinparam sequenceArrowThickness 1.5
+skinparam sequenceParticipantBackgroundColor #EEF5FF
+skinparam sequenceParticipantBorderColor #3366CC
+
+actor "Utilisateur" as U
+participant "Frontend\n(SvelteKit)" as FE
+participant "API Backend\n(Go)" as API
+database "Base de données" as DB
+
+U -> FE : Saisit identifiant + mot de passe
+FE -> API : POST /auth/login\n{ email, password }
+API -> DB : SELECT user WHERE email = ?
+DB --> API : Retourne l'enregistrement utilisateur
+alt Mot de passe valide (bcrypt.Compare)
+  API -> API : Génère JWT (rôle, userId, exp)
+  API --> FE : 200 OK { token, role }
+  FE -> FE : Stocke le token (sessionStorage)
+  FE --> U : Redirige vers dashboard (selon rôle)
+else Mot de passe invalide ou utilisateur inexistant
+  API --> FE : 401 Unauthorized
+  FE --> U : Affiche message d'erreur
+end
+@enduml

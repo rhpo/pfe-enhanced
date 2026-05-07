@@ -1,33 +1,77 @@
-# compile.ps1
-# Simple script to render the Quarto project to PDF and HTML
+# compile.ps1 - Optimized PFE compiler
+# Usage:
+#   .\scripts\compile.ps1              → PDF (single-pass, fast ~10s)
+#   .\scripts\compile.ps1 -Format html → HTML only (~3s)
+#   .\scripts\compile.ps1 -Final       → PDF with full 3-pass LaTeX (for submission)
+#   .\scripts\compile.ps1 -Format all  → Both formats, full quality
+param(
+    [ValidateSet("html", "pdf", "all")]
+    [string]$Format = "pdf",
+    [switch]$Final
+)
 
 Write-Host "------------------------------------------" -ForegroundColor Cyan
 Write-Host "  Compiling PFE Project (Quarto)" -ForegroundColor Cyan
+Write-Host "  Format: $Format$(if ($Final) {' (final)'} else {' (fast)'})" -ForegroundColor Cyan
 Write-Host "------------------------------------------" -ForegroundColor Cyan
 
-# 1. Clean previous build artifacts if any
-if (Test-Path "index.tex") { Remove-Item "index.tex" }
-if (Test-Path "index.log") { Remove-Item "index.log" }
+$sw = [System.Diagnostics.Stopwatch]::StartNew()
 
-# 2. Render to PDF
-Write-Host "[1/2] Generating PDF..." -ForegroundColor Yellow
-quarto render index.qmd --to pdf
+# ── Step 1: Re-render PlantUML diagrams only if changed ──────────
+$diagramsDir = Join-Path $PSScriptRoot "..\diagrams"
+$javaExe     = "C:\Users\ramyh\scoop\apps\openjdk17\current\bin\java.exe"
+$plantumlJar = "C:\Users\ramyh\Documents\plantuml.jar"
 
-if ($LASTEXITCODE -eq 0) {
-    Write-Host "[OK] PDF generated successfully." -ForegroundColor Green
-} else {
-    Write-Host "[ERROR] PDF generation failed." -ForegroundColor Red
+if (Test-Path $diagramsDir) {
+    $needsRender = $false
+    $pumlFiles = Get-ChildItem -Path $diagramsDir -Filter "*.puml"
+
+    foreach ($f in $pumlFiles) {
+        $png = Join-Path $diagramsDir "$($f.BaseName).png"
+        if ((-not (Test-Path $png)) -or ($f.LastWriteTime -gt (Get-Item $png).LastWriteTime)) {
+            $needsRender = $true
+            break
+        }
+    }
+
+    if ($needsRender -and $pumlFiles.Count -gt 0) {
+        Write-Host "[1/2] Rendering diagrams..." -ForegroundColor Yellow
+        & $javaExe -jar $plantumlJar -charset UTF-8 -tpng "$diagramsDir\*.puml" 2>&1 | Out-Null
+        Write-Host "      Diagrams OK" -ForegroundColor Green
+    } else {
+        Write-Host "[1/2] Diagrams up-to-date (skipped)" -ForegroundColor DarkGray
+    }
 }
 
-# 3. Render to HTML
-Write-Host "[2/2] Generating HTML..." -ForegroundColor Yellow
-quarto render index.qmd --to html
+# ── Step 2: Clean stale artifacts ────────────────────────────────
+@("index.tex", "index.log") | ForEach-Object {
+    if (Test-Path $_) { Remove-Item $_ }
+}
+
+# ── Step 3: Quarto render ────────────────────────────────────────
+$quartoArgs = @("render", "index.qmd")
+
+if ($Format -ne "all") {
+    $quartoArgs += "--to"
+    $quartoArgs += $Format
+}
+
+# Fast mode: single LaTeX pass (~10s instead of ~30s)
+if (-not $Final -and ($Format -eq "pdf" -or $Format -eq "all")) {
+    $quartoArgs += "-M"
+    $quartoArgs += "latex-max-runs:1"
+}
+
+Write-Host "[2/2] Rendering $($Format.ToUpper())..." -ForegroundColor Yellow
+& quarto @quartoArgs
+
+$sw.Stop()
+$elapsed = [math]::Round($sw.Elapsed.TotalSeconds, 1)
 
 if ($LASTEXITCODE -eq 0) {
-    Write-Host "[OK] HTML generated successfully." -ForegroundColor Green
+    Write-Host "[OK] Build succeeded in ${elapsed}s" -ForegroundColor Green
 } else {
-    Write-Host "[ERROR] HTML generation failed." -ForegroundColor Red
+    Write-Host "[ERROR] Build failed after ${elapsed}s" -ForegroundColor Red
 }
 
 Write-Host "------------------------------------------" -ForegroundColor Cyan
-Write-Host "Done." -ForegroundColor Cyan
