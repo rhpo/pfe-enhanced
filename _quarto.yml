@@ -3,6 +3,6 @@ project:
   render:
     - index.qmd
 
-execute:
-  cache: true
-  freeze: auto
+# execute:
+#   cache: true
+#   freeze: auto

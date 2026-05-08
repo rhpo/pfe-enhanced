@@ -34,8 +34,6 @@ format:
     citecolor: black
     filecolor: black
     fig-pos: H
-render:
-  - "**/*.qmd"        # ← watches ALL .qmd files in subfolders
 ---
 
 

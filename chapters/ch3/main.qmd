@@ -1,4 +1,5 @@
-﻿# Analyse Système et Exigences {#sec-analyse}
+
+# Analyse Système et Exigences {#sec-analyse}
 
 ## Introduction du chapitre
 
@@ -189,7 +190,7 @@ Le diagramme suivant représente l'ensemble des fonctionnalités accessibles à 
 une fois authentifié. Son périmètre est centré sur la gestion de son propre PFE : soumission,
 suivi et consultation des résultats.
 
-![Cas d'utilisation de l'Ã©tudiant](/diagrams/uc-etudiant.png){width="100%"}
+![Cas d'utilisation de l'étudiant](/diagrams/uc-etudiant.png){width="100%"}
 
 #### Cas d'utilisation de l'enseignant encadrant
 
@@ -225,7 +226,7 @@ Ce scénario décrit le flux d'authentification d'un utilisateur. Le système ut
 mécanisme JWT : en cas de succès, un token signé est retourné au client et joint dans
 l'en-tête de toutes les requêtes suivantes.
 
-![SÃ©quence - Authentification](/diagrams/seq-authentification.png){width="100%"}
+![Séquence - Authentification](/diagrams/seq-authentification.png){width="100%"}
 
 #### Soumission et validation d'une fiche PFE
 
@@ -233,7 +234,7 @@ Ce scénario couvre le cycle complet de soumission d'une fiche PFE par l'étudia
 sa validation par l'administration, en passant par la validation préalable de l'encadrant.
 C'est le scénario nominal le plus représentatif du processus métier.
 
-![SÃ©quence - Soumission et validation d'une fiche PFE](/diagrams/seq-soumission-fiche.png){width="100%"}
+![Séquence - Soumission et validation d'une fiche PFE](/diagrams/seq-soumission-fiche.png){width="100%"}
 
 #### Renseignement d'une fiche de suivi (FicheSuiviPFE)
 
@@ -241,15 +242,15 @@ Ce scénario illustre la collaboration entre l'étudiant et l'encadrant lors d'u
 d'avancement. La fiche de suivi est co-renseignée et constitue la trace formelle du suivi
 pédagogique.
 
-![SÃ©quence - Renseignement d'une fiche de suivi](/diagrams/seq-fiche-suivi.png){width="100%"}
+![Séquence - Renseignement d'une fiche de suivi](/diagrams/seq-fiche-suivi.png){width="100%"}
 
 #### Constitution du jury et planification de la soutenance
 
-![SÃ©quence - Constitution du jury et planification](/diagrams/seq-jury-planification.png){width="100%"}
+![Séquence - Constitution du jury et planification](/diagrams/seq-jury-planification.png){width="100%"}
 
 #### Enregistrement du résultat de soutenance
 
-![SÃ©quence - Enregistrement du rÃ©sultat de soutenance](/diagrams/seq-resultat-soutenance.png){width="100%"}
+![Séquence - Enregistrement du résultat de soutenance](/diagrams/seq-resultat-soutenance.png){width="100%"}
 
 ### Diagrammes d'états
 
@@ -259,11 +260,11 @@ Ce diagramme modélise l'ensemble des états qu'un PFE peut traverser depuis sa 
 jusqu'à sa publication ou son échec définitif. Chaque transition est déclenchée par une
 action précise d'un acteur identifié.
 
-![Diagramme d'Ã©tats - Cycle de vie d'un PFE](/diagrams/etat-pfe.png){width="100%"}
+![Diagramme d'états - Cycle de vie d'un PFE](/diagrams/etat-pfe.png){width="100%"}
 
 #### Cycle de vie d'une FicheSuiviPFE
 
-![Diagramme d'Ã©tats - Cycle de vie d'une FicheSuiviPFE](/diagrams/etat-fiche-suivi.png){width="100%"}
+![Diagramme d'états - Cycle de vie d'une FicheSuiviPFE](/diagrams/etat-fiche-suivi.png){width="100%"}
 
 ### Diagramme d'activité global
 
@@ -271,7 +272,7 @@ Ce diagramme représente le flux de bout en bout du processus PFE au sein du sys
 depuis l'authentification initiale jusqu'à l'archivage final, en intégrant les trois voies
 d'activité parallèles des acteurs.
 
-![Diagramme d'activitÃ© global du processus PFE](/diagrams/act-global.png){width="100%"}
+![Diagramme d'activité global du processus PFE](/diagrams/act-global.png){width="100%"}
 
 ## Conclusion
 
