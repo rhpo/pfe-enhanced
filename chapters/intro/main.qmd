@@ -3,17 +3,45 @@
 
 \markboth{}{}
 
-<!--
+Dans le système universitaire algérien, le Projet de Fin d'Études (PFE) constitue
+l'aboutissement obligatoire de tout cursus de formation supérieure, qu'il s'agisse du
+système LMD ou de la formation d'ingénieur. Il représente pour l'étudiant l'occasion
+de mobiliser l'ensemble des compétences acquises au cours de sa formation pour répondre
+à une problématique concrète, qu'il soit réalisé en interne à l'université ou en
+collaboration avec une entreprise partenaire.
 
-Dans le système universitaire algérien, le Projet de Fin d'Études (PFE) constitue l'aboutissement obligatoire de tout cursus de formation supérieure. Il représente pour l'étudiant l'occasion de mobiliser l'ensemble des compétences acquises au cours de sa formation pour répondre à une problématique concrète - qu'il soit réalisé en interne à l'université ou en collaboration avec une entreprise.
+Or, malgré son importance centrale dans la validation des diplômes, la gestion du PFE
+demeure aujourd'hui largement manuelle et non structurée au sein des établissements
+algériens. La coordination entre étudiants, enseignants encadrants, membres de jurys et
+services administratifs repose encore essentiellement sur des échanges informels, des
+tableurs et des courriers électroniques, sans plateforme unifiée capable d'assurer la
+traçabilité, la cohérence et l'efficacité du processus.
 
-Or, malgré son importance centrale dans la validation des diplômes, la gestion du PFE demeure aujourd'hui largement manuelle et non structurée au sein des établissements algériens (tel que détaillé au Chapitre 1). La coordination entre étudiants, enseignants encadrants et services administratifs repose encore essentiellement sur des échanges informels, des tableurs et des courriers électroniques, sans aucune plateforme unifiée.
+Cette situation engendre des dysfonctionnements récurrents : perte de documents, retards
+dans les affectations, difficultés de suivi pédagogique, conflits de planification des
+soutenances et absence d'archivage structuré. Les plateformes d'apprentissage en ligne
+existantes (Moodle, Canvas, Blackboard), bien que performantes dans leur domaine, ne
+proposent pas de modules spécifiquement conçus pour couvrir le cycle de vie complet
+d'un PFE.
 
-L'objectif de ce mémoire est de combler cette lacune en concevant et réalisant une **application web dédiée à la gestion des PFE**, pensée spécifiquement pour le contexte des établissements universitaires algériens.
+L'objectif de ce mémoire est de combler cette lacune en concevant et en réalisant une
+**application web dédiée à la gestion des PFE**, pensée spécifiquement pour le contexte
+des établissements universitaires algériens. La solution proposée couvre l'intégralité
+du processus : proposition et validation de sujets, expression de vœux, affectation,
+suivi pédagogique, dépôt du mémoire, constitution des jurys, planification des
+soutenances, notation et détermination des résultats.
 
- -->
+Le présent mémoire est structuré en quatre chapitres :
 
-{{< lipsum 2 >}}
-
-<!-- Empty page -->
+- Le **premier chapitre** pose le cadre théorique en définissant le PFE dans le contexte
+  éducatif algérien, en identifiant les acteurs impliqués et en analysant les
+  dysfonctionnements de la gestion actuelle.
+- Le **deuxième chapitre** dresse un état de l'art des solutions existantes et présente
+  une étude de cas menée à l'École Supérieure des Sciences et de la Technologie (ESST)
+  d'Alger, confirmant la nécessité d'une solution dédiée.
+- Le **troisième chapitre** détaille la conception du système : définition des besoins,
+  identification des acteurs et modélisation UML complète (cas d'utilisation, classes,
+  séquence et activité).
+- Le **quatrième chapitre** présente la réalisation concrète : choix technologiques,
+  frameworks retenus et interfaces développées.
 

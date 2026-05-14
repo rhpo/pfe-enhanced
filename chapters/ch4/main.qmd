@@ -1,28 +1,125 @@
-# Réalisation
+# Réalisation et Résultats
 
 ## Introduction du chapitre
 
-L'application repose sur une architecture **client-serveur** à deux niveaux :
+Ce chapitre présente la phase de réalisation du système conçu au chapitre précédent.
+Nous détaillerons les langages de programmation et les outils utilisés, les frameworks
+retenus, puis nous illustrerons le résultat final à travers les captures d'écran des
+interfaces principales de l'application.
 
-- **Frontend** : interface web réactive développée en SvelteKit, offrant des vues
-  différenciées selon le rôle de l'utilisateur authentifié.
+## Langages et outils
 
-- **Backend** : API REST développée en Go (Golang) [@pike2012], exposant des endpoints sécurisés
-  et gérant la logique métier ainsi que la persistance des données.
+L'implémentation du système repose sur un ensemble de langages et d'outils sélectionnés
+pour leur complémentarité et leur adéquation au profil de l'application.
+
+### Langages de programmation
+
+- **HTML5** : langage de balisage standard pour la structuration du contenu des pages web.
+  Il constitue le squelette de toutes les vues de l'application.
+- **CSS3** : langage de feuilles de style utilisé pour la mise en forme, le positionnement
+  et le design responsive de l'interface utilisateur.
+- **JavaScript (ES2022)** : langage de programmation côté client permettant l'interactivité
+  des pages, la manipulation du DOM et la communication asynchrone avec le serveur.
+- **TypeScript** : sur-ensemble typé de JavaScript, utilisé côté serveur (Node.js) et
+  côté client pour garantir la fiabilité du code grâce au typage statique et à la
+  détection d'erreurs à la compilation.
+- **Go (Golang)** [@pike2012] : langage compilé conçu par Google, utilisé pour le
+  développement de l'API REST backend. Go offre une empreinte mémoire faible, une gestion
+  native de la concurrence (goroutines) et produit un binaire autonome déployable sans
+  dépendances externes.
+
+### Outils de développement
+
+- **Neovim** : éditeur de code principal, hautement configurable et extensible, utilisé
+  avec des plugins dédiés pour Svelte, TypeScript et Go.
+- **Git / GitHub** : système de contrôle de version distribué et plateforme d'hébergement
+  du code source.
+- **SQLite** : système de gestion de base de données relationnelle embarquée, ne nécessitant
+  aucun serveur dédié, adapté au contexte d'un déploiement universitaire léger.
+- **PlantUML** : outil de génération de diagrammes UML à partir de descriptions textuelles,
+  utilisé pour la modélisation présentée au chapitre précédent.
+- **Quarto (LaTeX)** : système de publication scientifique utilisé pour la rédaction du
+  présent mémoire.
+
+## Frameworks
+
+### SvelteKit (Frontend)
+
+SvelteKit est un framework full-stack basé sur Svelte [@harris2018], utilisant Node.js et
+TypeScript côté serveur. Par rapport aux frameworks JavaScript dominants (React/Next.js,
+Vue.js/Nuxt, Angular), SvelteKit se distingue par son architecture basée sur la
+compilation : le code est converti en JavaScript optimisé au moment du build, sans runtime
+virtuel côté client. Cela se traduit par un temps de chargement initial nettement inférieur
+et une meilleure performance perceptible pour l'utilisateur.
+
+Sa gestion native du rendu côté serveur (SSR) et du routage basé sur le système de fichiers
+simplifie considérablement le développement. L'interface utilisateur de l'application
+offre des vues différenciées selon le rôle de l'utilisateur authentifié (étudiant,
+enseignant, administrateur, entreprise).
+
+### Fiber (Backend)
+
+Fiber est un framework web pour Go inspiré d'Express.js, conçu pour les applications à
+haute performance. Il repose sur le moteur HTTP Fasthttp, qui offre des performances
+nettement supérieures au package net/http standard de Go.
+
+L'API REST développée avec Fiber expose des endpoints sécurisés et gère la logique métier
+ainsi que la persistance des données. L'architecture du backend suit le pattern
+**Repository-Service-Handler** :
+
+- **Repository** : couche d'accès aux données (requêtes SQL vers SQLite).
+- **Service** : couche de logique métier (validation, calculs, orchestration).
+- **Handler** : couche de présentation (endpoints HTTP, sérialisation JSON).
 
 Cette séparation stricte des responsabilités garantit la maintenabilité, la testabilité et
 l'évolutivité de la solution.
 
-### Choix technologiques
+## Présentation des interfaces
 
-L'implémentation de cette solution s'appuie sur deux technologies open-source sélectionnées pour leur complémentarité, leur performance et leur adéquation au profil de l'application :
+Cette section présente les captures d'écran des pages principales de l'application,
+illustrant le résultat final de la phase de réalisation.
+
+*Les captures d'écran seront ajoutées ultérieurement.*
 
 <!--
+### Page d'authentification
 
-- **SvelteKit (frontend) :** par rapport aux frameworks JavaScript dominants (React, Vue.js, Angular), SvelteKit se distingue par son architecture basée sur la compilation - le code est converti en JavaScript optimisé au moment du build, sans runtime virtuel. Cela se traduit par un temps de chargement initial nettement inférieur et une meilleure performance perceptible pour l'utilisateur. Sa génération de pages côté serveur (SSR) native améliore également le référencement et la réactivité dans des conditions réseau limitées, fréquentes dans les établissements universitaires algériens. @harris2018
+![Page de connexion](/screenshots/login.png){width="100%"}
 
-- **Golang (backend) :** Go est un langage compilé, conçu par Google pour des applications serveur à haute performance et forte concurrence. Comparé à des alternatives courantes (Node.js, Django, Laravel), Go offre une empreinte mémoire plus faible, une gestion native de la concurrence (goroutines) et un binaire déployable sans dépendances externes. Ces caractéristiques en font un choix approprié pour une API REST servant plusieurs rôles simultanément (étudiants, enseignants, administrateurs) tout en restant facilement déployable sur une infrastructure universitaire limitée. @pike2012
+### Tableau de bord de l'administration
 
+![Tableau de bord administrateur](/screenshots/admin-dashboard.png){width="100%"}
+
+### Catalogue de sujets PFE
+
+![Catalogue de sujets](/screenshots/catalogue-sujets.png){width="100%"}
+
+### Expression de vœux
+
+![Page d'expression de vœux](/screenshots/voeux.png){width="100%"}
+
+### Gestion des affectations
+
+![Page des affectations PFE](/screenshots/affectations.png){width="100%"}
+
+### Suivi pédagogique
+
+![Fiches de suivi](/screenshots/suivi.png){width="100%"}
+
+### Planification des soutenances
+
+![Planning des soutenances](/screenshots/soutenances.png){width="100%"}
+
+### Notation et résultats
+
+![Page de notation](/screenshots/notation.png){width="100%"}
 -->
 
-- **SvelteKit (full-stack) :** SvelteKit est un framework full-stack basé sur Svelte, utilisant Node.js et TypeScript côté serveur. Par rapport aux frameworks JavaScript dominants (React/Next.js, Vue.js/Nuxt, Angular), SvelteKit se distingue par son architecture basée sur la compilation - le code est converti en JavaScript optimisé au moment du build, sans runtime virtuel côté client. Cela se traduit par un temps de chargement initial nettement inférieur et une meilleure performance perceptible pour l'utilisateur. Sa gestion native du rendu côté serveur (SSR) et des routes API via les server endpoints TypeScript permet de développer l'ensemble de l'application - interface utilisateur et logique métier - au sein d'un projet unifié, simplifiant ainsi l'architecture et la maintenance. Cette approche est particulièrement adaptée à une infrastructure universitaire aux ressources limitées, ne nécessitant qu'un seul service Node.js déployé. @harris2018
+## Conclusion du chapitre
+
+Ce chapitre a présenté la réalisation concrète du système conçu au chapitre précédent.
+Le choix d'une architecture client-serveur associant SvelteKit (frontend) et Go/Fiber
+(backend) a permis de développer une application performante, maintenable et adaptée au
+contexte universitaire algérien. Les interfaces développées couvrent l'ensemble des
+fonctionnalités identifiées : authentification, gestion des sujets, expression de vœux,
+affectation, suivi pédagogique, planification des soutenances et notation.

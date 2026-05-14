@@ -1,0 +1,12 @@
+Dans le chapiter 3 je commence 
+
+- Debut : Fonctionnalités du systeme (toutes les fonctionnalités que je suis censé developer)
+- Apres : 
+    - Definition des acteurs du syteme
+    - Apres chaque acteur je lui donne sous forme de points les different besoins qui sont attachés a lui comme si que je fais un tri par acteur en quelque sorte) parce quapres je vais traduire en diagrammes UML (deja fait)
+
+Chapitre 4 : Réalisation et résultats
+La partie langage et outils, tout les langages que j'ai utilisé (html, css, js)
+Apres on parle de framework (SvelteKit, Fiber)
+
+Apres je fais des screenshots (toutes les ecrans de chaque pages (les pages les plus essentiels)

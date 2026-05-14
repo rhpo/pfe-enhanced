@@ -47,17 +47,38 @@ format:
 
 {{< include chapters/ch4/main.qmd >}}
 
-# Conclusion {.unnumbered}
+# Conclusion Générale {.unnumbered}
 
-Ce mémoire a poursuivi un fil conducteur clair, allègre du plus général au plus spécifique.
+Le présent mémoire a abordé la problématique de la gestion des Projets de Fin d'Études
+au sein des établissements universitaires algériens, en suivant une démarche progressive
+allant de l'analyse du contexte existant jusqu'à la réalisation d'une solution
+opérationnelle.
 
-Le **Chapitre 1** a posé le cadre théorique en définissant le Projet de Fin d'Études dans le contexte du système éducatif algérien (LMD et formation d'ingénieur). Il a ensuite dressé un tableau précis des acteurs impliqués et du processus institutionnel du PFE, avant d'identifier les dysfonctionnements majeurs de sa gestion actuelle - justifiant ainsi la nécessité d'une solution numérique dédiée.
+Le premier chapitre a établi le cadre théorique en situant le PFE dans le système
+éducatif algérien et en identifiant les dysfonctionnements récurrents de sa gestion
+actuelle : coordination informelle, absence de traçabilité et perte d'information.
+Le deuxième chapitre a confirmé ces constats par une analyse comparative des plateformes
+existantes et une étude de cas menée à l'ESST d'Alger, démontrant l'absence d'une
+solution adaptée au contexte universitaire algérien.
 
-Le **Chapitre 2** a validé cette nécessité par l'analyse de l'existant : après une étude des LMS généralistes disponibles (Moodle, Canvas, Blackboard) et une comparaison objective de leurs limites, l'étude de cas menée à l'École Supérieure des Sciences et de la Technologie (ESST) d'Alger a confirmé l'absence totale de solution structurée adaptée au contexte universitaire algérien.
+Fort de ces constats, le troisième chapitre a présenté la conception complète du
+système en définissant les besoins fonctionnels de chaque acteur et en formalisant
+le comportement attendu à travers une modélisation UML rigoureuse. Le quatrième
+chapitre a concrétisé cette conception en détaillant les choix technologiques retenus
+(SvelteKit pour le frontend, Go/Fiber pour le backend et SQLite pour la persistance)
+et en présentant les interfaces développées couvrant l'ensemble du cycle de vie d'un PFE.
 
-Le **Chapitre 3** (en cours) présentera la conception de la solution répondant à ces besoins : architecture logicielle, modélisation UML et choix technologiques.
+La solution réalisée répond aux exigences identifiées : elle offre une plateforme
+unifiée couvrant la proposition de sujets, l'expression de vœux, l'affectation, le
+suivi pédagogique, la planification des soutenances et la notation. Son architecture
+légère et son déploiement sans dépendances lourdes la rendent particulièrement adaptée
+aux contraintes des établissements universitaires algériens.
 
-En somme, ce mémoire établit qu'une application web dédiée à la gestion des PFE est non seulement techniquement réalisable, mais institutionnellement nécessaire - et que sa conception doit être ancrée dans les réalités spécifiques du système universitaire algérien.
+À titre de perspectives, plusieurs axes d'amélioration peuvent être envisagés :
+l'intégration d'un système de notifications en temps réel, la génération automatique
+de documents administratifs (PV de soutenance, attestations), l'ajout d'un module
+d'analyse statistique avancée pour le pilotage décisionnel, ainsi que l'ouverture de
+l'application à d'autres établissements via une architecture multi-tenant.
 
 
 

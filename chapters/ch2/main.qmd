@@ -167,6 +167,34 @@ flowchart LR
     R --> A
 ```
 
+À l'issue de la soutenance, la notation est consignée dans une **fiche de notation**
+standardisée. Les Figures `\ref{fig-notation-licence-1}`{=latex} et
+`\ref{fig-notation-licence-2}`{=latex} présentent le recto et le verso du modèle
+utilisé pour les PFE (pour Licence et Master) : le recto recueille les informations du projet
+(étudiants, thème, encadrant, jury) et les notes attribuées selon quatre critères
+(rédaction, présentation, réponses aux questions, qualité des résultats), tandis que
+le verso consigne la décision finale (admis, ajourné), les modalités d'archivage et
+les éventuelles réserves formulées par le jury.
+
+```{=latex}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth,keepaspectratio,page=1]{images/Fiche de notation PFE Licence 2026_cropped.pdf}
+\caption{Fiche de notation PFE Licence et Master (recto)}
+\label{fig-notation-licence-1}
+\end{figure}
+```
+
+
+```{=latex}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth,keepaspectratio,page=2]{images/Fiche de notation PFE Licence 2026_cropped.pdf}
+\caption{Fiche de notation PFE Licence et Master (verso)}
+\label{fig-notation-licence-2}
+\end{figure}
+```
+
 ![Fichier de Situation Globale @esst](/images/FicheGlobale-A.png){#fig-situation-globale fig-align="center" width="100%"}
 
 **Vue d'ensemble du processus**
