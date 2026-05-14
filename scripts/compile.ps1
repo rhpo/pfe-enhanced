@@ -59,7 +59,7 @@ if ($Format -ne "all") {
 # Fast mode: single LaTeX pass (~10s instead of ~30s)
 if (-not $Final -and ($Format -eq "pdf" -or $Format -eq "all")) {
     $quartoArgs += "-M"
-    $quartoArgs += "latex-max-runs:1"
+    $quartoArgs += "latex-max-runs:2"
 }
 
 Write-Host "[2/2] Rendering $($Format.ToUpper())..." -ForegroundColor Yellow

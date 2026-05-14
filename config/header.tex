@@ -150,6 +150,12 @@
 \raggedbottom
 \setcounter{secnumdepth}{2}
 
+% Center floats vertically on float-only pages
+\makeatletter
+\setlength{\@fptop}{0pt plus 1fil}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+
 % ROMAN Notation for Chapters (Affects IV.2.4 style)
 \renewcommand{\thechapter}{\Roman{chapter}}
 

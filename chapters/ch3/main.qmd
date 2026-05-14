@@ -294,55 +294,58 @@ les concepts clés du processus PFE :
 
 #### Cas d'utilisation de l'étudiant
 
-Le diagramme suivant représente l'ensemble des fonctionnalités accessibles à l'étudiant.
+La @fig-uc-etudiant représente l'ensemble des fonctionnalités accessibles à l'étudiant.
 Son périmètre est centré sur la consultation du catalogue, l'expression de vœux, le suivi
 de son affectation et la consultation des résultats.
 
-![Cas d'utilisation de l'étudiant](/diagrams/uc-etudiant.png){width="100%"}
+![Cas d'utilisation de l'étudiant](/diagrams/uc-etudiant.png){#fig-uc-etudiant width="100%"}
 
 #### Cas d'utilisation de l'enseignant
 
 L'enseignant intervient à travers plusieurs rôles : proposant de sujet, validateur,
-superviseur et membre du jury. Le diagramme ci-dessous couvre l'ensemble de ces
+superviseur et membre du jury. La @fig-uc-enseignant couvre l'ensemble de ces
 responsabilités.
 
-![Cas d'utilisation de l'enseignant](/diagrams/uc-enseignant.png){width="100%"}
+![Cas d'utilisation de l'enseignant](/diagrams/uc-enseignant.png){#fig-uc-enseignant width="100%"}
 
 #### Cas d'utilisation de l'administration
 
-L'administration dispose du périmètre fonctionnel le plus étendu. Elle orchestre
-l'ensemble du processus : validation des entreprises, assignation des validateurs,
-affectation, constitution des jurys, planification et résolution des conflits de notation.
+L'administration dispose du périmètre fonctionnel le plus étendu, comme illustré
+par la @fig-uc-admin. Elle orchestre l'ensemble du processus : validation des entreprises,
+assignation des validateurs, affectation, constitution des jurys, planification et
+résolution des conflits de notation.
 
-![Cas d'utilisation de l'administration](/diagrams/uc-administration.png){width="100%"}
+![Cas d'utilisation de l'administration](/diagrams/uc-administration.png){#fig-uc-admin width="100%"}
 
 #### Cas d'utilisation de l'entreprise
 
 L'entreprise partenaire intervient principalement dans la proposition de sujets externes
-et le suivi des PFE qui lui sont associés.
+et le suivi des PFE qui lui sont associés (@fig-uc-entreprise).
 
-![Cas d'utilisation de l'entreprise](/diagrams/uc-entreprise.png){width="100%"}
+![Cas d'utilisation de l'entreprise](/diagrams/uc-entreprise.png){#fig-uc-entreprise width="100%"}
 
 ### Diagramme de classes
 
-Le modèle conceptuel du domaine a été scindé en deux diagrammes pour des raisons de
+Le modèle conceptuel du domaine a été scindé en trois diagrammes pour des raisons de
 lisibilité : le premier se concentre sur la hiérarchie des acteurs et le contexte
-académique, le second sur le processus PFE et l'évaluation.
+académique (@fig-dc-acteurs), le deuxième sur les sujets, vœux et affectations
+(Figure `\ref{fig-dc-sujets}`{=latex}), et le troisième sur l'évaluation et la
+soutenance (@fig-dc-eval).
 
 #### Acteurs et contexte académique
 
-Ce diagramme modélise la hiérarchie d'héritage des profils utilisateurs (étudiant,
+La @fig-dc-acteurs modélise la hiérarchie d'héritage des profils utilisateurs (étudiant,
 enseignant, entreprise) ainsi que les entités de référence du contexte académique
 (année académique, promotion, spécialité, domaine) et leurs relations structurelles.
 
-![Diagramme de classes - Acteurs et contexte académique](/diagrams/dc-classes-acteurs.png){width="100%"}
+![Diagramme de classes - Acteurs et contexte académique](/diagrams/dc-classes-acteurs.png){#fig-dc-acteurs width="100%"}
 
 #### Sujets, vœux et affectations
 
-Ce diagramme modélise les entités liées à la proposition de sujets, l'expression
-de vœux par les étudiants, l'affectation PFE et le suivi pédagogique. Les entités
-en jaune sont définies dans le diagramme précédent et apparaissent ici à titre de
-référence.
+La Figure `\ref{fig-dc-sujets}`{=latex} modélise les entités liées à la proposition de
+sujets, l'expression de vœux par les étudiants, l'affectation PFE et le suivi
+pédagogique. Les entités en jaune sont définies dans le diagramme précédent
+(@fig-dc-acteurs) et apparaissent ici à titre de référence.
 
 ```{=latex}
 \begin{landscape}
@@ -350,17 +353,18 @@ référence.
 \vspace*{\fill}
 \includegraphics[width=\linewidth,height=0.88\textheight,keepaspectratio]{diagrams/dc-classes-sujets.png}
 \captionof{figure}{Diagramme de classes - Sujets, vœux et affectations}
+\label{fig-dc-sujets}
 \vspace*{\fill}
 \end{landscape}
 ```
 
 #### Évaluation et soutenance
 
-Ce diagramme modélise les entités liées à la constitution des jurys, la planification
+La @fig-dc-eval modélise les entités liées à la constitution des jurys, la planification
 des soutenances, la notation par les membres du jury (critères 1 à 4) et l'évaluation
 de l'encadrant (critère 5).
 
-![Diagramme de classes - Évaluation et soutenance](/diagrams/dc-classes-eval.png){width="100%"}
+![Diagramme de classes - Évaluation et soutenance](/diagrams/dc-classes-eval.png){#fig-dc-eval width="100%"}
 
 ### Diagrammes de séquence
 
@@ -370,47 +374,48 @@ processus PFE.
 
 #### Proposition d'un sujet PFE
 
-Ce scénario décrit la soumission d'un sujet par un enseignant (ou une entreprise) et
-l'assignation de validateurs par l'administration. C'est le point d'entrée du processus PFE.
+La @fig-seq-proposition décrit la soumission d'un sujet par un enseignant (ou une
+entreprise) et l'assignation de validateurs par l'administration. C'est le point
+d'entrée du processus PFE.
 
-![Séquence - Proposition d'un sujet](/diagrams/seq-proposition.png){width="70%"}
+![Séquence - Proposition d'un sujet](/diagrams/seq-proposition.png){#fig-seq-proposition width="100%"}
 
 #### Validation d'un sujet PFE
 
-Ce scénario décrit l'évaluation d'un sujet par les validateurs assignés et la
-détermination du statut final selon leurs décisions.
+La @fig-seq-validation décrit l'évaluation d'un sujet par les validateurs assignés
+et la détermination du statut final selon leurs décisions.
 
-![Séquence - Validation d'un sujet](/diagrams/seq-validation.png){width="70%"}
+![Séquence - Validation d'un sujet](/diagrams/seq-validation.png){#fig-seq-validation width="100%"}
 
 #### Vœux et affectation
 
-Ce scénario décrit le parcours de l'étudiant depuis la consultation du catalogue de sujets
-validés jusqu'à la réception de son affectation PFE, en passant par l'expression de ses
-vœux et l'acceptation par le proposant du sujet.
+La @fig-seq-voeux décrit le parcours de l'étudiant depuis la consultation du catalogue
+de sujets validés jusqu'à la réception de son affectation PFE, en passant par l'expression
+de ses vœux et l'acceptation par le proposant du sujet.
 
-![Séquence - Vœux et affectation](/diagrams/seq-voeux-affectation.png){width="100%"}
+![Séquence - Vœux et affectation](/diagrams/seq-voeux-affectation.png){#fig-seq-voeux width="100%"}
 
 #### Constitution du jury et planification
 
-Ce scénario décrit la constitution du jury par l'administration, la confirmation de
-participation des membres et la planification logistique de la soutenance.
+La @fig-seq-jury décrit la constitution du jury par l'administration, la confirmation
+de participation des membres et la planification logistique de la soutenance.
 
-![Séquence - Constitution du jury et planification](/diagrams/seq-jury-planification.png){width="100%"}
+![Séquence - Constitution du jury et planification](/diagrams/seq-jury-planification.png){#fig-seq-jury width="100%"}
 
 #### Notation
 
-Ce scénario illustre la soumission des notes par les membres du jury (critères 1 à 4) et
-par le superviseur (critère 5), le calcul de la note finale sur 20 et la résolution des
-conflits de notation.
+La @fig-seq-notation illustre la soumission des notes par les membres du jury (critères
+1 à 4) et par le superviseur (critère 5), le calcul de la note finale sur 20 et la
+résolution des conflits de notation.
 
-![Séquence - Notation](/diagrams/seq-notation.png){width="70%"}
+![Séquence - Notation](/diagrams/seq-notation.png){#fig-seq-notation width="100%"}
 
 #### Résultats
 
-Ce scénario décrit la détermination du résultat final de la soutenance selon trois issues
-possibles : admis, corrections requises ou non admis.
+La @fig-seq-resultats décrit la détermination du résultat final de la soutenance selon
+trois issues possibles : admis, corrections requises ou non admis.
 
-![Séquence - Résultats](/diagrams/seq-resultats.png){width="70%"}
+![Séquence - Résultats](/diagrams/seq-resultats.png){#fig-seq-resultats width="100%"}
 
 ### Diagrammes d'activité
 
@@ -419,19 +424,26 @@ PFE, scindé en deux phases pour des raisons de lisibilité.
 
 #### De la proposition à l'affectation
 
-Ce diagramme couvre la première moitié du processus : proposition d'un sujet, validation,
-publication au catalogue, expression des vœux par les étudiants, sélection des candidats
-et affectation administrative.
+La Figure `\ref{fig-act-proposition}`{=latex} couvre la première moitié du processus :
+proposition d'un sujet, validation, publication au catalogue, expression des vœux par
+les étudiants, sélection des candidats et affectation administrative.
 
-![Activité - De la proposition à l'affectation](/diagrams/act-proposition-affectation.png){width="100%"}
+```{=latex}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth,height=0.88\textheight,keepaspectratio]{diagrams/act-proposition-affectation.png}
+\caption{Activité - De la proposition à l'affectation}
+\label{fig-act-proposition}
+\end{figure}
+```
 
 #### Du suivi aux résultats
 
-Ce diagramme couvre la seconde moitié : réalisation des travaux, suivi pédagogique,
+La @fig-act-suivi couvre la seconde moitié : réalisation des travaux, suivi pédagogique,
 dépôt du mémoire, constitution du jury, soutenance, notation et détermination du
 résultat final.
 
-![Activité - Du suivi aux résultats](/diagrams/act-suivi-resultats.png){width="100%"}
+![Activité - Du suivi aux résultats](/diagrams/act-suivi-resultats.png){#fig-act-suivi width="100%"}
 
 ## Conclusion
 

@@ -1,4 +1,5 @@
 @startuml
+scale 1.5
 skinparam sequenceArrowThickness 1.5
 skinparam sequenceParticipantBackgroundColor #EEF5FF
 skinparam sequenceParticipantBorderColor #3366CC
