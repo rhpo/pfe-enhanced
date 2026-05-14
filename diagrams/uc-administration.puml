@@ -1,4 +1,4 @@
-﻿@startuml
+@startuml
 left to right direction
 skinparam actorStyle awesome
 skinparam packageStyle rectangle
@@ -11,18 +11,16 @@ skinparam usecase {
 actor "Administration" as A
 
 rectangle "Système de Gestion des PFE" {
-  usecase "S'authentifier" as UC1
-  usecase "Valider / Rejeter une FichePFE" as UC2
-  usecase "Attribuer un code PFE" as UC3
-  usecase "Affecter un encadrant" as UC4
-  usecase "Affecter un co-promoteur" as UC5
-  usecase "Constituer le jury" as UC6
-  usecase "Planifier la soutenance" as UC7
-  usecase "Envoyer des notifications" as UC8
-  usecase "Enregistrer le résultat d'évaluation" as UC9
-  usecase "Archiver / Publier un PFE" as UC10
-  usecase "Consulter le tableau de bord" as UC11
-  usecase "Gérer les utilisateurs" as UC12
+  usecase "S'authentifier" as AUTH
+  usecase "Gérer les utilisateurs" as UC1
+  usecase "Valider les entreprises\npartenaires" as UC2
+  usecase "Assigner les validateurs\naux sujets" as UC3
+  usecase "Procéder aux\naffectations PFE" as UC4
+  usecase "Constituer les jurys\nde soutenance" as UC5
+  usecase "Planifier les\nsoutenances" as UC6
+  usecase "Résoudre les conflits\nde notation" as UC7
+  usecase "Gérer les paramètres\nacadémiques" as UC8
+  usecase "Consulter les statistiques\net exporter les rapports" as UC9
 }
 
 A --> UC1
@@ -34,15 +32,18 @@ A --> UC6
 A --> UC7
 A --> UC8
 A --> UC9
-A --> UC10
-A --> UC11
-A --> UC12
 
-UC2 ..> UC1 : <<include>>
-UC3 ..> UC2 : <<include>>
+UC1 ..> AUTH : <<include>>
+UC2 ..> AUTH : <<include>>
+UC3 ..> AUTH : <<include>>
+UC4 ..> AUTH : <<include>>
+UC5 ..> AUTH : <<include>>
+UC6 ..> AUTH : <<include>>
+UC7 ..> AUTH : <<include>>
+UC8 ..> AUTH : <<include>>
+UC9 ..> AUTH : <<include>>
+
+UC6 ..> UC5 : <<include>>
+UC7 ..> UC6 : <<extend>>
 UC4 ..> UC3 : <<include>>
-UC5 ..> UC4 : <<extend>>
-UC8 ..> UC4 : <<include>>
-UC8 ..> UC7 : <<include>>
-UC8 ..> UC9 : <<include>>
 @enduml

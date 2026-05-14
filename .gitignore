@@ -21,6 +21,8 @@ _freeze/
 **/*.fls
 **/*.synctex.gz
 
+backend/
+
 # Keep essential LaTeX configuration/headers
 !header.tex
 !before-body.tex

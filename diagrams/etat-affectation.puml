@@ -1,0 +1,23 @@
+@startuml
+skinparam state {
+  BackgroundColor #EEF5FF
+  BorderColor #3366CC
+  ArrowColor #3366CC
+  FontSize 12
+}
+
+[*] --> EN_COURS : Administration crée\nl'affectation PFE\n(code PFE généré)
+
+EN_COURS --> MEMOIRE_SOUMIS : Étudiant soumet\nle mémoire final
+
+MEMOIRE_SOUMIS --> SOUTENANCE_PLANIFIEE : Administration constitue\nle jury et planifie\nla soutenance
+
+SOUTENANCE_PLANIFIEE --> VALIDE : Jury et encadrant\nsoumettent les notes\n(résultat : admis)
+
+SOUTENANCE_PLANIFIEE --> REFUSE : Résultat : non admis
+
+SOUTENANCE_PLANIFIEE --> MEMOIRE_SOUMIS : Résultat : corrections\nrequises — étudiant\nre-soumet le mémoire
+
+VALIDE --> [*] : PFE archivé et publié
+REFUSE --> [*] : Fin du cycle
+@enduml

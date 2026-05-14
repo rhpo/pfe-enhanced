@@ -8,39 +8,8 @@ skinparam activity {
   FontSize 12
 }
 
-|Enseignant / Entreprise|
+|Étudiant|
 start
-:Proposer un sujet PFE;
-
-|Administration|
-:Assigner les validateurs;
-
-|Enseignant / Entreprise|
-:Évaluer le sujet\n(en tant que validateur);
-if (Sujet validé ?) then (Oui)
-else (Non)
-  :Notifier le proposant\n(sujet refusé);
-  stop
-endif
-
-|Administration|
-:Publier le sujet au catalogue;
-
-|Étudiant|
-:Consulter le catalogue;
-:Exprimer ses vœux\n(classés par préférence);
-
-|Enseignant / Entreprise|
-:Consulter les candidatures;
-:Accepter ou refuser\nles candidats;
-
-|Administration|
-:Procéder aux affectations PFE;
-:Générer le code PFE;
-:Affecter superviseur\net co-superviseur;
-:Notifier toutes les parties;
-
-|Étudiant|
 :Réaliser les travaux du PFE;
 
 fork

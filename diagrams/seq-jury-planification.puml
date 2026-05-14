@@ -1,30 +1,22 @@
-﻿@startuml
+@startuml
 skinparam sequenceArrowThickness 1.5
 skinparam sequenceParticipantBackgroundColor #EEF5FF
 skinparam sequenceParticipantBorderColor #3366CC
 
 actor "Administration" as A
+participant "Système" as S
+actor "Enseignant\n(Membre du jury)" as J
+actor "Enseignant\n(Superviseur)" as T
 actor "Étudiant" as E
-actor "Jury" as J
-participant "Frontend" as FE
-participant "API Backend" as API
-database "Base de données" as DB
-participant "Notification\nService" as NS
 
-A -> FE : Sélectionne un PFE soumis
-A -> FE : Constitue le jury (Président + Membres)
-FE -> API : POST /pfe/{pfeId}/jury\n{ presidentId, memberIds[] }
-API -> DB : INSERT Jury, JuryMembers
-DB --> API : jury.id
-API --> FE : 201 Created
+A -> S : Constitue le jury\n(président + membre)
+S -> J : Notification : demande de confirmation
+J -> S : Confirme sa participation
 
-A -> FE : Planifie la soutenance
-FE -> API : POST /pfe/{pfeId}/schedule\n{ date, time, roomId }
-API -> DB : INSERT Schedule\nUPDATE PFE status=UNDER_EVALUATION
-DB --> API : schedule.id
-API -> NS : Notifie toutes les parties
-NS -> E : Email "Soutenance planifiée : {date}, {salle}"
-NS -> J : Email "Convocation jury : {date}, {salle}"
-API --> FE : 201 Created
-FE --> A : Confirmation de planification
+A -> S : Planifie la soutenance\n(date, salle, échéance)
+S -> E : Notification : soutenance planifiée
+S -> J : Notification : convocation au jury
+S -> T : Notification : soutenance planifiée
+
+note over E, S : La soutenance a lieu
 @enduml

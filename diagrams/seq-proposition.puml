@@ -1,0 +1,16 @@
+@startuml
+skinparam sequenceArrowThickness 1.5
+skinparam sequenceParticipantBackgroundColor #EEF5FF
+skinparam sequenceParticipantBorderColor #3366CC
+
+actor "Enseignant\n(Proposant)" as P
+participant "Système" as S
+actor "Administration" as A
+
+P -> S : Propose un sujet PFE\n(titre, description, type de groupement, domaines)
+S -> S : Enregistre le sujet\n(statut : en attente)
+S -> A : Notification : nouveau sujet à traiter
+
+A -> S : Assigne deux validateurs au sujet
+S -> S : Validateurs associés au sujet
+@enduml

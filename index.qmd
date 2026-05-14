@@ -33,7 +33,7 @@ format:
     urlcolor: blue
     citecolor: black
     filecolor: black
-    fig-pos: H
+    fig-pos: htbp
 ---
 
 

@@ -39,45 +39,5 @@ endif
 :Générer le code PFE;
 :Affecter superviseur\net co-superviseur;
 :Notifier toutes les parties;
-
-|Étudiant|
-:Réaliser les travaux du PFE;
-
-fork
-  |Étudiant|
-  :Participer aux\nréunions de suivi;
-|Enseignant / Entreprise|
-  :Renseigner les\nfiches de suivi;
-fork end
-
-|Étudiant|
-:Soumettre le mémoire final;
-
-|Administration|
-:Constituer le jury\n(président + membre);
-:Planifier la soutenance\n(date, salle);
-:Notifier toutes les parties;
-
-|Étudiant|
-:Présenter la soutenance;
-
-|Enseignant / Entreprise|
-:Soumettre les notes du jury\n(critères 1 à 4);
-:Soumettre l'évaluation\nde l'encadrant (critère 5);
-
-|Administration|
-:Calculer la note finale (/20);
-
-if (Résultat ?) then (Admis)
-  :Archiver et publier le PFE;
-  stop
-else if (Corrections requises)
-  |Étudiant|
-  :Apporter les corrections;
-  :Re-soumettre le mémoire;
-  |Administration|
-  :Re-planifier la soutenance;
-else (Non admis)
-  stop
-endif
+stop
 @enduml

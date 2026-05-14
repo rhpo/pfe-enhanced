@@ -1,4 +1,4 @@
-﻿@startuml
+@startuml
 left to right direction
 skinparam actorStyle awesome
 skinparam packageStyle rectangle
@@ -11,14 +11,15 @@ skinparam usecase {
 actor "Enseignant" as T
 
 rectangle "Système de Gestion des PFE" {
-  usecase "S'authentifier" as UC1
-  usecase "Consulter les PFE encadrés" as UC2
-  usecase "Valider une FichePFE" as UC3
-  usecase "Demander révision d'une FichePFE" as UC4
-  usecase "Cosigner une FicheSuiviPFE" as UC5
-  usecase "Renseigner le feedback encadrant" as UC6
-  usecase "Participer au jury de soutenance" as UC7
-  usecase "Consulter l'historique des PFE" as UC8
+  usecase "S'authentifier" as AUTH
+  usecase "Proposer un sujet PFE" as UC1
+  usecase "Valider des sujets\n(en tant que validateur)" as UC2
+  usecase "Consulter et gérer\nles candidatures" as UC3
+  usecase "Assurer le suivi\npédagogique" as UC4
+  usecase "Soumettre l'évaluation\nde l'encadrant" as UC5
+  usecase "Confirmer sa\nparticipation au jury" as UC6
+  usecase "Soumettre les notes\ndu jury" as UC7
+  usecase "Gérer sa\ndisponibilité" as UC8
 }
 
 T --> UC1
@@ -30,8 +31,15 @@ T --> UC6
 T --> UC7
 T --> UC8
 
-UC3 ..> UC1 : <<include>>
-UC5 ..> UC1 : <<include>>
-UC6 ..> UC5 : <<include>>
-UC4 ..> UC3 : <<extend>>
+UC1 ..> AUTH : <<include>>
+UC2 ..> AUTH : <<include>>
+UC3 ..> AUTH : <<include>>
+UC4 ..> AUTH : <<include>>
+UC5 ..> AUTH : <<include>>
+UC6 ..> AUTH : <<include>>
+UC7 ..> AUTH : <<include>>
+UC8 ..> AUTH : <<include>>
+
+UC3 ..> UC1 : <<extend>>
+UC7 ..> UC6 : <<include>>
 @enduml

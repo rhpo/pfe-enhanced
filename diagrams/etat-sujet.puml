@@ -1,0 +1,23 @@
+@startuml
+skinparam state {
+  BackgroundColor #EEF5FF
+  BorderColor #3366CC
+  ArrowColor #3366CC
+  FontSize 12
+}
+
+[*] --> EN_ATTENTE : Enseignant ou entreprise\npropose un sujet
+
+EN_ATTENTE --> EN_ATTENTE : Administration assigne\nles validateurs
+
+EN_ATTENTE --> VALIDE : Les deux validateurs\napprouvent le sujet
+EN_ATTENTE --> ACCEPTE_SOUS_RESERVE : Validateurs approuvent\navec réserves
+EN_ATTENTE --> REFUSE : Au moins un validateur\nrefuse le sujet
+EN_ATTENTE --> EXPIRE : Période de soumission\néchue
+
+ACCEPTE_SOUS_RESERVE --> VALIDE : Proposant apporte\nles modifications requises
+
+VALIDE --> [*] : Sujet publié\nau catalogue
+REFUSE --> [*] : Fin du processus
+EXPIRE --> [*] : Fin du processus
+@enduml

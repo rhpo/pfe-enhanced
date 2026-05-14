@@ -1,0 +1,22 @@
+@startuml
+skinparam sequenceArrowThickness 1.5
+skinparam sequenceParticipantBackgroundColor #EEF5FF
+skinparam sequenceParticipantBorderColor #3366CC
+
+actor "Administration" as A
+participant "Système" as S
+actor "Étudiant" as E
+
+alt Résultat : admis
+  S -> S : Affectation → validée
+  S -> E : Notification : PFE admis avec note finale
+  A -> S : Archive et publie le PFE
+else Résultat : corrections requises
+  S -> E : Notification : corrections requises\navec remarques du jury
+  E -> S : Re-soumet le mémoire corrigé
+  A -> S : Re-planifie la soutenance
+else Résultat : non admis
+  S -> S : Affectation → refusée
+  S -> E : Notification : PFE non admis
+end
+@enduml

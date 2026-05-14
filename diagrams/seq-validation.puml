@@ -1,0 +1,27 @@
+@startuml
+skinparam sequenceArrowThickness 1.5
+skinparam sequenceParticipantBackgroundColor #EEF5FF
+skinparam sequenceParticipantBorderColor #3366CC
+
+actor "Enseignant\n(Proposant)" as P
+participant "Système" as S
+actor "Enseignant\n(Validateur)" as V
+
+S -> V : Notification : sujet à évaluer
+V -> S : Consulte le sujet
+V -> S : Soumet sa décision\n(validé / accepté sous réserve / refusé)\navec commentaire
+
+S -> S : Met à jour le statut du sujet\nselon les décisions des validateurs
+
+alt Les deux validateurs valident
+  S -> S : Statut → validé
+  S -> P : Notification : sujet validé
+  S -> S : Sujet visible au catalogue
+else Au moins un validateur refuse
+  S -> S : Statut → refusé
+  S -> P : Notification : sujet refusé\navec commentaires des validateurs
+else Accepté sous réserve
+  S -> S : Statut → accepté sous réserve
+  S -> P : Notification : modifications mineures requises
+end
+@enduml

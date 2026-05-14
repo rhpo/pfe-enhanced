@@ -1,0 +1,75 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor #EEF5FF
+  BorderColor #3366CC
+  ArrowColor #3366CC
+  FontSize 11
+}
+
+skinparam class<<acteur>> {
+  BackgroundColor #FFF8E1
+  BorderColor #FF8C00
+}
+
+enum ResultatSoutenance {
+  admis
+  corrections_requises
+  non_admis
+}
+
+class Enseignant <<acteur>> {
+  +confirmerJury()
+  +soumettreNotesJury(notes)
+  +soumettreEvaluation(note)
+}
+
+class AffectationPFE <<acteur>> {
+  +id: String
+  +codePFE: String
+  +statut: String
+}
+
+class JurySoutenance {
+  +id: String
+  +presidentConfirme: Boolean
+  +membreConfirme: Boolean
+}
+
+class Soutenance {
+  +id: String
+  +datePrevue: DateTime
+  +salle: String
+  +echeance: Date
+  +statut: String
+  +resultat: ResultatSoutenance
+  +noteFinale: Float
+}
+
+class NoteJury {
+  +id: String
+  +critere1: Float
+  +critere2: Float
+  +critere3: Float
+  +critere4: Float
+}
+
+class EvaluationEncadrant {
+  +id: String
+  +critere5: Float
+}
+
+JurySoutenance "1" --> "1" AffectationPFE
+JurySoutenance "0..*" --> "1" Enseignant : président / membre
+
+Soutenance "1" --> "1" AffectationPFE
+Soutenance "0..*" --> "1" JurySoutenance
+
+NoteJury "0..*" --> "1" Soutenance
+NoteJury "0..*" --> "1" Enseignant : évaluateur
+
+EvaluationEncadrant "1" --> "1" AffectationPFE
+EvaluationEncadrant "0..*" --> "1" Enseignant : évaluateur
+
+note bottom of AffectationPFE : Entité détaillée dans le\ndiagramme précédent
+@enduml

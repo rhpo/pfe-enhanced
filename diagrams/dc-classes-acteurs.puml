@@ -1,0 +1,109 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor #EEF5FF
+  BorderColor #3366CC
+  ArrowColor #3366CC
+  FontSize 11
+}
+
+enum RoleUtilisateur {
+  etudiant
+  enseignant
+  admin
+  entreprise
+}
+
+enum GradeEnseignant {
+  assistant
+  mab
+  maa
+  mcb
+  mca
+  professeur
+}
+
+class ProfilUtilisateur {
+  +id: String
+  +role: RoleUtilisateur
+  +nomComplet: String
+  +email: String
+  +avatarUrl: String
+  +estActif: Boolean
+  +dateCreation: DateTime
+  --
+  +sAuthentifier()
+}
+
+class Etudiant {
+  +id: String
+  +numeroEtudiant: String
+  +niveau: String
+  --
+  +consulterCatalogue()
+  +exprimerVoeu(sujet)
+  +soumettreMemoire(fichier)
+}
+
+class Enseignant {
+  +id: String
+  +grade: GradeEnseignant
+  +departement: String
+  +statutDisponibilite: String
+  +indisponibleJusqua: Date
+  --
+  +proposerSujet(sujet)
+  +validerSujet(decision)
+  +soumettreEvaluation(note)
+}
+
+class Entreprise {
+  +id: String
+  +nomEntreprise: String
+  +secteur: String
+  +description: String
+  +logoUrl: String
+  +emailContact: String
+  +telephoneContact: String
+  +siteWeb: String
+  +estVerifiee: Boolean
+  --
+  +proposerSujet(sujet)
+  +soumettreRapport(rapport)
+}
+
+class AnneeAcademique {
+  +id: String
+  +libelle: String
+  +statut: String
+  +ouvertureSoumission: DateTime
+  +clotureSoumission: DateTime
+  +maxVoeux: Integer
+}
+
+class Promotion {
+  +id: String
+  +libelle: String
+}
+
+class Specialite {
+  +id: String
+  +nom: String
+  +code: String
+  +typeAnnee: String
+}
+
+class Domaine {
+  +id: String
+  +nom: String
+}
+
+ProfilUtilisateur <|-- Etudiant
+ProfilUtilisateur <|-- Enseignant
+ProfilUtilisateur <|-- Entreprise
+
+Etudiant "0..*" --> "1" Specialite : appartient à
+Etudiant "0..*" --> "1" Promotion : inscrit dans
+Promotion "0..*" --> "1" AnneeAcademique : rattachée à
+Enseignant "0..*" -- "0..*" Domaine : expertise dans
+@enduml

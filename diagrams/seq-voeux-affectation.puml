@@ -1,0 +1,33 @@
+@startuml
+skinparam sequenceArrowThickness 1.5
+skinparam sequenceParticipantBackgroundColor #EEF5FF
+skinparam sequenceParticipantBorderColor #3366CC
+
+actor "Étudiant" as E
+participant "Système" as S
+actor "Enseignant\n(Proposant)" as T
+actor "Administration" as A
+
+E -> S : Consulte le catalogue de sujets validés
+S -> E : Affiche les sujets disponibles\n(filtrés par spécialité et domaine)
+
+E -> S : Soumet ses vœux classés\npar ordre de préférence
+S -> S : Enregistre les vœux\n(dans la limite du maximum autorisé)
+S -> T : Notification : nouvelle candidature
+
+T -> S : Consulte les candidatures\npour ses sujets
+T -> S : Accepte ou refuse les candidats
+
+alt Candidat accepté
+  S -> E : Notification : vœu accepté
+else Candidat refusé
+  S -> E : Notification : vœu refusé
+end
+
+A -> S : Procède aux affectations PFE
+S -> S : Génère le code PFE\n(ex : PFE-ISIL-2025-001)
+S -> S : Affecte le superviseur\net le co-superviseur (si applicable)
+S -> S : Crée l'affectation\n(statut : en cours)
+S -> E : Notification : affectation confirmée
+S -> T : Notification : étudiant(s) affecté(s)
+@enduml

@@ -1,184 +1,292 @@
 
-# Analyse Système et Exigences {#sec-analyse}
+# Conception du Système et Modélisation {#sec-conception}
 
 ## Introduction du chapitre
 
 Ce chapitre constitue le cœur de la démarche d'ingénierie logicielle du présent mémoire.
 Fort du constat établi au chapitre précédent *(l'absence d'une solution numérique dédiée
-à la gestion des PFE dans le contexte universitaire algérien)* il s'agit désormais de
-traduire ce constat en un système concret, structuré et rigoureusement spécifié.
+à la gestion des PFE dans le contexte universitaire algérien)*, il s'agit désormais de
+traduire ce constat en une conception système complète, structurée et rigoureusement
+spécifiée.
 
 Nous commencerons par délimiter précisément le périmètre fonctionnel du système, en
-identifiant les acteurs impliqués et leurs interactions. Nous formaliserons ensuite les
-exigences fonctionnelles et non fonctionnelles qui guideront toute la phase de conception.
-Enfin, l'ensemble sera modélisé à travers une série de diagrammes UML (cas d'utilisation,
-classes, séquences, états et activité) afin d'offrir une représentation formelle et non
-ambiguë du comportement attendu du système.
+identifiant les acteurs impliqués et leurs interactions métier. Nous présenterons ensuite
+le modèle conceptuel du domaine à travers les entités et leurs relations. Enfin, l'ensemble
+sera formalisé par une série de diagrammes UML (cas d'utilisation, classes, séquences,
+séquences et activité) afin d'offrir une représentation non ambiguë du comportement
+attendu du système.
 
-La méthodologie adoptée s'inscrit dans une démarche d'analyse orientée objet, conforme
+La méthodologie adoptée s'inscrit dans une démarche de conception orientée objet, conforme
 aux standards de l'industrie logicielle et aux recommandations de l'*Unified Modeling
 Language* (UML 2.0) via PlantUML.
 
 ## Présentation générale du système
 
-Le système conçu est dédiée à la gestion du cycle de vie complet
+Le système conçu est dédié à la gestion du cycle de vie complet
 des Projets de Fin d'Études au sein d'un établissement universitaire algérien, en prenant
 pour cas d'usage concret l'ESST d'Alger.
 
 Son objectif est de centraliser, structurer et automatiser l'ensemble des étapes du processus
-PFE : depuis la soumission d'une fiche PFE par un étudiant jusqu'à l'archivage du résultat
-de soutenance, en passant par la validation administrative, l'affectation des encadrants,
-le suivi de l'avancement, la constitution des jurys et la planification des soutenances.
+PFE : depuis la proposition d'un sujet par un enseignant ou une entreprise partenaire
+jusqu'à l'archivage du résultat de soutenance, en passant par la validation par des
+validateurs désignés, l'expression de vœux par les étudiants, l'affectation administrative,
+le suivi de l'avancement, la constitution des jurys, la planification des soutenances et
+le calcul des notes finales.
 
 ## Identification des acteurs
 
-L'analyse du processus PFE à l'ESST (cf. Chapitre II) a permis d'identifier trois acteurs
+L'analyse du processus PFE à l'ESST (cf. Chapitre II) a permis d'identifier quatre acteurs
 principaux, dont les rôles et les interactions sont complémentaires et interdépendants.
 
 ### L'étudiant
 
-L'étudiant se voit affecter un PFE (soit par l'enseignant, soit par l'entreprise), il interagit avec le système tout au long
-du cycle de vie de son projet. Ses responsabilités dans le système incluent :
+L'étudiant est l'acteur central du cycle PFE. Il interagit avec le système pour :
 
-- Soumettre une fiche PFE modifiable (*FichePFE*).
-- Consulter le statut de validation de sa fiche par l'administration.
-- Renseigner régulièrement sa fiche de suivi (*FicheSuiviPFE*) pour documenter
-  l'avancement de ses travaux.
-- Prendre connaissance des décisions du jury et des éventuelles corrections requises.
-- Accéder au calendrier de soutenance qui le concerne.
+- **Consulter le catalogue de sujets** : accéder à l'ensemble des sujets validés, filtrés
+  par spécialité et domaine d'intérêt.
+- **Exprimer ses vœux** : déclarer son intérêt pour des sujets spécifiques en les classant
+  par ordre de préférence, dans la limite du nombre de vœux autorisés par l'année académique.
+- **Consulter son affectation** : prendre connaissance du sujet PFE assigné, du code PFE
+  attribué et de ses encadrants (superviseur principal, co-superviseur si applicable).
+- **Consulter les fiches de suivi** : accéder aux comptes rendus des réunions d'avancement
+  renseignés par son encadrant.
+- **Soumettre le mémoire final** : livrer le mémoire avant la date limite fixée.
+- **Consulter les résultats** : accéder au planning de soutenance, à la composition du
+  jury et à la note finale après évaluation.
 
-### L'enseignant encadrant
+### L'enseignant
 
-L'enseignant est le référent académique de l'étudiant. Dans le système, il joue un rôle
-d'accompagnateur et d'évaluateur :
+L'enseignant intervient selon plusieurs rôles complémentaires :
 
-- Consulter les fiches PFE qui lui sont soumises ou affectées.
-- Valider ou demander la révision d'une fiche PFE en amont de la transmission à
-  l'administration.
-- Renseigner et cosigner les fiches de suivi (*FicheSuiviPFE*) lors des réunions
-  périodiques avec l'étudiant.
-- Participer en tant que membre du jury lors de la soutenance.
-- Consulter l'historique des PFE encadrés.
+**Rôle 1 : Proposant de sujet*
+- Proposer des sujets PFE correspondant à son domaine d'expertise, en précisant le titre,
+  la description, le type de groupement souhaité (monôme, binôme ou trinôme) et les domaines
+  associés.
+- Consulter les candidatures des étudiants intéressés par ses sujets et accepter ou refuser
+  leur participation.
+
+**Rôle 2 : Validateur de sujet**
+- Évaluer les sujets proposés par d'autres enseignants ou entreprises lorsque l'administration
+  l'assigne en tant que validateur.
+- Soumettre une décision (validé, accepté sous réserve, refusé) accompagnée d'un commentaire
+  justificatif.
+
+**Rôle 3 : Superviseur / Encadrant**
+- Assurer l'accompagnement pédagogique de l'étudiant tout au long du projet.
+- Renseigner les fiches de suivi lors de réunions régulières, en documentant les sujets
+  abordés, la durée, le type de réunion (présentiel ou visioconférence) et les observations.
+- Soumettre l'évaluation de l'encadrant (critère 5 noté sur 4 points) contribuant à la
+  note finale.
+- Signaler sa disponibilité ou indisponibilité temporaire.
+
+**Rôle 4 : Membre du jury**
+- Confirmer sa participation au jury de soutenance auquel il est affecté (en tant que
+  président ou membre).
+- Soumettre ses notes selon quatre critères d'évaluation, chacun noté sur 4 points.
 
 ### L'administration
 
-L'administration est le pivot organisationnel du système. Elle valide, coordonne et
-archive :
+L'administration est le pivot organisationnel et décisionnel. Elle :
 
-- Crée les comptes des enseignants.
-- Confirme les demandes d'inscription des entreprises.
-- Recevoir et examiner les fiches PFE soumises par les étudiants.
-- Attribuer un code unique de PFE (*PFE-XX-SPEC-ANNEE*) et valider la fiche.
-- Affecter l'encadrant académique et, le cas échéant, le co-promoteur pour les PFE
-  externes.
-- Constituer les jurys de soutenance (président et membres).
-- Planifier les soutenances (date, heure, salle).
-- Envoyer les notifications aux parties prenantes via le service de notification.
-- Archiver les PFE admis et gérer les corrections requises.
-- Produire des statistiques sur l'avancement global des PFE.
+- **Gère les utilisateurs** : crée et maintient les profils des enseignants, étudiants,
+  entreprises et administrateurs, y compris par importation en lot.
+- **Valide les entreprises** : examine les inscriptions d'entreprises partenaires et décide
+  de leur vérification ou rejet.
+- **Assigne les validateurs** : désigne deux enseignants validateurs pour chaque sujet PFE
+  proposé, chargés d'évaluer la pertinence et la qualité du sujet.
+- **Procède aux affectations** : affecte les étudiants aux sujets en tenant compte de
+  leurs vœux et des places disponibles, génère le code PFE unique
+  (ex : PFE-ISIL-2025-001) et désigne le superviseur principal ainsi que le co-superviseur
+  le cas échéant.
+- **Constitue les jurys** : sélectionne le président et le membre du jury pour chaque
+  soutenance, en veillant aux disponibilités et aux domaines d'expertise.
+- **Planifie les soutenances** : fixe la date, l'heure et la salle de chaque soutenance.
+- **Résout les conflits de notation** : en cas de divergence entre les notes soumises par
+  les deux membres du jury, l'administration arbitre en retenant l'une des évaluations ou
+  en saisissant une note corrigée.
+- **Gère les paramètres académiques** : administre les spécialités, domaines, promotions
+  et années académiques (périodes de soumission, nombre maximal de vœux).
+- **Consulte les statistiques et exporte les rapports** : génère des tableaux de bord,
+  des plannings d'affectation et des bilans statistiques.
 
-### Initiateur?
-L'initiateur peut être l'encadrant en proposant un sujet, ou bien l'administration.
+### L'entreprise
 
-## Spécification des exigences
+L'entreprise partenaire peut proposer des sujets PFE externes et participer au suivi :
 
-### Exigences fonctionnelles
+- Proposer des sujets d'intérêt avec description du contexte professionnel, après
+  vérification de son profil par l'administration.
+- Consulter les candidatures des étudiants pour ses sujets.
+- Accepter ou refuser les étudiants candidats.
+- Participer au suivi du PFE via les fiches de suivi.
+- Soumettre une évaluation du travail de l'étudiant.
+- Soumettre un rapport de correction à l'administration en cas de besoin (modification
+  de profil, réclamation).
 
-Les exigences fonctionnelles sont organisées par domaine métier, correspondant aux
-grandes fonctions du système.
+## Flux et processus métier
 
-#### Gestion de l'authentification et des profils
+### Flux principal : Cycle de vie d'un PFE
 
-- **EF-01** : Le système doit permettre l'authentification sécurisée de tout utilisateur
-  (étudiant, enseignant, administration) via un identifiant et un mot de passe.
-- **EF-02** : Le système doit implémenter un contrôle d'accès basé sur les rôles (*Role-Based
-  Access Control*, RBAC) : chaque acteur n'accède qu'aux fonctionnalités et données
-  correspondant à son rôle.
-- **EF-03** : Le système doit permettre la gestion des profils utilisateurs (consultation et
-  modification des informations personnelles).
+Le processus PFE se déroule selon les phases suivantes :
 
-#### Gestion des fiches PFE
+**Phase 1 : Proposition de sujet**
 
-- **EF-04** : Un étudiant doit pouvoir soumettre une fiche PFE contenant : titre, type
-  (interne/externe), spécialité, description du sujet, et le cas échéant, les coordonnées
-  de l'entreprise d'accueil.
-- **EF-05** : L'encadrant doit pouvoir valider ou demander la révision de la fiche avant
-  transmission à l'administration.
-- **EF-06** : L'administration doit pouvoir valider la fiche, lui attribuer un code unique, ou
-  la rejeter avec justification.
-- **EF-07** : Le système doit maintenir un historique complet des transitions d'état de
-  chaque fiche PFE.
+Un enseignant ou une entreprise partenaire (préalablement vérifiée) propose un sujet PFE
+comportant :
 
-#### Gestion des affectations
+- Un titre et une description détaillée du travail attendu.
+- Un type de groupement (monôme, binôme ou trinôme).
+- Un ou plusieurs domaines de spécialisation associés.
+- Pour les sujets externes : identification de l'entreprise proposante.
 
-- **EF-08** : L'administration doit pouvoir affecter un encadrant à un PFE validé.
-- **EF-09** : Pour les PFE de type externe, l'administration doit pouvoir affecter un
-  co-promoteur issu de l'entreprise (*CoPromoteur*).
-- **EF-10** : Le système doit notifier automatiquement l'encadrant et l'étudiant lors de
-  toute affectation.
+Le sujet est enregistré avec le statut *en attente* de validation.
 
-#### Suivi de l'avancement
+**Phase 2 : Validation du sujet**
 
-- **EF-11** : L'étudiant et l'encadrant doivent pouvoir renseigner conjointement des fiches
-  de suivi (*FicheSuiviPFE*) à intervalles réguliers, incluant : date de réunion, notes
-  d'avancement, feedback de l'encadrant.
-- **EF-12** : L'administration doit pouvoir consulter en temps réel l'état d'avancement de
-  tous les PFE en cours.
+L'administration assigne deux enseignants validateurs au sujet proposé. Chaque validateur
+évalue indépendamment le sujet et soumet une décision :
 
-#### Gestion des soutenances
+- **Validé** : le sujet est conforme et pertinent.
+- **Accepté sous réserve** : des modifications mineures sont requises.
+- **Refusé** : le sujet est rejeté avec justification.
 
-- **EF-13** : L'administration doit pouvoir constituer un jury pour chaque PFE, composé
-  d'un président et d'un ou deux membres.
-- **EF-14** : L'administration doit pouvoir planifier la soutenance (date, heure, salle).
-- **EF-15** : Le système doit notifier toutes les parties prenantes des détails de la soutenance.
-- **EF-16** : Le jury doit pouvoir enregistrer le résultat de l'évaluation : admis,
-  non-admis, ou correction requise, assorti d'une note et d'un commentaire.
+Le statut final du sujet est déterminé en fonction des deux décisions. Un sujet validé
+devient visible dans le catalogue accessible aux étudiants.
 
-#### Publication et archivage
+**Phase 3 : Expression des vœux et sélection**
 
-- **EF-17** : Les PFE admis et jugés archivables doivent être publiés en ligne et rendus
-  consultables par les utilisateurs autorisés.
-- **EF-18** : Les PFE nécessitant des corrections doivent être renvoyés à l'étudiant avec
-  les remarques du jury.
+- L'étudiant consulte le catalogue des sujets validés pour l'année académique en cours,
+  filtrés par spécialité et domaine.
+- Il exprime ses vœux en classant les sujets par ordre de préférence, dans la limite du
+  nombre maximal de vœux défini pour l'année académique.
+- Le proposant du sujet (enseignant ou entreprise) peut consulter les candidatures reçues
+  et accepter ou refuser les étudiants candidats.
 
-### Exigences non fonctionnelles
+**Phase 4 : Affectation PFE**
 
-#### Sécurité
+L'administration procède aux affectations en tenant compte des vœux acceptés, des capacités
+d'encadrement et de la cohérence pédagogique :
 
-- **ENF-01** : L'authentification doit reposer sur des jetons JWT (*JSON Web Tokens*)
-  à durée de vie limitée, transmis via HTTPS.
-- **ENF-02** : Les mots de passe doivent être stockés sous forme hachée (bcrypt, coût
-  minimum 12).
-- **ENF-03** : Toute action sensible (validation, affectation, résultat de soutenance) doit
-  être journalisée avec horodatage et identifiant de l'acteur.
+- Chaque affectation reçoit un code PFE unique généré automatiquement selon le format
+  PFE-[CODE_SPÉCIALITÉ]-[ANNÉE]-[NUMÉRO] (ex : PFE-ISIL-2025-001).
+- Un superviseur principal est désigné parmi les enseignants.
+- Un co-superviseur peut être assigné (notamment pour les PFE en entreprise).
+- L'affectation prend le statut *en cours* et les parties concernées sont notifiées.
 
-#### Performance
+**Phase 5 : Suivi de l'avancement**
 
-- **ENF-04** : Le temps de réponse des endpoints API ne doit pas dépasser 200 ms pour
-  95 % des requêtes en charge nominale.
-- **ENF-05** : L'interface utilisateur doit atteindre un score Lighthouse Performance
-  supérieur à 90.
+- Le superviseur planifie des réunions régulières de suivi avec l'étudiant.
+- À chaque réunion, une fiche de suivi est renseignée, documentant : la date et la durée
+  de la réunion, le type (présentiel ou visioconférence), les sujets abordés et les
+  observations pédagogiques.
+- Le système maintient un historique complet des réunions et permet de visualiser la
+  progression temporelle du projet.
 
-#### Disponibilité et fiabilité
+**Phase 6 : Dépôt du mémoire**
 
-- **ENF-06** : Le système doit viser un taux de disponibilité de 99 % en période académique
-  active.
-- **ENF-07** : Les données persistées doivent faire l'objet de sauvegardes quotidiennes
-  automatisées.
+- À l'approche de la date limite, l'étudiant soumet la version finale de son mémoire.
+- Le système enregistre le dépôt et met à jour le statut de l'affectation à *mémoire soumis*.
 
-#### Ergonomie et accessibilité
+**Phase 7 : Constitution du jury et planification de la soutenance**
 
-- **ENF-08** : L'interface doit être *responsive* et utilisable sur terminaux mobiles,
-  tablettes et ordinateurs de bureau.
-- **ENF-09** : Les formulaires doivent fournir des retours de validation en temps réel
-  (*inline validation*).
+- L'administration constitue un jury pour chaque affectation PFE, composé d'un président
+  et d'un membre, sélectionnés parmi les enseignants disponibles et compétents dans le
+  domaine concerné.
+- Chaque membre du jury est invité à confirmer sa participation.
+- L'administration fixe la date, l'heure et la salle de la soutenance.
+- Des notifications sont adressées à l'étudiant, aux membres du jury et au superviseur,
+  contenant tous les détails logistiques. Le statut de l'affectation passe à
+  *soutenance planifiée*.
 
-#### Maintenabilité et évolutivité
+**Phase 8 : Évaluation et résultats**
 
-- **ENF-10** : L'architecture backend doit respecter le principe de séparation des
-  responsabilités (*separation of concerns*) : handlers, services, repositories.
-- **ENF-11** : Le système doit être déployable via des conteneurs Docker, facilitant la
-  portabilité sur l'infrastructure universitaire.
+Le système de notation repose sur cinq critères, chacun noté sur 4 points, pour un total
+sur 20 :
+
+- **Critères 1 à 4** : évalués par chaque membre du jury (président et membre) lors de
+  la soutenance.
+- **Critère 5** : évalué par le superviseur (évaluation de l'encadrant).
+
+En cas de divergence entre les notes des deux membres du jury, l'administration intervient
+pour résoudre le conflit en retenant l'une des évaluations ou en saisissant une note
+corrigée.
+
+La note finale est calculée comme la somme des cinq critères. Le résultat de la soutenance
+est l'un des suivants :
+
+- **Admis** : le PFE est validé, archivé et rendu consultable.
+- **Corrections requises** : l'étudiant doit apporter des corrections et re-soumettre son
+  mémoire pour une nouvelle soutenance.
+- **Non admis** : le PFE est refusé.
+
+## Entités conceptuelles du domaine
+
+La conception du système s'articule autour d'entités métier interdépendantes qui modélisent
+les concepts clés du processus PFE :
+
+### Acteurs et utilisateurs
+
+- **Profil utilisateur** : représente tout participant au système avec ses attributs
+  identitaires (nom complet, email, avatar) et son rôle (étudiant, enseignant, administrateur,
+  entreprise). C'est l'entité de base dont héritent les acteurs spécialisés.
+- **Étudiant** : spécialisation d'un profil avec informations académiques (numéro d'étudiant,
+  niveau, spécialité, promotion).
+- **Enseignant** : spécialisation d'un profil avec grade académique (assistant, MAB, MAA,
+  MCB, MCA, professeur), département, domaines d'expertise et statut de disponibilité.
+- **Entreprise** : spécialisation d'un profil avec informations professionnelles (nom de
+  l'entreprise, secteur, description, logo, email et téléphone de contact, site web) et
+  statut de vérification administrative.
+
+### Contexte académique
+
+- **Année académique** : période temporelle (ex : 2024-2025) durant laquelle se déroulent
+  les PFE, avec statut d'ouverture/clôture, fenêtre de soumission des sujets et nombre
+  maximal de vœux autorisés.
+- **Domaine** : domaine de spécialisation (ex : Intelligence Artificielle, Réseaux)
+  associé aux sujets et aux enseignants via une relation multiple.
+- **Spécialité** : filière de l'étudiant (ex : ISIL, Chimie, Électronique) avec un code
+  court et un type d'année (licence ou master).
+- **Promotion** : cohorte d'étudiants rattachée à une année académique.
+
+### Sujets et vœux
+
+- **Sujet PFE** : proposition de travail émise par un enseignant ou une entreprise,
+  comportant titre, description, type de groupement (monôme/binôme/trinôme), domaines
+  associés, statut de validation (en attente, validé, accepté sous réserve, refusé, expiré)
+  et les décisions/commentaires de deux validateurs assignés.
+- **Vœu** : expression d'intérêt d'un étudiant pour un sujet, avec statut (en attente,
+  accepté, refusé) et horodatage.
+
+### Affectations et suivi
+
+- **Affectation PFE** : assignation concrète d'un sujet à un groupe d'étudiants (1 à 3),
+  avec code PFE unique (ex : PFE-ISIL-2025-001), superviseur principal, co-superviseur
+  optionnel, lien vers le mémoire soumis et statut de progression (en cours, mémoire soumis,
+  soutenance planifiée, validé, refusé).
+- **Fiche de suivi** : compte rendu renseigné par le superviseur lors de chaque réunion
+  d'avancement, documentant la date, la durée, le type de réunion (présentiel ou
+  visioconférence), les sujets abordés et les observations pédagogiques.
+
+### Évaluation et résultats
+
+- **Jury de soutenance** : composition du jury affecté à une soutenance, comprenant un
+  président et un membre (tous deux enseignants), avec confirmation de participation de
+  chacun.
+- **Soutenance** : événement d'évaluation finale associé à une affectation PFE, caractérisé
+  par la date prévue, la salle, l'échéance, le statut (planifiée, effectuée, reportée),
+  le résultat (admis, corrections requises, non admis) et la note finale calculée.
+- **Note du jury** : évaluation soumise par chaque membre du jury selon quatre critères,
+  chacun noté sur 4 points.
+- **Évaluation de l'encadrant** : évaluation pédagogique soumise par le superviseur,
+  constituant le cinquième critère noté sur 4 points.
+
+### Notifications et traçabilité
+
+- **Notification** : événement généré lors d'étapes critiques (proposition de sujet,
+  décision de validation, affectation, planification de soutenance, résultats) adressé aux
+  utilisateurs concernés.
+- **Journal d'audit** : enregistrement de chaque action sensible avec l'acteur, l'horodatage,
+  l'entité affectée et les métadonnées associées, garantissant la traçabilité complète du
+  système.
 
 ## Modélisation UML
 
@@ -186,108 +294,159 @@ grandes fonctions du système.
 
 #### Cas d'utilisation de l'étudiant
 
-Le diagramme suivant représente l'ensemble des fonctionnalités accessibles à l'étudiant
-une fois authentifié. Son périmètre est centré sur la gestion de son propre PFE : soumission,
-suivi et consultation des résultats.
+Le diagramme suivant représente l'ensemble des fonctionnalités accessibles à l'étudiant.
+Son périmètre est centré sur la consultation du catalogue, l'expression de vœux, le suivi
+de son affectation et la consultation des résultats.
 
 ![Cas d'utilisation de l'étudiant](/diagrams/uc-etudiant.png){width="100%"}
 
-#### Cas d'utilisation de l'enseignant encadrant
+#### Cas d'utilisation de l'enseignant
 
-L'enseignant intervient principalement dans les phases de validation de la fiche PFE et
-de suivi de l'avancement des travaux. Il participe également à l'évaluation en tant que
-membre du jury.
+L'enseignant intervient à travers plusieurs rôles : proposant de sujet, validateur,
+superviseur et membre du jury. Le diagramme ci-dessous couvre l'ensemble de ces
+responsabilités.
 
-![Cas d'utilisation de l'enseignant encadrant](/diagrams/uc-enseignant.png){width="100%"}
+![Cas d'utilisation de l'enseignant](/diagrams/uc-enseignant.png){width="100%"}
 
 #### Cas d'utilisation de l'administration
 
 L'administration dispose du périmètre fonctionnel le plus étendu. Elle orchestre
-l'ensemble du processus : validation, affectation, planification et archivage.
+l'ensemble du processus : validation des entreprises, assignation des validateurs,
+affectation, constitution des jurys, planification et résolution des conflits de notation.
 
 ![Cas d'utilisation de l'administration](/diagrams/uc-administration.png){width="100%"}
 
+#### Cas d'utilisation de l'entreprise
+
+L'entreprise partenaire intervient principalement dans la proposition de sujets externes
+et le suivi des PFE qui lui sont associés.
+
+![Cas d'utilisation de l'entreprise](/diagrams/uc-entreprise.png){width="100%"}
+
 ### Diagramme de classes
 
-Le diagramme de classes ci-dessous modélise les entités du domaine métier, leurs attributs,
-leurs méthodes et leurs relations structurelles. Il constitue la base de la conception de la
-couche de persistance et de la logique métier du backend.
+Le modèle conceptuel du domaine a été scindé en deux diagrammes pour des raisons de
+lisibilité : le premier se concentre sur la hiérarchie des acteurs et le contexte
+académique, le second sur le processus PFE et l'évaluation.
 
-![Diagramme de classes du systÃ¨me](/diagrams/dc-classes.png){width="100%"}
+#### Acteurs et contexte académique
+
+Ce diagramme modélise la hiérarchie d'héritage des profils utilisateurs (étudiant,
+enseignant, entreprise) ainsi que les entités de référence du contexte académique
+(année académique, promotion, spécialité, domaine) et leurs relations structurelles.
+
+![Diagramme de classes - Acteurs et contexte académique](/diagrams/dc-classes-acteurs.png){width="100%"}
+
+#### Sujets, vœux et affectations
+
+Ce diagramme modélise les entités liées à la proposition de sujets, l'expression
+de vœux par les étudiants, l'affectation PFE et le suivi pédagogique. Les entités
+en jaune sont définies dans le diagramme précédent et apparaissent ici à titre de
+référence.
+
+```{=latex}
+\begin{landscape}
+\centering
+\vspace*{\fill}
+\includegraphics[width=\linewidth,height=0.88\textheight,keepaspectratio]{diagrams/dc-classes-sujets.png}
+\captionof{figure}{Diagramme de classes - Sujets, vœux et affectations}
+\vspace*{\fill}
+\end{landscape}
+```
+
+#### Évaluation et soutenance
+
+Ce diagramme modélise les entités liées à la constitution des jurys, la planification
+des soutenances, la notation par les membres du jury (critères 1 à 4) et l'évaluation
+de l'encadrant (critère 5).
+
+![Diagramme de classes - Évaluation et soutenance](/diagrams/dc-classes-eval.png){width="100%"}
 
 ### Diagrammes de séquence
 
-Les diagrammes de séquence ci-dessous illustrent les échanges chronologiques entre les
-composants du système pour les scénarios fonctionnels les plus critiques.
+Les diagrammes de séquence ci-dessous illustrent les interactions chronologiques entre
+les acteurs et le système pour les trois scénarios fonctionnels les plus critiques du
+processus PFE.
 
-#### Authentification
+#### Proposition d'un sujet PFE
 
-Ce scénario décrit le flux d'authentification d'un utilisateur. Le système utilise un
-mécanisme JWT : en cas de succès, un token signé est retourné au client et joint dans
-l'en-tête de toutes les requêtes suivantes.
+Ce scénario décrit la soumission d'un sujet par un enseignant (ou une entreprise) et
+l'assignation de validateurs par l'administration. C'est le point d'entrée du processus PFE.
 
-![Séquence - Authentification](/diagrams/seq-authentification.png){width="100%"}
+![Séquence - Proposition d'un sujet](/diagrams/seq-proposition.png){width="70%"}
 
-#### Soumission et validation d'une fiche PFE
+#### Validation d'un sujet PFE
 
-Ce scénario couvre le cycle complet de soumission d'une fiche PFE par l'étudiant jusqu'à
-sa validation par l'administration, en passant par la validation préalable de l'encadrant.
-C'est le scénario nominal le plus représentatif du processus métier.
+Ce scénario décrit l'évaluation d'un sujet par les validateurs assignés et la
+détermination du statut final selon leurs décisions.
 
-![Séquence - Soumission et validation d'une fiche PFE](/diagrams/seq-soumission-fiche.png){width="100%"}
+![Séquence - Validation d'un sujet](/diagrams/seq-validation.png){width="70%"}
 
-#### Renseignement d'une fiche de suivi (FicheSuiviPFE)
+#### Vœux et affectation
 
-Ce scénario illustre la collaboration entre l'étudiant et l'encadrant lors d'une réunion
-d'avancement. La fiche de suivi est co-renseignée et constitue la trace formelle du suivi
-pédagogique.
+Ce scénario décrit le parcours de l'étudiant depuis la consultation du catalogue de sujets
+validés jusqu'à la réception de son affectation PFE, en passant par l'expression de ses
+vœux et l'acceptation par le proposant du sujet.
 
-![Séquence - Renseignement d'une fiche de suivi](/diagrams/seq-fiche-suivi.png){width="100%"}
+![Séquence - Vœux et affectation](/diagrams/seq-voeux-affectation.png){width="100%"}
 
-#### Constitution du jury et planification de la soutenance
+#### Constitution du jury et planification
+
+Ce scénario décrit la constitution du jury par l'administration, la confirmation de
+participation des membres et la planification logistique de la soutenance.
 
 ![Séquence - Constitution du jury et planification](/diagrams/seq-jury-planification.png){width="100%"}
 
-#### Enregistrement du résultat de soutenance
+#### Notation
 
-![Séquence - Enregistrement du résultat de soutenance](/diagrams/seq-resultat-soutenance.png){width="100%"}
+Ce scénario illustre la soumission des notes par les membres du jury (critères 1 à 4) et
+par le superviseur (critère 5), le calcul de la note finale sur 20 et la résolution des
+conflits de notation.
 
-### Diagrammes d'états
+![Séquence - Notation](/diagrams/seq-notation.png){width="70%"}
 
-#### Cycle de vie d'un PFE
+#### Résultats
 
-Ce diagramme modélise l'ensemble des états qu'un PFE peut traverser depuis sa création
-jusqu'à sa publication ou son échec définitif. Chaque transition est déclenchée par une
-action précise d'un acteur identifié.
+Ce scénario décrit la détermination du résultat final de la soutenance selon trois issues
+possibles : admis, corrections requises ou non admis.
 
-![Diagramme d'états - Cycle de vie d'un PFE](/diagrams/etat-pfe.png){width="100%"}
+![Séquence - Résultats](/diagrams/seq-resultats.png){width="70%"}
 
-#### Cycle de vie d'une FicheSuiviPFE
+### Diagrammes d'activité
 
-![Diagramme d'états - Cycle de vie d'une FicheSuiviPFE](/diagrams/etat-fiche-suivi.png){width="100%"}
+Les diagrammes d'activité ci-dessous représentent le flux de bout en bout du processus
+PFE, scindé en deux phases pour des raisons de lisibilité.
 
-### Diagramme d'activité global
+#### De la proposition à l'affectation
 
-Ce diagramme représente le flux de bout en bout du processus PFE au sein du système,
-depuis l'authentification initiale jusqu'à l'archivage final, en intégrant les trois voies
-d'activité parallèles des acteurs.
+Ce diagramme couvre la première moitié du processus : proposition d'un sujet, validation,
+publication au catalogue, expression des vœux par les étudiants, sélection des candidats
+et affectation administrative.
 
-![Diagramme d'activité global du processus PFE](/diagrams/act-global.png){width="100%"}
+![Activité - De la proposition à l'affectation](/diagrams/act-proposition-affectation.png){width="100%"}
+
+#### Du suivi aux résultats
+
+Ce diagramme couvre la seconde moitié : réalisation des travaux, suivi pédagogique,
+dépôt du mémoire, constitution du jury, soutenance, notation et détermination du
+résultat final.
+
+![Activité - Du suivi aux résultats](/diagrams/act-suivi-resultats.png){width="100%"}
 
 ## Conclusion
 
 Ce chapitre a posé les fondements formels de la solution applicative proposée. Partant
-d'une identification précise des trois acteurs du système - étudiant, enseignant et
-administration - nous avons défini un ensemble d'exigences fonctionnelles et non
-fonctionnelles exhaustif et cohérent avec les dysfonctionnements identifiés dans le
-chapitre précédent.
+d'une identification précise des quatre acteurs du système - étudiant, enseignant,
+administration et entreprise - nous avons défini un ensemble de processus métier couvrant
+l'intégralité du cycle de vie d'un PFE : proposition de sujet, validation par des
+pairs, expression de vœux, affectation, suivi pédagogique, dépôt du mémoire, constitution
+du jury, soutenance et notation selon un barème à cinq critères sur 20 points.
 
-La modélisation UML qui en résulte - cas d'utilisation, classes, séquences, états et
+La modélisation UML qui en résulte - cas d'utilisation, classes, séquences et
 activité - offre une spécification non ambiguë du comportement attendu du système,
 constituant à la fois un contrat entre les parties prenantes et une feuille de route
-technique pour la phase d'implémentation.
+pour la phase d'implémentation.
 
 Le chapitre suivant s'attachera à traduire cette spécification en une architecture technique
-concrète, en détaillant les choix de conception du backend Go et du frontend SvelteKit,
-ainsi que le schéma de la base de données qui découle directement du diagramme de
-classes présenté ici.
+concrète, en détaillant les choix technologiques, l'organisation du code et le schéma de
+la base de données qui découle directement du diagramme de classes présenté ici.

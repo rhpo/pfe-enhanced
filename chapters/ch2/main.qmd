@@ -203,7 +203,7 @@ Les *Learning Management Systems* (LMS), ou systèmes de gestion de l'apprentiss
 
 ### Moodle
 
-Moodle (*Modular Object-Oriented Dynamic Learning Environment*) est la plateforme LMS open-source la plus utilisée dans le monde. Développée initialement par Martin Dougiamas en 2002 et publiée sous licence GNU GPL, elle compte aujourd'hui plus de 400 millions d'utilisateurs répartis dans plus de 230 pays [@moodle2023]. Son architecture modulaire permet une personnalisation poussée grâce à un écosystème de plugins développés par la communauté.
+Moodle (*Modular Object-Oriented Dynamic Learning Environment*) est la plateforme LMS open-source la plus utilisée dans le monde. Développée initialement par Martin Dougiamas en 2002 et publiée sous licence GNU GPL, elle compte aujourd'hui plus de 400 millions d'utilisateurs répartis dans plus de 230 pays [@moodle2023 ; @moodle2023stats ; @moodle2022stats]. Son architecture modulaire permet une personnalisation poussée grâce à un écosystème de plugins développés par la communauté.
 
 Dans le contexte universitaire algérien, Moodle est utilisé dans plusieurs établissements comme support aux enseignements (dépôt de cours, devoirs en ligne, forums). Certaines universités ont tenté d'adapter ses modules de gestion de devoirs pour le suivi des PFE, avec des résultats mitigés : l'outil reste généraliste et ne modélise pas les étapes spécifiques du processus PFE algérien (proposition de sujet, validation, affectation).
 
@@ -219,7 +219,7 @@ Fonctionnalités principales de Moodle pertinentes pour la gestion de PFE :
 
 Au-delà de Moodle, d'autres LMS sont utilisés dans l'enseignement supérieur mondial, chacun avec ses spécificités :
 
-- **Canvas (Instructure) :** LMS propriétaire très répandu en Amérique du Nord, apprécié pour son interface moderne et intuitive. Il offre des fonctionnalités avancées de collaboration et s'intègre facilement avec des outils tiers. Cependant, il ne propose aucun mécanisme dédié à la gestion de PFE et son coût le rend peu accessible aux établissements algériens.
+- **Canvas (Instructure) :** LMS propriétaire très répandu en Amérique du Nord (environ 41 % du marché nord-américain [@hill2024]), apprécié pour son interface moderne et intuitive. Il offre des fonctionnalités avancées de collaboration et s'intègre facilement avec des outils tiers. Cependant, il ne propose aucun mécanisme dédié à la gestion de PFE et son coût le rend peu accessible aux établissements algériens.
 - **Blackboard Learn :** l'un des premiers LMS commerciaux, largement adopté par les grandes universités. Il propose des outils analytiques avancés mais sa complexité et son coût élevé le rendent peu adapté au contexte des établissements algériens de taille intermédiaire.
 - **Google Classroom :** solution légère et gratuite de Google, particulièrement adaptée à l'enseignement secondaire et aux petites structures. Son intégration avec l'écosystème Google (Drive, Docs, Meet) constitue son principal atout. Toutefois, ses fonctionnalités restent trop limitées pour couvrir un processus aussi structuré que le PFE.
 - **Microsoft Teams for Education :** solution de Microsoft intégrant gestion de classe, communication et collaboration, de plus en plus adoptée dans le supérieur grâce aux licences gratuites offertes aux établissements. Il ne propose cependant aucune fonctionnalité de gestion de sujets, d'affectation ou de validation, ce qui le rend insuffisant pour le suivi complet d'un PFE.
@@ -270,7 +270,7 @@ Les critères retenus pour la comparaison sont les suivants :
 
 ### Analyse des résultats
 
-Il ressort de cette analyse comparative que les LMS généralistes disponibles sur le marché (Moodle, Canvas, Blackboard) couvrent correctement les besoins liés à la communication et à la gestion documentaire, mais s'avèrent insuffisants dès lors qu'il s'agit de gérer spécifiquement le processus PFE dans son intégralité. En particulier, aucune de ces solutions ne propose de mécanisme automatisé pour la proposition, l'affectation et la validation de sujets de PFE.
+Il ressort de cette analyse comparative que les LMS généralistes disponibles sur le marché (Moodle, Canvas, Blackboard) couvrent correctement les besoins liés à la communication et à la gestion documentaire [@cavus2013], mais s'avèrent insuffisants dès lors qu'il s'agit de gérer spécifiquement le processus PFE dans son intégralité. En particulier, aucune de ces solutions ne propose de mécanisme automatisé pour la proposition, l'affectation et la validation de sujets de PFE.
 
 Par ailleurs, ces solutions ne tiennent aucunement compte des particularités du système universitaire algérien : organisation en semestres, régulations du MESRS, pratiques locales en matière de soutenances et de constitution des jurys. Leur déploiement dans ce contexte nécessiterait des adaptations coûteuses en temps et en ressources humaines.
 

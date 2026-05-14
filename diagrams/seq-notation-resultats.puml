@@ -1,0 +1,37 @@
+@startuml
+skinparam sequenceArrowThickness 1.5
+skinparam sequenceParticipantBackgroundColor #EEF5FF
+skinparam sequenceParticipantBorderColor #3366CC
+
+actor "Administration" as A
+participant "Système" as S
+actor "Enseignant\n(Membre du jury)" as J
+actor "Enseignant\n(Superviseur)" as T
+actor "Étudiant" as E
+
+J -> S : Soumet ses notes\n(critères 1 à 4, chacun noté sur 4)
+T -> S : Soumet l'évaluation de l'encadrant\n(critère 5, noté sur 4)
+
+S -> S : Calcule la note finale\n(somme des 5 critères = /20)
+
+alt Notes du jury concordantes
+  S -> S : Note finale directement calculée
+else Notes du jury divergentes
+  S -> A : Notification : conflit de notation
+  A -> S : Résout le conflit\n(choisit les notes à retenir)
+  S -> S : Recalcule la note finale
+end
+
+alt Résultat : admis
+  S -> S : Affectation → validée
+  S -> E : Notification : PFE admis avec note finale
+  A -> S : Archive et publie le PFE
+else Résultat : corrections requises
+  S -> E : Notification : corrections requises\navec remarques du jury
+  E -> S : Re-soumet le mémoire corrigé
+  A -> S : Re-planifie la soutenance
+else Résultat : non admis
+  S -> S : Affectation → refusée
+  S -> E : Notification : PFE non admis
+end
+@enduml
