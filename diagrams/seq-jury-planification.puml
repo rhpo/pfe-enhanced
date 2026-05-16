@@ -6,18 +6,18 @@ skinparam sequenceParticipantBorderColor #3366CC
 
 actor "Administration" as A
 participant "Système" as S
-actor "Enseignant\n(Membre du jury)" as J
-actor "Enseignant\n(Superviseur)" as T
-actor "Étudiant" as E
+database "SGBD" as DB
 
 A -> S : Constitue le jury\n(président + membre)
-S -> J : Notification : demande de confirmation
-J -> S : Confirme sa participation
+S -> DB : SELECT enseignants disponibles
+DB --> S : Liste des enseignants
+S -> DB : INSERT jury_soutenance\n(président, membre)
+DB --> S : Confirmation
+S -> DB : INSERT notifications\n(membres du jury : demande de confirmation)
 
-A -> S : Planifie la soutenance\n(date, salle, échéance)
-S -> E : Notification : soutenance planifiée
-S -> J : Notification : convocation au jury
-S -> T : Notification : soutenance planifiée
-
-note over E, S : La soutenance a lieu
+A -> S : Planifie la soutenance\n(date, heure, salle)
+S -> DB : INSERT soutenance\n(date, salle, échéance)
+DB --> S : Confirmation
+S -> DB : INSERT notifications\n(étudiant, jury, superviseur)
+S --> A : Soutenance planifiée
 @enduml

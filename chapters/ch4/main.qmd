@@ -3,9 +3,31 @@
 ## Introduction du chapitre
 
 Ce chapitre présente la phase de réalisation du système conçu au chapitre précédent.
-Nous détaillerons les langages de programmation et les outils utilisés, les frameworks
-retenus, puis nous illustrerons le résultat final à travers les captures d'écran des
+Nous commencerons par justifier le choix d'une application web, puis nous détaillerons
+les langages de programmation, les outils et les frameworks retenus en motivant chaque
+décision. Enfin, nous illustrerons le résultat final à travers les captures d'écran des
 interfaces principales de l'application.
+
+## Justification du choix d'une application web
+
+Le choix de développer une application web, par opposition à une application de bureau
+ou mobile native, repose sur plusieurs critères directement liés au contexte d'utilisation
+du système :
+
+- **Accessibilité universelle** : une application web est accessible depuis n'importe quel
+  navigateur, sans installation préalable, ce qui facilite l'adoption par les quatre
+  catégories d'acteurs (étudiants, enseignants, administration, entreprises).
+- **Déploiement centralisé** : une seule instance du système est déployée sur un serveur,
+  ce qui simplifie la maintenance, les mises à jour et la gestion des données.
+- **Multi-plateforme** : l'application fonctionne indépendamment du système d'exploitation
+  (Windows, Linux, macOS) et du type de terminal (ordinateur, tablette, smartphone).
+- **Coût réduit** : le développement d'une seule base de code couvrant tous les terminaux
+  évite la duplication d'efforts inhérente au développement natif multi-plateforme.
+- **Collaboration en temps réel** : l'architecture client-serveur permet à plusieurs
+  utilisateurs d'accéder simultanément aux données actualisées du système.
+
+Ces avantages font de l'application web le choix le plus adapté pour un système de gestion
+des PFE destiné à un établissement universitaire.
 
 ## Langages et outils
 
@@ -14,28 +36,36 @@ pour leur complémentarité et leur adéquation au profil de l'application.
 
 ### Langages de programmation
 
-- **HTML5** : langage de balisage standard pour la structuration du contenu des pages web.
-  Il constitue le squelette de toutes les vues de l'application.
-- **CSS3** : langage de feuilles de style utilisé pour la mise en forme, le positionnement
-  et le design responsive de l'interface utilisateur.
-- **JavaScript (ES2022)** : langage de programmation côté client permettant l'interactivité
-  des pages, la manipulation du DOM et la communication asynchrone avec le serveur.
-- **TypeScript** : sur-ensemble typé de JavaScript, utilisé côté serveur (Node.js) et
-  côté client pour garantir la fiabilité du code grâce au typage statique et à la
-  détection d'erreurs à la compilation.
+- **HTML5** [@mdn2024] : langage de balisage standard pour la structuration du contenu des
+  pages web. Il constitue le squelette de toutes les vues de l'application.
+- **CSS3** [@mdn2024css] : langage de feuilles de style utilisé pour la mise en forme, le
+  positionnement et le design responsive de l'interface utilisateur.
+- **JavaScript (ES2022)** [@ecma2022] : langage de programmation côté client permettant
+  l'interactivité des pages, la manipulation du DOM et la communication asynchrone avec
+  le serveur. JavaScript est le seul langage nativement exécuté par les navigateurs web,
+  ce qui en fait un choix incontournable pour le frontend.
+- **TypeScript** [@typescript2024] : sur-ensemble typé de JavaScript, utilisé côté serveur
+  (Node.js) et côté client pour garantir la fiabilité du code grâce au typage statique et
+  à la détection d'erreurs à la compilation. Le choix de TypeScript plutôt que JavaScript
+  pur se justifie par la réduction significative des erreurs à l'exécution dans un projet
+  de cette envergure.
 - **Go (Golang)** [@pike2012] : langage compilé conçu par Google, utilisé pour le
-  développement de l'API REST backend. Go offre une empreinte mémoire faible, une gestion
-  native de la concurrence (goroutines) et produit un binaire autonome déployable sans
-  dépendances externes.
+  développement de l'API REST backend. Go a été retenu pour son empreinte mémoire faible,
+  sa gestion native de la concurrence (goroutines) et la production d'un binaire autonome
+  déployable sans dépendances externes, ce qui simplifie considérablement le déploiement
+  en contexte universitaire.
 
 ### Outils de développement
 
-- **Neovim** : éditeur de code principal, hautement configurable et extensible, utilisé
-  avec des plugins dédiés pour Svelte, TypeScript et Go.
+- **Neovim** [@neovim2024] : éditeur de code principal, hautement configurable et
+  extensible, utilisé avec des plugins dédiés pour Svelte, TypeScript et Go.
 - **Git / GitHub** : système de contrôle de version distribué et plateforme d'hébergement
-  du code source.
-- **SQLite** : système de gestion de base de données relationnelle embarquée, ne nécessitant
-  aucun serveur dédié, adapté au contexte d'un déploiement universitaire léger.
+  du code source, permettant le suivi des modifications et la collaboration.
+- **SQLite** [@sqlite2024] : système de gestion de base de données relationnelle embarquée,
+  ne nécessitant aucun serveur dédié. Le choix de SQLite plutôt qu'un SGBD client-serveur
+  (PostgreSQL, MySQL) se justifie par la simplicité de déploiement et la faible charge
+  attendue dans un contexte universitaire, tout en offrant la conformité ACID et le support
+  complet du SQL.
 - **PlantUML** : outil de génération de diagrammes UML à partir de descriptions textuelles,
   utilisé pour la modélisation présentée au chapitre précédent.
 - **Quarto (LaTeX)** : système de publication scientifique utilisé pour la rédaction du
@@ -45,12 +75,13 @@ pour leur complémentarité et leur adéquation au profil de l'application.
 
 ### SvelteKit (Frontend)
 
-SvelteKit est un framework full-stack basé sur Svelte [@harris2018], utilisant Node.js et
-TypeScript côté serveur. Par rapport aux frameworks JavaScript dominants (React/Next.js,
-Vue.js/Nuxt, Angular), SvelteKit se distingue par son architecture basée sur la
-compilation : le code est converti en JavaScript optimisé au moment du build, sans runtime
-virtuel côté client. Cela se traduit par un temps de chargement initial nettement inférieur
-et une meilleure performance perceptible pour l'utilisateur.
+SvelteKit [@sveltekit2024] est un framework full-stack basé sur Svelte [@harris2018],
+utilisant Node.js et TypeScript côté serveur. Le choix de SvelteKit plutôt que les
+frameworks JavaScript dominants (React/Next.js, Vue.js/Nuxt, Angular) se justifie par
+son architecture basée sur la compilation : le code est converti en JavaScript optimisé
+au moment du build, sans runtime virtuel côté client. Cela se traduit par un temps de
+chargement initial nettement inférieur et une meilleure performance perceptible pour
+l'utilisateur.
 
 Sa gestion native du rendu côté serveur (SSR) et du routage basé sur le système de fichiers
 simplifie considérablement le développement. L'interface utilisateur de l'application
@@ -59,9 +90,11 @@ enseignant, administrateur, entreprise).
 
 ### Fiber (Backend)
 
-Fiber est un framework web pour Go inspiré d'Express.js, conçu pour les applications à
-haute performance. Il repose sur le moteur HTTP Fasthttp, qui offre des performances
-nettement supérieures au package net/http standard de Go.
+Fiber [@fiber2024] est un framework web pour Go inspiré d'Express.js, conçu pour les
+applications à haute performance. Il repose sur le moteur HTTP Fasthttp, qui offre des
+performances nettement supérieures au package net/http standard de Go. Le choix de Fiber
+se justifie par sa simplicité d'utilisation, sa documentation complète et son écosystème
+de middlewares (authentification, CORS, logging).
 
 L'API REST développée avec Fiber expose des endpoints sécurisés et gère la logique métier
 ainsi que la persistance des données. L'architecture du backend suit le pattern
@@ -118,8 +151,10 @@ illustrant le résultat final de la phase de réalisation.
 ## Conclusion du chapitre
 
 Ce chapitre a présenté la réalisation concrète du système conçu au chapitre précédent.
-Le choix d'une architecture client-serveur associant SvelteKit (frontend) et Go/Fiber
-(backend) a permis de développer une application performante, maintenable et adaptée au
-contexte universitaire algérien. Les interfaces développées couvrent l'ensemble des
-fonctionnalités identifiées : authentification, gestion des sujets, expression de vœux,
-affectation, suivi pédagogique, planification des soutenances et notation.
+Le choix d'une application web se justifie par l'accessibilité universelle, le déploiement
+centralisé et la compatibilité multi-plateforme. L'architecture client-serveur associant
+SvelteKit (frontend) et Go/Fiber (backend) a permis de développer une application
+performante, maintenable et adaptée au contexte universitaire algérien. Les interfaces
+développées couvrent l'ensemble des fonctionnalités identifiées : authentification,
+gestion des sujets, expression de vœux, affectation, suivi pédagogique, planification
+des soutenances et notation.

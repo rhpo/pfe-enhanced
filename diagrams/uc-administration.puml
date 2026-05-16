@@ -18,7 +18,6 @@ rectangle "Système de Gestion des PFE" {
   usecase "Procéder aux\naffectations PFE" as UC4
   usecase "Constituer les jurys\nde soutenance" as UC5
   usecase "Planifier les\nsoutenances" as UC6
-  usecase "Résoudre les conflits\nde notation" as UC7
   usecase "Gérer les paramètres\nacadémiques" as UC8
   usecase "Consulter les statistiques\net exporter les rapports" as UC9
 }
@@ -29,7 +28,6 @@ A --> UC3
 A --> UC4
 A --> UC5
 A --> UC6
-A --> UC7
 A --> UC8
 A --> UC9
 
@@ -39,11 +37,9 @@ UC3 ..> AUTH : <<include>>
 UC4 ..> AUTH : <<include>>
 UC5 ..> AUTH : <<include>>
 UC6 ..> AUTH : <<include>>
-UC7 ..> AUTH : <<include>>
 UC8 ..> AUTH : <<include>>
 UC9 ..> AUTH : <<include>>
 
 UC6 ..> UC5 : <<include>>
-UC7 ..> UC6 : <<extend>>
 UC4 ..> UC3 : <<include>>
 @enduml

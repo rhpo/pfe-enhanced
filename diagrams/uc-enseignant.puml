@@ -15,16 +15,20 @@ rectangle "Système de Gestion des PFE" {
   usecase "Proposer un sujet PFE" as UC1
   usecase "Valider des sujets\n(en tant que validateur)" as UC2
   usecase "Consulter et gérer\nles candidatures" as UC3
+  usecase "Gérer les sujets\nproposés" as UC3B
+  usecase "Gérer les sujets\naffectés" as UC3C
   usecase "Assurer le suivi\npédagogique" as UC4
   usecase "Soumettre l'évaluation\nde l'encadrant" as UC5
   usecase "Confirmer sa\nparticipation au jury" as UC6
-  usecase "Soumettre les notes\ndu jury" as UC7
+  usecase "Noter un PFE" as UC7
   usecase "Gérer sa\ndisponibilité" as UC8
 }
 
 T --> UC1
 T --> UC2
 T --> UC3
+T --> UC3B
+T --> UC3C
 T --> UC4
 T --> UC5
 T --> UC6
@@ -34,12 +38,14 @@ T --> UC8
 UC1 ..> AUTH : <<include>>
 UC2 ..> AUTH : <<include>>
 UC3 ..> AUTH : <<include>>
+UC3B ..> AUTH : <<include>>
+UC3C ..> AUTH : <<include>>
 UC4 ..> AUTH : <<include>>
 UC5 ..> AUTH : <<include>>
 UC6 ..> AUTH : <<include>>
 UC7 ..> AUTH : <<include>>
 UC8 ..> AUTH : <<include>>
 
-UC3 ..> UC1 : <<extend>>
+UC3 ..> UC1 : <<include>>
 UC7 ..> UC6 : <<include>>
 @enduml

@@ -4,25 +4,30 @@ skinparam sequenceArrowThickness 1.5
 skinparam sequenceParticipantBackgroundColor #EEF5FF
 skinparam sequenceParticipantBorderColor #3366CC
 
-actor "Enseignant\n(Proposant)" as P
-participant "Système" as S
 actor "Enseignant\n(Validateur)" as V
+participant "Système" as S
+database "SGBD" as DB
 
-S -> V : Notification : sujet à évaluer
-V -> S : Consulte le sujet
+V -> S : Consulte le sujet à évaluer
+S -> DB : SELECT sujet WHERE id = ?
+DB --> S : Données du sujet
+S --> V : Affiche les détails du sujet
+
 V -> S : Soumet sa décision\n(validé / accepté sous réserve / refusé)\navec commentaire
+S -> DB : UPDATE sujet\n(décision du validateur)
+DB --> S : Confirmation
 
-S -> S : Met à jour le statut du sujet\nselon les décisions des validateurs
+S -> DB : SELECT décisions des deux validateurs
+DB --> S : Décisions
 
 alt Les deux validateurs valident
-  S -> S : Statut → validé
-  S -> P : Notification : sujet validé
-  S -> S : Sujet visible au catalogue
+  S -> DB : UPDATE sujet (statut = validé)
+  S -> DB : INSERT notification (proposant : sujet validé)
 else Au moins un validateur refuse
-  S -> S : Statut → refusé
-  S -> P : Notification : sujet refusé\navec commentaires des validateurs
+  S -> DB : UPDATE sujet (statut = refusé)
+  S -> DB : INSERT notification (proposant : sujet refusé)
 else Accepté sous réserve
-  S -> S : Statut → accepté sous réserve
-  S -> P : Notification : modifications mineures requises
+  S -> DB : UPDATE sujet (statut = accepté_sous_réserve)
+  S -> DB : INSERT notification (proposant : modifications requises)
 end
 @enduml

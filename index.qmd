@@ -47,7 +47,9 @@ format:
 
 {{< include chapters/ch4/main.qmd >}}
 
-# Conclusion Générale {.unnumbered}
+# Conclusion Générale et Perspectives {.unnumbered}
+
+\markboth{Conclusion Générale et Perspectives}{}
 
 Le présent mémoire a abordé la problématique de la gestion des Projets de Fin d'Études
 au sein des établissements universitaires algériens, en suivant une démarche progressive
@@ -83,6 +85,8 @@ l'application à d'autres établissements via une architecture multi-tenant.
 
 
 # Bibliographie {.unnumbered}
+
+\markboth{Bibliographie}{}
 
 ::: {#refs}
 :::

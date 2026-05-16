@@ -4,14 +4,14 @@ skinparam sequenceArrowThickness 1.5
 skinparam sequenceParticipantBackgroundColor #EEF5FF
 skinparam sequenceParticipantBorderColor #3366CC
 
-actor "Enseignant\n(Proposant)" as P
+actor "Enseignant" as P
 participant "Système" as S
-actor "Administration" as A
+database "SGBD" as DB
 
-P -> S : Propose un sujet PFE\n(titre, description, type de groupement, domaines)
-S -> S : Enregistre le sujet\n(statut : en attente)
-S -> A : Notification : nouveau sujet à traiter
-
-A -> S : Assigne deux validateurs au sujet
-S -> S : Validateurs associés au sujet
+P -> S : Soumet un sujet PFE\n(titre, description, type, domaines)
+S -> S : Valide les données du formulaire
+S -> DB : INSERT sujet\n(statut = en_attente)
+DB --> S : Confirmation
+S --> P : Sujet enregistré avec succès
+S -> DB : INSERT notification\n(pour l'administration)
 @enduml

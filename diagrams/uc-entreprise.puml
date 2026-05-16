@@ -16,7 +16,6 @@ rectangle "Système de Gestion des PFE" {
   usecase "Consulter les\ncandidatures" as UC2
   usecase "Suivre les PFE\nassignés" as UC3
   usecase "Participer au suivi\npédagogique" as UC4
-  usecase "Soumettre une\névaluation" as UC5
   usecase "Soumettre un rapport\nde correction" as UC6
 }
 
@@ -24,16 +23,13 @@ C --> UC1
 C --> UC2
 C --> UC3
 C --> UC4
-C --> UC5
 C --> UC6
 
 UC1 ..> AUTH : <<include>>
 UC2 ..> AUTH : <<include>>
 UC3 ..> AUTH : <<include>>
 UC4 ..> AUTH : <<include>>
-UC5 ..> AUTH : <<include>>
 UC6 ..> AUTH : <<include>>
 
 UC2 ..> UC1 : <<extend>>
-UC5 ..> UC3 : <<include>>
 @enduml

@@ -1,0 +1,241 @@
+@startuml
+scale 1.5
+left to right direction
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor #EEF5FF
+  BorderColor #3366CC
+  ArrowColor #3366CC
+  FontSize 10
+}
+
+' === ENUMS ===
+enum RoleUtilisateur {
+  etudiant
+  enseignant
+  admin
+  entreprise
+}
+
+enum GradeEnseignant {
+  assistant
+  mab
+  maa
+  mcb
+  mca
+  professeur
+}
+
+enum TypeGroupement {
+  monome
+  binome
+  trinome
+}
+
+enum StatutSujet {
+  en_attente
+  valide
+  accepte_sous_reserve
+  refuse
+}
+
+enum DecisionValidateur {
+  valide
+  accepte_sous_reserve
+  refuse
+}
+
+enum StatutAffectation {
+  en_cours
+  memoire_soumis
+  soutenance_planifiee
+  valide
+  refuse
+}
+
+enum ResultatSoutenance {
+  admis
+  corrections_requises
+  non_admis
+}
+
+' === ACTEURS ===
+class ProfilUtilisateur {
+  +id: String
+  +role: RoleUtilisateur
+  +nomComplet: String
+  +email: String
+  +avatarUrl: String
+  +estActif: Boolean
+  +dateCreation: DateTime
+  --
+  +sAuthentifier()
+}
+
+class Etudiant {
+  +id: String
+  +numeroEtudiant: String
+  +niveau: String
+  --
+  +consulterCatalogue()
+  +exprimerVoeu(sujet)
+  +soumettreMemoire(fichier)
+}
+
+class Enseignant {
+  +id: String
+  +grade: GradeEnseignant
+  +departement: String
+  +statutDisponibilite: String
+  +indisponibleJusqua: Date
+  --
+  +proposerSujet(sujet)
+  +validerSujet(decision)
+  +soumettreEvaluation(note)
+  +confirmerJury()
+  +soumettreNotesJury(notes)
+}
+
+class Entreprise {
+  +id: String
+  +nomEntreprise: String
+  +secteur: String
+  +description: String
+  +emailContact: String
+  +telephoneContact: String
+  +estVerifiee: Boolean
+  --
+  +proposerSujet(sujet)
+}
+
+' === CONTEXTE ACADEMIQUE ===
+class AnneeAcademique {
+  +id: String
+  +libelle: String
+  +statut: String
+  +ouvertureSoumission: DateTime
+  +clotureSoumission: DateTime
+  +maxVoeux: Integer
+}
+
+class Promotion {
+  +id: String
+  +libelle: String
+}
+
+class Specialite {
+  +id: String
+  +nom: String
+  +code: String
+  +typeAnnee: String
+}
+
+class Domaine {
+  +id: String
+  +nom: String
+}
+
+' === SUJETS ET VOEUX ===
+class SujetPFE {
+  +id: String
+  +titre: String
+  +description: String
+  +typeGroupement: TypeGroupement
+  +roleProposant: String
+  +statut: StatutSujet
+  +decisionValidateur1: DecisionValidateur
+  +commentaireValidateur1: String
+  +decisionValidateur2: DecisionValidateur
+  +commentaireValidateur2: String
+}
+
+class Voeu {
+  +id: String
+  +statut: String
+  +dateCreation: DateTime
+}
+
+' === AFFECTATION ET SUIVI ===
+class AffectationPFE {
+  +id: String
+  +codePFE: String
+  +urlMemoire: String
+  +statut: StatutAffectation
+}
+
+class FicheSuivi {
+  +id: String
+  +dateReunion: Date
+  +duree: Integer
+  +typeReunion: String
+  +sujetsAbordes: String
+  +observation: String
+  +statut: String
+}
+
+' === EVALUATION ET SOUTENANCE ===
+class JurySoutenance {
+  +id: String
+  +presidentConfirme: Boolean
+  +membreConfirme: Boolean
+}
+
+class Soutenance {
+  +id: String
+  +datePrevue: DateTime
+  +salle: String
+  +echeance: Date
+  +statut: String
+  +resultat: ResultatSoutenance
+  +noteFinale: Float
+}
+
+class NoteJury {
+  +id: String
+  +critere1: Float
+  +critere2: Float
+  +critere3: Float
+  +critere4: Float
+}
+
+class EvaluationEncadrant {
+  +id: String
+  +critere5: Float
+}
+
+' === RELATIONS ===
+ProfilUtilisateur <|-- Etudiant
+ProfilUtilisateur <|-- Enseignant
+ProfilUtilisateur <|-- Entreprise
+
+Etudiant "0..*" --> "1" Specialite : appartient à
+Etudiant "0..*" --> "1" Promotion : inscrit dans
+Promotion "0..*" --> "1" AnneeAcademique : rattachée à
+Enseignant "0..*" -- "0..*" Domaine : expertise dans
+
+SujetPFE "0..*" --> "1" AnneeAcademique
+SujetPFE "0..*" -- "0..*" Domaine
+SujetPFE "0..*" --> "1" Enseignant : proposé / validé par
+SujetPFE "0..*" --> "0..1" Entreprise : proposé par
+
+Voeu "0..*" --> "1" Etudiant
+Voeu "0..*" --> "1" SujetPFE
+
+AffectationPFE "0..*" --> "1" SujetPFE
+AffectationPFE "1" --> "1..3" Etudiant
+AffectationPFE "0..*" --> "1" Enseignant : superviseur
+
+FicheSuivi "0..*" --> "1" AffectationPFE
+
+JurySoutenance "1" --> "1" AffectationPFE
+JurySoutenance "0..*" --> "1" Enseignant : président / membre
+
+Soutenance "1" --> "1" AffectationPFE
+Soutenance "0..*" --> "1" JurySoutenance
+
+NoteJury "0..*" --> "1" Soutenance
+NoteJury "0..*" --> "1" Enseignant : évaluateur
+
+EvaluationEncadrant "1" --> "1" AffectationPFE
+EvaluationEncadrant "0..*" --> "1" Enseignant : évaluateur
+@enduml

@@ -6,18 +6,28 @@ skinparam sequenceParticipantBorderColor #3366CC
 
 actor "Administration" as A
 participant "Système" as S
-actor "Étudiant" as E
+database "SGBD" as DB
+
+A -> S : Détermine le résultat final
+
+S -> DB : SELECT noteFinale\nWHERE soutenance = ?
+DB --> S : Note finale
 
 alt Résultat : admis
-  S -> S : Affectation → validée
-  S -> E : Notification : PFE admis avec note finale
-  A -> S : Archive et publie le PFE
+  S -> DB : UPDATE affectation\n(statut = validée)
+  S -> DB : UPDATE soutenance\n(résultat = admis)
+  DB --> S : Confirmation
+  S -> DB : INSERT notification\n(étudiant : PFE admis)
 else Résultat : corrections requises
-  S -> E : Notification : corrections requises\navec remarques du jury
-  E -> S : Re-soumet le mémoire corrigé
-  A -> S : Re-planifie la soutenance
+  S -> DB : UPDATE soutenance\n(résultat = corrections_requises)
+  DB --> S : Confirmation
+  S -> DB : INSERT notification\n(étudiant : corrections requises)
 else Résultat : non admis
-  S -> S : Affectation → refusée
-  S -> E : Notification : PFE non admis
+  S -> DB : UPDATE affectation\n(statut = refusée)
+  S -> DB : UPDATE soutenance\n(résultat = non_admis)
+  DB --> S : Confirmation
+  S -> DB : INSERT notification\n(étudiant : PFE non admis)
 end
+
+S --> A : Résultat enregistré
 @enduml
