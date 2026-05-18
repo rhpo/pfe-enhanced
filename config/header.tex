@@ -33,15 +33,18 @@
 \captionsetup[table]{
   labelfont={bf,color=mainblue},
   font=small,
-  skip=10pt,
+  skip=6pt,
   justification=centering
+}
+\captionsetup[figure]{
+  skip=6pt
 }
 
 \setlength{\arrayrulewidth}{0.8pt}
 \arrayrulecolor{tableborder}
 
 % Use a smaller font (footnotesize) and RaggedRight alignment to handle long text
-\renewcommand{\arraystretch}{1.6}
+\renewcommand{\arraystretch}{1.4}
 
 \AtBeginEnvironment{tabular}{
   \footnotesize % Smaller font for better fit
@@ -75,15 +78,15 @@
     \\ \vspace{-2pt}
     \footnotesize\color{chaptergrey}\bfseries\MakeUppercase{\chaptertitlename}
   }
-  {3ex}
-  {\titlerule[1.5pt]\vspace{2.5ex}\huge\bfseries}
-  [\vspace{1.5ex}\titlerule\vspace{2.5ex}]
+  {2.5ex}
+  {\titlerule[1.5pt]\vspace{2ex}\huge\bfseries}
+  [\vspace{1.2ex}\titlerule\vspace{2ex}]
 
-\titlespacing*{\chapter}{0pt}{-30pt}{25pt}
+\titlespacing*{\chapter}{0pt}{-30pt}{15pt}
 
 % Section & Subsection styling
-\titlespacing*{\section}{0pt}{15pt}{8pt}
-\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
 
 % TOC Header spacing
 \advance\cftbeforetoctitleskip by -30pt
@@ -92,9 +95,9 @@
 % Fix List of Figures: wider number column to prevent "III.10" overlapping caption
 \setlength{\cftfignumwidth}{3.5em}
 
-% List spacing - MODERN & BREATHE
-\setlist[itemize]{label=\textbullet, itemsep=10pt, topsep=6pt, parsep=4pt}
-\setlist[enumerate]{itemsep=10pt, topsep=6pt, parsep=4pt}
+% List spacing - compact but readable
+\setlist[itemize]{label=\textbullet, itemsep=4pt, topsep=4pt, parsep=1pt}
+\setlist[enumerate]{itemsep=4pt, topsep=4pt, parsep=1pt}
 
 % Footer configuration
 \pagestyle{fancy}
@@ -127,7 +130,7 @@
     right=15pt,
     top=12pt,
     bottom=12pt,
-    after skip=40pt,
+    after skip=20pt,
     fontupper=\small\itshape\color{quote-text},
     overlay={
       \node[anchor=north west, xshift=8pt, yshift=-10pt] at (frame.north west) {
@@ -148,6 +151,7 @@
 }
 
 % Global Typography & Spacing
+\setlength{\parskip}{3pt plus 1pt minus 1pt}
 \widowpenalty=10000
 \clubpenalty=10000
 \raggedbottom
@@ -164,7 +168,7 @@
 
 \titleformat{\subsubsection}
   {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
-\titlespacing*{\subsubsection}{0pt}{10pt}{5pt}
+\titlespacing*{\subsubsection}{0pt}{8pt}{4pt}
 
 \hypersetup{
   linkcolor=black,

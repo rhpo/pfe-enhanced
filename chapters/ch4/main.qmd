@@ -112,41 +112,58 @@ l'évolutivité de la solution.
 Cette section présente les captures d'écran des pages principales de l'application,
 illustrant le résultat final de la phase de réalisation.
 
-*Les captures d'écran seront ajoutées ultérieurement.*
+### Interfaces de l'Administration
 
-<!--
-### Page d'authentification
+L'administrateur dispose d'une vue d'ensemble sur le système. Le tableau de bord lui permet de suivre l'état global des processus du PFE (sujets soumis, affectations, soutenances).
 
-![Page de connexion](/screenshots/login.png){width="100%"}
+![Tableau de bord de l'administration, offrant une vue d'ensemble sur les statistiques et l'état des PFE.](images/screenshots/admin-dashboard.png){width="80%"}
 
-### Tableau de bord de l'administration
+La gestion des sujets permet à l'administration de valider, d'assigner et de filtrer les différents sujets proposés par les enseignants et les entreprises.
 
-![Tableau de bord administrateur](/screenshots/admin-dashboard.png){width="100%"}
+![Interface de gestion des sujets, permettant le suivi et la validation des propositions de PFE.](images/screenshots/admin-sujets.png){width="80%"}
 
-### Catalogue de sujets PFE
+Une fois les affectations terminées, l'administrateur planifie et gère les soutenances. Cette interface centralise les événements à venir.
 
-![Catalogue de sujets](/screenshots/catalogue-sujets.png){width="100%"}
+![Interface de planification et gestion des soutenances.](images/screenshots/admin-soutenances.png){width="80%"}
 
-### Expression de vœux
+### Interfaces des Enseignants
 
-![Page d'expression de vœux](/screenshots/voeux.png){width="100%"}
+Le tableau de bord enseignant offre un accès rapide à ses encadrements, aux sujets qu'il propose ainsi qu'aux jurys auxquels il est affecté.
 
-### Gestion des affectations
+![Tableau de bord de l'enseignant résumant ses responsabilités (encadrements, jurys, propositions).](images/screenshots/teacher-dashboard.png){width="80%"}
 
-![Page des affectations PFE](/screenshots/affectations.png){width="100%"}
+La page des sujets permet à l'enseignant de soumettre de nouveaux sujets via un formulaire dédié et de consulter l'état de validation de ses propositions.
 
-### Suivi pédagogique
+![Interface de gestion des sujets par l'enseignant.](images/screenshots/teacher-sujets.png){width="80%"}
 
-![Fiches de suivi](/screenshots/suivi.png){width="100%"}
+### Interfaces des Étudiants
 
-### Planification des soutenances
+Dès sa connexion, l'étudiant accède à un tableau de bord récapitulatif lui indiquant les dates importantes et le statut de son PFE de manière claire et concise.
 
-![Planning des soutenances](/screenshots/soutenances.png){width="100%"}
+![Tableau de bord de l'étudiant, affichant l'état de la recherche et les échéances.](images/screenshots/student-dashboard.png){width="80%"}
 
-### Notation et résultats
+Pour formuler ses choix, l'étudiant a accès au catalogue complet et peut exprimer ses vœux selon ses préférences. Une interface interactive permet de les classer facilement.
 
-![Page de notation](/screenshots/notation.png){width="100%"}
--->
+![Page d'expression et d'ordre des vœux par l'étudiant.](images/screenshots/student-voeux.png){width="80%"}
+
+L'espace PFE de l'étudiant lui permet de suivre l'avancement de son projet. Il peut consulter les remarques de son encadrant et interagir en ligne.
+
+![Espace de suivi du PFE pour l'étudiant.](images/screenshots/student-pfe.png){width="80%"}
+
+### Interfaces des Entreprises
+
+Les partenaires industriels bénéficient d'une interface sur mesure qui s'adapte à leurs besoins. Le tableau de bord affiche un résumé des interactions avec l'établissement universitaire.
+
+![Tableau de bord de l'entreprise partenaire.](images/screenshots/company-dashboard.png){width="80%"}
+
+La gestion des sujets permet à l'entreprise de consulter l'historique de ses propositions et de vérifier leur état de validation par le comité scientifique.
+
+L'entreprise peut également formuler et soumettre de nouvelles propositions de projets via un formulaire structuré facilitant l'évaluation par l'établissement.
+
+
+![Interface de gestion des sujets soumis par l'entreprise.](images/screenshots/company-sujets.png){height=20%}
+
+![Formulaire de proposition d'un nouveau sujet de PFE par l'entreprise.](images/screenshots/company-proposal.png){width=100%}
 
 ## Conclusion du chapitre
 

@@ -159,7 +159,7 @@ La @fig-uc-etudiant représente l'ensemble des fonctionnalités accessibles à l
 Son périmètre est centré sur la consultation du catalogue, l'expression de vœux, le suivi
 de son affectation et la consultation des résultats.
 
-![Cas d'utilisation de l'étudiant](/diagrams/uc-etudiant.png){#fig-uc-etudiant width="100%"}
+![Cas d'utilisation de l'étudiant](/diagrams/uc-etudiant.png){#fig-uc-etudiant width="85%"}
 
 #### Cas d'utilisation de l'enseignant
 
@@ -168,7 +168,7 @@ superviseur et membre du jury. La @fig-uc-enseignant couvre l'ensemble de ces
 responsabilités. La gestion des candidatures inclut nécessairement la proposition
 préalable d'un sujet PFE (relation *include*).
 
-![Cas d'utilisation de l'enseignant](/diagrams/uc-enseignant.png){#fig-uc-enseignant width="100%"}
+![Cas d'utilisation de l'enseignant](/diagrams/uc-enseignant.png){#fig-uc-enseignant width="85%"}
 
 #### Cas d'utilisation de l'administration
 
@@ -177,14 +177,14 @@ par la @fig-uc-admin. Elle orchestre l'ensemble du processus : validation des en
 assignation des validateurs, affectation, constitution des jurys et planification
 des soutenances.
 
-![Cas d'utilisation de l'administration](/diagrams/uc-administration.png){#fig-uc-admin width="100%"}
+![Cas d'utilisation de l'administration](/diagrams/uc-administration.png){#fig-uc-admin width="85%"}
 
 #### Cas d'utilisation de l'entreprise
 
 L'entreprise partenaire intervient principalement dans la proposition de sujets externes
 et le suivi des PFE qui lui sont associés (@fig-uc-entreprise).
 
-![Cas d'utilisation de l'entreprise](/diagrams/uc-entreprise.png){#fig-uc-entreprise width="100%"}
+![Cas d'utilisation de l'entreprise](/diagrams/uc-entreprise.png){#fig-uc-entreprise width="85%"}
 
 ### Diagramme de classes
 
@@ -220,14 +220,14 @@ processus PFE.
 La @fig-seq-proposition décrit la soumission d'un sujet par un enseignant et son
 enregistrement dans la base de données.
 
-![Séquence - Proposition d'un sujet](/diagrams/seq-proposition.png){#fig-seq-proposition width="100%"}
+![Séquence - Proposition d'un sujet](/diagrams/seq-proposition.png){#fig-seq-proposition width="90%"}
 
 #### Validation d'un sujet PFE
 
 La @fig-seq-validation décrit l'évaluation d'un sujet par un validateur assigné
 et la détermination du statut final selon les décisions des deux validateurs.
 
-![Séquence - Validation d'un sujet](/diagrams/seq-validation.png){#fig-seq-validation width="100%"}
+![Séquence - Validation d'un sujet](/diagrams/seq-validation.png){#fig-seq-validation width="90%"}
 
 #### Vœux et affectation
 
@@ -235,28 +235,28 @@ La @fig-seq-voeux décrit le parcours de l'étudiant depuis la consultation du c
 de sujets validés jusqu'à l'enregistrement de ses vœux, avec vérification de la
 limite autorisée.
 
-![Séquence - Vœux et affectation](/diagrams/seq-voeux-affectation.png){#fig-seq-voeux width="100%"}
+![Séquence - Vœux et affectation](/diagrams/seq-voeux-affectation.png){#fig-seq-voeux width="90%"}
 
 #### Constitution du jury et planification
 
 La @fig-seq-jury décrit la constitution du jury par l'administration et la
 planification logistique de la soutenance.
 
-![Séquence - Constitution du jury et planification](/diagrams/seq-jury-planification.png){#fig-seq-jury width="100%"}
+![Séquence - Constitution du jury et planification](/diagrams/seq-jury-planification.png){#fig-seq-jury width="90%"}
 
 #### Notation
 
 La @fig-seq-notation illustre la soumission des notes par un membre du jury et le
 calcul de la note finale sur 20.
 
-![Séquence - Notation](/diagrams/seq-notation.png){#fig-seq-notation width="100%"}
+![Séquence - Notation](/diagrams/seq-notation.png){#fig-seq-notation width="90%"}
 
 #### Résultats
 
 La @fig-seq-resultats décrit la détermination du résultat final de la soutenance selon
 trois issues possibles : admis, corrections requises ou non admis.
 
-![Séquence - Résultats](/diagrams/seq-resultats.png){#fig-seq-resultats width="100%"}
+![Séquence - Résultats](/diagrams/seq-resultats.png){#fig-seq-resultats width="75%"}
 
 ### Diagrammes d'activité
 
@@ -284,7 +284,7 @@ La @fig-act-suivi couvre la seconde moitié : réalisation des travaux, suivi p�
 dépôt du mémoire, constitution du jury, soutenance, notation et détermination du
 résultat final.
 
-![Activité - Du suivi aux résultats](/diagrams/act-suivi-resultats.png){#fig-act-suivi width="100%"}
+![Activité - Du suivi aux résultats](/diagrams/act-suivi-resultats.png){#fig-act-suivi width="90%"}
 
 ## Conclusion
 

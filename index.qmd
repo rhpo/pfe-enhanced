@@ -19,10 +19,10 @@ format:
     documentclass: report
     classoption: [a4paper, 12pt]
     geometry:
-      - top=2.5cm
-      - bottom=2.5cm
-      - left=2.5cm
-      - right=2.5cm
+      - top=2.3cm
+      - bottom=2.3cm
+      - left=2.3cm
+      - right=2.3cm
     include-in-header: config/header.tex
     include-before-body: config/layout.tex
     toc: true
