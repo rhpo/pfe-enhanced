@@ -48,15 +48,13 @@ Ces motivations justifient l'organisation, par les sociétés, de systèmes édu
 
 L'éducation formelle est le mécanisme institutionnel par lequel les sociétés organisent le transfert de connaissances et de compétences entre générations. Elle est structurée en paliers successifs, chacun ayant ses objectifs pédagogiques propres, menant progressivement l'individu de l'acquisition des savoirs de base jusqu'à une spécialisation professionnelle avancée.
 
-En Algérie, comme dans la majorité des pays, le système éducatif est organisé en plusieurs cycles définis par le ministère de l'Éducation nationale et le ministère de l'Enseignement supérieur et de la Recherche scientifique (MESRS) [@loi9905].
-
-\vspace{1cm}
+En Algérie, comme dans la majorité des pays, le système éducatif est organisé en plusieurs cycles définis par le ministère de l'Éducation nationale et le ministère de l'Enseignement supérieur et de la Recherche scientifique (MESRS) [@loi9905]. Ce parcours, illustré par la figure ci-dessous, se décompose en quatre grands paliers : l'enseignement primaire, l'enseignement moyen, l'enseignement secondaire et l'enseignement supérieur. Chaque palier sanctionne la réussite de l'élève par un diplôme ou un examen national conditionnant l'accès au cycle suivant.
 
 ![Parcours scolaire de l'être humain (en Algérie) @france-edu-intl](/images/education.png){
     fig-align="center"
-    width="90%"
+    width="85%"
+    fig-pos="H"
 }
-
 
 ### L'enseignement primaire
 
@@ -64,11 +62,11 @@ L'enseignement primaire constitue la première étape de la scolarisation obliga
 
 ### L'enseignement moyen
 
-Le cycle moyen (collège) dure quatre ans en Algérie - classes de 1ère AM à 4ème AM [@loi9905]. Il approfondit et élargit les connaissances acquises en primaire, en introduisant des disciplines supplémentaires telles que les mathématiques approfondies, les sciences physiques, l'histoire-géographie et les langues étrangères. Ce cycle se conclut par le **Brevet d'Enseignement Moyen (BEM)**, examen national qui conditionne l'accès au lycée.
+Le cycle moyen (collège) dure quatre ans en Algérie, couvrant les classes de 1ère AM à 4ème AM [@loi9905]. Il approfondit et élargit les connaissances acquises en primaire, en introduisant des disciplines supplémentaires telles que les mathématiques approfondies, les sciences physiques, l'histoire-géographie et les langues étrangères. Ce cycle se conclut par le **Brevet d'Enseignement Moyen (BEM)**, examen national qui conditionne l'accès au lycée.
 
 ### L'enseignement secondaire
 
-Le lycée s'étale sur trois années - classes de 1ère AS à 3ème AS - et représente une étape charnière dans l'orientation scolaire de l'élève [@loi9905]. Les élèves se spécialisent dans des filières (sciences, lettres, mathématiques, technique, gestion...) en fonction de leurs aptitudes et projets professionnels. Ce cycle se termine par l'obtention du **Baccalauréat**, diplôme national donnant accès à l'enseignement supérieur, souvent considéré comme le premier diplôme officiel de l'élève.
+Le lycée s'étale sur trois années, couvrant les classes de 1ère AS à 3ème AS, et représente une étape charnière dans l'orientation scolaire de l'élève [@loi9905]. Les élèves se spécialisent dans des filières (sciences, lettres, mathématiques, technique, gestion...) en fonction de leurs aptitudes et projets professionnels. Ce cycle se termine par l'obtention du **Baccalauréat**, diplôme national donnant accès à l'enseignement supérieur, souvent considéré comme le premier diplôme officiel de l'élève.
 
 ### L'enseignement supérieur
 

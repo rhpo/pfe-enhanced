@@ -26,7 +26,7 @@ format:
     include-in-header: config/header.tex
     include-before-body: config/layout.tex
     toc: true
-    lof: true
+    lof: false
     number-sections: true
     colorlinks: true
     linkcolor: black
@@ -36,6 +36,11 @@ format:
     fig-pos: htbp
 ---
 
+
+```{=latex}
+\clearpage
+\listoffigures
+```
 
 {{< include chapters/intro/main.qmd >}}
 

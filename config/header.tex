@@ -92,8 +92,13 @@
 \advance\cftbeforetoctitleskip by -30pt
 \advance\cftaftertoctitleskip by -20pt
 
+% LOF Header spacing (tighter to fit all entries on one page)
+\advance\cftbeforeloftitleskip by -30pt
+\advance\cftafterloftitleskip by -15pt
+
 % Fix List of Figures: wider number column to prevent "III.10" overlapping caption
 \setlength{\cftfignumwidth}{3.5em}
+
 
 % List spacing - compact but readable
 \setlist[itemize]{label=\textbullet, itemsep=4pt, topsep=4pt, parsep=1pt}
@@ -149,6 +154,9 @@
   \fancyfoot[R]{\thepage}
   \renewcommand{\footrulewidth}{0.4pt}
 }
+
+% Prevent floats from getting their own page unless they fill 85% of it
+\renewcommand{\floatpagefraction}{0.85}
 
 % Global Typography & Spacing
 \setlength{\parskip}{3pt plus 1pt minus 1pt}
