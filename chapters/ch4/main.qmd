@@ -114,56 +114,88 @@ illustrant le résultat final de la phase de réalisation.
 
 ### Interfaces de l'Administration
 
-L'administrateur dispose d'une vue d'ensemble sur le système. Le tableau de bord lui permet de suivre l'état global des processus du PFE (sujets soumis, affectations, soutenances).
+L'administrateur dispose d'une vue d'ensemble sur le système. Comme l'illustre la @fig-admin-dashboard, le tableau de bord lui permet de suivre l'état global des processus du PFE de manière claire et visuelle.
 
-![Tableau de bord de l'administration, offrant une vue d'ensemble sur les statistiques et l'état des PFE.](images/screenshots/admin-dashboard.png){width="80%"}
+La première partie de cette interface présente des cartes récapitulatives affichant le nombre total d'étudiants (avec le nombre d'affectés), le nombre de sujets soumis (avec ceux en attente ou validés), ainsi que les enseignants disponibles. Cela offre une vision immédiate sur les indicateurs de performance clés.
+Ensuite, des graphiques interactifs détaillent la progression du cycle PFE, illustrent l'évolution des étudiants au cours de l'année académique sous forme de courbe, et décomposent l'état global des sujets (validés, en attente, refusés) grâce à un diagramme circulaire intuitif pour faciliter la prise de décision.
 
-La gestion des sujets permet à l'administration de valider, d'assigner et de filtrer les différents sujets proposés par les enseignants et les entreprises.
+![Tableau de bord de l'administration, offrant une vue d'ensemble sur l'activité, les statistiques et l'état d'avancement des PFE.](images/screenshots/admin-dashboard.png){#fig-admin-dashboard width="80%"}
 
-![Interface de gestion des sujets, permettant le suivi et la validation des propositions de PFE.](images/screenshots/admin-sujets.png){width="80%"}
+La gestion des sujets permet à l'administration de valider, d'assigner et de filtrer les différents sujets proposés par les enseignants et les entreprises. La @fig-admin-sujets montre en détail cette interface de supervision.
 
-Une fois les affectations terminées, l'administrateur planifie et gère les soutenances. Cette interface centralise les événements à venir.
+Cette page s'articule autour d'un tableau filtrable ("Tous", "En attente", "Validés", "Refusés") listant l'ensemble des propositions de PFE. Pour chaque sujet, on retrouve son titre, la composition du groupe exigée (monôme, binôme, trinôme), l'initiateur du sujet avec son rôle précis (enseignant ou entreprise), et sa date de soumission.
+De plus, la colonne des statuts affiche des badges colorés permettant une identification rapide de l'état du sujet. La colonne d'actions offre à l'administrateur des contrôles directs : il peut par exemple assigner des validateurs pour les sujets en attente d'évaluation ou débloquer des sujets refusés.
 
-![Interface de planification et gestion des soutenances.](images/screenshots/admin-soutenances.png){width="80%"}
+![Interface de gestion des sujets, permettant le suivi, le filtrage et la validation des propositions de PFE.](images/screenshots/admin-sujets.png){#fig-admin-sujets width="80%"}
+
+Une fois les affectations terminées, l'administrateur planifie et gère les soutenances. Cette interface, présentée par la @fig-admin-soutenances, centralise les événements à venir.
+
+Elle fournit un tableau structuré listant toutes les soutenances programmées ou en attente de planification. On y trouve la date et l'heure prévues, la salle affectée (par exemple, "Salle A101"), ainsi que le statut actuel de l'événement (comme "Planifiée"). Des colonnes sont également prévues pour la note finale et le résultat une fois la soutenance passée.
+L'administrateur dispose en haut de page d'outils de filtrage par date et par statut, ainsi que d'un bouton de création "Planifier une soutenance". Chaque ligne du tableau intègre un bouton "Voir" permettant d'accéder aux détails spécifiques du rendez-vous, du jury et du groupe évalué.
+
+![Interface de planification et gestion des soutenances.](images/screenshots/admin-soutenances.png){#fig-admin-soutenances width="80%"}
 
 ### Interfaces des Enseignants
 
-Le tableau de bord enseignant offre un accès rapide à ses encadrements, aux sujets qu'il propose ainsi qu'aux jurys auxquels il est affecté.
+Le tableau de bord enseignant offre un accès rapide à ses encadrements, aux sujets qu'il propose ainsi qu'aux jurys auxquels il est affecté. La @fig-teacher-dashboard illustre cette page d'accueil personnalisée.
 
-![Tableau de bord de l'enseignant résumant ses responsabilités (encadrements, jurys, propositions).](images/screenshots/teacher-dashboard.png){width="80%"}
+Le haut de l'interface met en évidence quatre indicateurs essentiels : le nombre d'étudiants qu'il encadre, les sujets en attente de validation, les sujets qu'il a déjà proposés, et son statut de disponibilité ("Disponible" par défaut). Des accès rapides ("Raccourcis") sous forme de boutons bien mis en évidence lui permettent de naviguer directement vers "Mes sujets", "Sujets à valider", ou de "Modifier sa disponibilité".
+Au centre de l'écran, deux encarts informent l'enseignant des événements cruciaux : "Prochaines soutenances", qui liste ses convocations en tant que membre de jury (avec date, heure et lieu), et "Notifications", pour les messages ou alertes non lues et récentes.
 
-La page des sujets permet à l'enseignant de soumettre de nouveaux sujets via un formulaire dédié et de consulter l'état de validation de ses propositions.
+![Tableau de bord de l'enseignant résumant ses responsabilités, encadrements, jurys, et propositions en un coup d'œil.](images/screenshots/teacher-dashboard.png){#fig-teacher-dashboard width="80%"}
 
-![Interface de gestion des sujets par l'enseignant.](images/screenshots/teacher-sujets.png){width="80%"}
+La page des sujets permet à l'enseignant de soumettre de nouveaux sujets via un formulaire dédié et de consulter l'état de validation de ses propositions, comme le présente la @fig-teacher-sujets.
+
+Cette vue liste sous forme de tableau l'historique complet des sujets créés par l'enseignant. Chaque ligne affiche le titre de la proposition (par exemple "Chatbot IA pour la scolarité"), l'effectif du groupe demandé (Binôme), le statut actuel signalé par un badge visuel (ex. "EN ATTENTE"), et la date de proposition.
+Un bouton d'action principal "Proposer un nouveau sujet" est mis en évidence en haut à droite pour permettre de nouvelles soumissions facilement. Cela centralise et simplifie le parcours de dépôt de PFE pour les équipes pédagogiques.
+
+![Interface de gestion des sujets proposés par l'enseignant.](images/screenshots/teacher-sujets.png){#fig-teacher-sujets width="80%"}
 
 ### Interfaces des Étudiants
 
-Dès sa connexion, l'étudiant accède à un tableau de bord récapitulatif lui indiquant les dates importantes et le statut de son PFE de manière claire et concise.
+Dès sa connexion, l'étudiant accède à un tableau de bord récapitulatif lui indiquant les dates importantes et le statut de son PFE de manière claire et concise. La @fig-student-dashboard donne un aperçu de cette interface.
 
-![Tableau de bord de l'étudiant, affichant l'état de la recherche et les échéances.](images/screenshots/student-dashboard.png){width="80%"}
+L'agencement se concentre sur l'essentiel : des indicateurs statistiques lui montrent le statut de son PFE (actuellement "EN COURS"), le nombre de vœux qu'il a déjà soumis pour ses choix de sujet, et ses notifications non lues. Tous ces éléments sont accessibles en un seul coup d'œil.
+L'étudiant dispose également de rubriques dédiées à ses dernières notifications et de raccourcis rapides pour consulter le catalogue global des sujets, gérer ses vœux, ou accéder à l'espace de suivi détaillé de son PFE. Ces commandes facilitent une navigation fluide sans se perdre dans les menus secondaires.
 
-Pour formuler ses choix, l'étudiant a accès au catalogue complet et peut exprimer ses vœux selon ses préférences. Une interface interactive permet de les classer facilement.
+![Tableau de bord de l'étudiant, affichant l'état de la recherche, les vœux soumis et les raccourcis vers les actions principales.](images/screenshots/student-dashboard.png){#fig-student-dashboard width="80%"}
 
-![Page d'expression et d'ordre des vœux par l'étudiant.](images/screenshots/student-voeux.png){width="80%"}
+Pour formuler ses choix, l'étudiant a accès au catalogue complet et peut exprimer ses vœux selon ses préférences. La @fig-student-voeux montre l'interface de gestion de ces choix.
 
-L'espace PFE de l'étudiant lui permet de suivre l'avancement de son projet. Il peut consulter les remarques de son encadrant et interagir en ligne.
+Sur cet écran, l'étudiant peut visualiser et gérer la liste ordonnée des sujets qui l'intéressent. Le système indique clairement la limite autorisée (par exemple "1 vœu sur 5 maximum"), offrant une contrainte visuelle qui aide à limiter les erreurs.
+Les vœux formulés s'affichent sous forme de cartes d'information détaillant le titre du sujet, son identifiant, son statut, et sa date de création/ajout. Pour chaque choix, l'étudiant a la possibilité de le "Retirer" d'un simple clic s'il change d'avis avant la clôture de la période d'affectation.
 
-![Espace de suivi du PFE pour l'étudiant.](images/screenshots/student-pfe.png){width="80%"}
+![Page de gestion et d'expression des vœux par l'étudiant.](images/screenshots/student-voeux.png){#fig-student-voeux width="80%"}
+
+L'espace PFE de l'étudiant lui permet de suivre l'avancement de son projet. Il peut consulter les remarques de son encadrant et interagir chronologiquement, comme illustré par la @fig-student-pfe.
+
+Cette vue centralise l'information autour du projet validé : on y trouve l'état du "Sujet" avec l'encadreur assigné (ou non assigné) et un éventuel co-promoteur (par exemple, une "Entreprise").
+Juste en dessous, le "Journal de suivi" répertorie les échanges et l'historique des réunions. L'étudiant peut y ajouter de nouvelles intéractions en renseignant la "Date de la réunion" et en rédigeant des "Notes" descriptives sur l'avancement de ses travaux. Ce carnet de bord numérique est essentiel pour tracer l'évolution des tâches et l'implication des parties prenantes.
+
+![Espace "Mon PFE" permettant à l'étudiant de suivre l'avancement de son projet et de tenir un journal de bord.](images/screenshots/student-pfe.png){#fig-student-pfe width="80%"}
 
 ### Interfaces des Entreprises
 
-Les partenaires industriels bénéficient d'une interface sur mesure qui s'adapte à leurs besoins. Le tableau de bord affiche un résumé des interactions avec l'établissement universitaire.
+Les partenaires industriels bénéficient d'une interface sur mesure qui s'adapte à leurs besoins, utilisant notamment un mode sombre esthétique et reposant (dark mode). La @fig-company-dashboard affiche ce tableau de bord.
 
-![Tableau de bord de l'entreprise partenaire.](images/screenshots/company-dashboard.png){width="80%"}
+Pour les autres profiles, a vue présente des indicateurs de l'activité de l'entreprise : "Sujets proposés", "Étudiants encadrés" et "Notifications non lues". Permettant d'avoir un bilan immédiat de son implication au sein du programme PFE de l'établissement.
+Des blocs spécifiques affichent un aperçu des encadrements en cours (actuellement vides s'il n'y en a pas encore) et l'état des derniers sujets soumis pour validation. Un raccourci "Proposer un sujet" est facilement accessible, favorisant et fluidifiant les propositions de problématiques industrielles.
 
-La gestion des sujets permet à l'entreprise de consulter l'historique de ses propositions et de vérifier leur état de validation par le comité scientifique.
+![Tableau de bord en mode sombre de l'entreprise partenaire récapitulant les propositions et encadrements.](images/screenshots/company-dashboard.png){#fig-company-dashboard width="80%"}
 
-L'entreprise peut également formuler et soumettre de nouvelles propositions de projets via un formulaire structuré facilitant l'évaluation par l'établissement.
+La gestion des sujets permet à l'entreprise de consulter l'historique de ses propositions et de vérifier leur état de validation par le comité scientifique. La @fig-company-sujets montre cette liste de sujets.
 
+Ce tableau synthétise toutes les soumissions de l'entreprise. On y retrouve des détails pertinents comme le titre ("Migration cloud de l'infrastructure"), les domaines, le type de groupe requis, et son statut (par exemple "EN ATTENTE").
+Cette vue met l'accent sur la lisibilité des états pour éviter à l'entreprise de devoir solliciter sans cesse l'administration : elle sait directement si son idée est acceptée, en relecture, ou validée.
 
-![Interface de gestion des sujets soumis par l'entreprise.](images/screenshots/company-sujets.png){height=20%}
+![Interface de gestion des sujets soumis par l'entreprise partenaire.](images/screenshots/company-sujets.png){#fig-company-sujets width="80%"}
 
-![Formulaire de proposition d'un nouveau sujet de PFE par l'entreprise.](images/screenshots/company-proposal.png){width=100%}
+L'entreprise peut également formuler et soumettre de nouvelles propositions de projets via un formulaire structuré facilitant l'évaluation par l'établissement. Ce formulaire est visible en @fig-company-proposal.
+
+Ce dernier regroupe l'ensemble des champs obligatoires marqués d'un astérisque : un champ texte pour le "Titre du sujet", une zone de "Description" détaillée pour lister les objectifs et technologies attendues, ainsi que des menus déroulants pour préciser le "Niveau", la "Spécialité" et le "Type de groupe" (ex: Monôme 1 étudiant).
+Une annotation informative rappelle subtilement que le sujet ne sera visible dans le catalogue qu'après la validation d'enseignants spécialisés, renforçant la transparence du processus. Une fois les données saisies, le bouton d'action principal permet de finaliser la proposition.
+
+![Formulaire de proposition d'un nouveau sujet de PFE par l'entreprise, comprenant tous les champs descriptifs requis.](images/screenshots/company-proposal.png){#fig-company-proposal width="100%"}
 
 ## Conclusion du chapitre
 
