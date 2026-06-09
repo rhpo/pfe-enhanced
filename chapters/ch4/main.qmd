@@ -8,6 +8,7 @@ les langages de programmation, les outils et les frameworks retenus en motivant 
 décision. Enfin, nous illustrerons le résultat final à travers les captures d'écran des
 interfaces principales de l'application.
 
+
 ## Justification du choix d'une application web
 
 Le choix de développer une application web, par opposition à une application de bureau
